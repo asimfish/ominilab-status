@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-06 20:35",
+ "updated": "2026-11-06 21:00",
  "tz": "UTC+8",
  "session": {
   "online": false,
@@ -195,16 +195,16 @@ window.STATUS = {
      "tag": "Isolated FR3",
      "live": false,
      "status": "pass",
-     "line": "4/4 pass · 0.43–0.94 mm · ≤ 0.13°",
-     "details": "First native robot trial; independent verifier agrees on all 44 values. Replay in the viewer is being added."
+     "line": "16/16 trials + 2 refusals pass; independent check running",
+     "details": "Three independent runs plus a same-seed repeat (bit-identical paths): worst 0.93 mm / 0.10°, zero contacts, joint limits respected. Unreachable and colliding targets refused with no motion. Approval needs the independent check and 2 more refusal tests."
     },
     {
      "id": "lab_balance_fixture",
      "title": "Balance station: reference-weight readings",
      "tag": "Pilot station",
      "live": false,
-     "status": "partial",
-     "line": "Locked-pan fixtures pass stillness; readings re-test next",
+     "status": "running",
+     "line": "Readings re-test on locked pans running",
      "details": "New locked-pan fixtures for 100 g, 500 g, 1 kg and 2 kg all pass the 600-step stillness test. Earlier readings were correct on average but jittery (14–327 g vs 0.1 g needed); the readout is re-measured on these fixtures next."
     },
     {
@@ -221,9 +221,9 @@ window.STATUS = {
      "title": "Pick and place a 100 g weight",
      "tag": "Pilot station",
      "live": false,
-     "status": "blocked",
-     "line": "Gripper range fix in progress",
-     "details": "Gripper currently stops at 40 mm; the weight is 24 mm wide."
+     "status": "running",
+     "line": "Gripper fixed; first real grasp running",
+     "details": "The 40 mm stop was a software default, not the robot model; the new gripper closes to about 20 mm with contact-stop. First native attempts: lift 30 mm, hold 1 s, place back (≤ 2 mm slip, ≤ 5 mm placement error)."
     },
     {
      "id": "lab_balance_check",
@@ -266,10 +266,14 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "No complete experiment yet; first robot skill trial 4/4"
+   "line": "No complete experiment yet; move-to-pose 16/16 with refusals; first grasp and stable-reading test running"
   }
  ],
  "timeline": [
+  {
+   "t": "11-06 20:55",
+   "text": "Skill-approval run: 16/16 trials pass, refusals correct, repeat bit-identical. Grasp and locked-pan reading test started."
+  },
   {
    "t": "11-06 20:30",
    "text": "Main-lab sweep: 0 unstable objects; all four locked-pan balance fixtures pass; oven exits cleanly."
