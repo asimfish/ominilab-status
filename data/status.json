@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 20:30",
+  "updated": "2026-11-06 20:35",
   "tz": "UTC+8",
   "session": {
     "online": false,
@@ -36,9 +36,9 @@
           "title": "Analysis centre + weighing unit",
           "tag": "Base",
           "live": true,
-          "status": "fail",
-          "line": "Stops at step 14: dispenser tips 0.55°",
-          "details": "86 objects; holds the pilot balance station. Titration bottle-top dispenser overhangs its support by 2.2 mm; fix candidate ready. Five beaker supports and the pestle already fixed."
+          "status": "partial",
+          "line": "Full sweep: 0 unstable objects in 600 steps; strict test next",
+          "details": "86 objects; holds the pilot balance station. Main-lab sweep over 71 moving bodies found no object that tips or drifts (diagnostic run). Next: the strict whole-room L0 test. The dispenser still has a separate operability defect (joints lost in the source)."
         },
         {
           "id": "legacy_l3",
@@ -82,8 +82,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "Simulator crash before step 1",
-          "details": "25 objects. Crash narrowed to one group of 6 root objects."
+          "line": "Crash narrowed to 3 instruments",
+          "details": "25 objects. Simulator crash traced to a group of 3 instruments; next 8 narrowing cases prepared."
         },
         {
           "id": "room_l_suite",
@@ -109,8 +109,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "Simulator crash before step 1",
-          "details": "44 objects. Crash narrowed to two groups of 11 root objects."
+          "line": "Crash narrowed to groups of 5–6 objects",
+          "details": "44 objects."
         },
         {
           "id": "room_inert_suite",
@@ -119,7 +119,7 @@
           "live": true,
           "status": "fail",
           "line": "Valves / doors fail at step 1",
-          "details": "29 objects: glovebox transfer, heat treatment, characterisation. Oven fix is physics-stable; shutdown hang fixed in the next run."
+          "details": "29 objects: glovebox transfer, heat treatment, characterisation. Oven now physics-stable with a clean exit; valves and doors still fail at step 1."
         }
       ]
     },
@@ -204,8 +204,8 @@
           "tag": "Pilot station",
           "live": false,
           "status": "partial",
-          "line": "Average correct, still jittery",
-          "details": "100 g – 2 kg read within 0.1 % on average; jitter 14–327 g vs 0.1 g needed. Locked-pan fixture in progress."
+          "line": "Locked-pan fixtures pass stillness; readings re-test next",
+          "details": "New locked-pan fixtures for 100 g, 500 g, 1 kg and 2 kg all pass the 600-step stillness test. Earlier readings were correct on average but jittery (14–327 g vs 0.1 g needed); the readout is re-measured on these fixtures next."
         },
         {
           "id": "lab_motion_over_pan",
@@ -240,8 +240,8 @@
           "tag": "Complete lab",
           "live": true,
           "scene": "legacy_l2",
-          "status": "fail",
-          "line": "Whole room not yet still (step 14)",
+          "status": "partial",
+          "line": "Diagnostic sweep clean; strict test next",
           "details": "Opens the main lab live; robot motion here starts after the fixture runs pass."
         }
       ]
@@ -251,7 +251,7 @@
     {
       "name": "Base scenes",
       "status": "partial",
-      "line": "0 of 12 rooms pass as a whole; 5 isolated fixtures pass"
+      "line": "0 of 12 rooms certified yet; main-lab sweep found 0 unstable objects; 9 isolated fixtures pass"
     },
     {
       "name": "Auto-built scenes",
@@ -270,6 +270,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-06 20:30",
+      "text": "Main-lab sweep: 0 unstable objects; all four locked-pan balance fixtures pass; oven exits cleanly."
+    },
     {
       "t": "11-06 20:25",
       "text": "Experiment 12 (balance routine check) compiled: 18-step plan, control-chart steps tested."
