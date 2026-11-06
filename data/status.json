@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-06 21:20",
+  "updated": "2026-11-06 21:45",
   "tz": "UTC+8",
   "session": {
     "online": false,
     "expires": null,
-    "note": "No live debug session right now. One is being scheduled; scenes open here as soon as it is up."
+    "note": "First session attempt stopped at startup (configuration bug, now fixed). A second attempt is starting; scenes open here once it is live."
   },
   "default_port": 18640,
   "groups": [
@@ -132,10 +132,10 @@
           "id": "auto_balance_routine_check",
           "title": "Balance routine check (NIST IR 6969)",
           "tag": "From protocol",
-          "live": false,
+          "live": true,
           "status": "partial",
-          "line": "Layout 12 pass / 4 unknown; under review",
-          "details": "Robot bench, robot, balance and 4 reference weights in storage spots, empty pan. Minimum clearance 105 mm. Robot reach not yet verified."
+          "line": "Reviewed; empty-pan version with pan lock built; stillness test next",
+          "details": "Robot bench, robot, balance and 4 reference weights in storage spots, empty pan, pan lock added by the base-scene agent. Minimum clearance 105 mm. Native stillness test runs in the next debug session; reach not yet verified."
         },
         {
           "id": "auto_hplc",
@@ -202,7 +202,7 @@
           "id": "lab_balance_fixture",
           "title": "Balance station: reference-weight readings",
           "tag": "Pilot station",
-          "live": false,
+          "live": true,
           "status": "running",
           "line": "Readings re-test on locked pans running",
           "details": "New locked-pan fixtures for 100 g, 500 g, 1 kg and 2 kg all pass the 600-step stillness test. Earlier readings were correct on average but jittery (14–327 g vs 0.1 g needed); the readout is re-measured on these fixtures next."
@@ -270,6 +270,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-06 21:40",
+      "text": "Debug console wired to 15 scenes; first session attempt hit a startup config bug (fixed), retrying."
+    },
     {
       "t": "11-06 21:15",
       "text": "Independent check agrees with all 32 robot-trial phases; experiment 12 plan gets its simulation settings."
