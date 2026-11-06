@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 21:00",
+  "updated": "2026-11-06 21:20",
   "tz": "UTC+8",
   "session": {
     "online": false,
@@ -195,7 +195,7 @@
           "tag": "Isolated FR3",
           "live": false,
           "status": "pass",
-          "line": "16/16 trials + 2 refusals pass; independent check running",
+          "line": "16/16 pass · independent check agrees 32/32 · 2 refusal tests to add",
           "details": "Three independent runs plus a same-seed repeat (bit-identical paths): worst 0.93 mm / 0.10°, zero contacts, joint limits respected. Unreachable and colliding targets refused with no motion. Approval needs the independent check and 2 more refusal tests."
         },
         {
@@ -231,8 +231,8 @@
           "tag": "Full experiment",
           "live": false,
           "status": "partial",
-          "line": "Plan compiled (18 steps); 0 steps runnable yet",
-          "details": "Robot 6 / instrument program 10 / manual 2. The 6 calculation steps (repeatability, indication error, control chart, control state, record, loop) are implemented and tested. Waiting for: scene review and 600-step stillness test, robot-skill confirmations, and repeat counts."
+          "line": "Plan with simulation settings ready; waiting for scene + skills",
+          "details": "18 steps (robot 6 / instrument program 10 / manual 2). Simulation settings: no warm-up, one practice placement, 3 averaged placements per weight per run, 100 g / 500 g / 1 kg; control chart after ≥ 7 independent runs per weight. Absolute pass limits are not stated in the source and stay report-only."
         },
         {
           "id": "lab_main",
@@ -270,6 +270,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-06 21:15",
+      "text": "Independent check agrees with all 32 robot-trial phases; experiment 12 plan gets its simulation settings."
+    },
     {
       "t": "11-06 20:55",
       "text": "Skill-approval run: 16/16 trials pass, refusals correct, repeat bit-identical. Grasp and locked-pan reading test started."
