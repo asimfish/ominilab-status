@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-06 20:15",
+ "updated": "2026-11-06 20:30",
  "tz": "UTC+8",
  "session": {
   "online": false,
@@ -230,9 +230,9 @@ window.STATUS = {
      "title": "Experiment 12: balance routine check",
      "tag": "Full experiment",
      "live": false,
-     "status": "pending",
-     "line": "Plan compiling; not run",
-     "details": "18 steps: robot 6, instrument program 10, manual 2."
+     "status": "partial",
+     "line": "Plan compiled (18 steps); 0 steps runnable yet",
+     "details": "Robot 6 / instrument program 10 / manual 2. The 6 calculation steps (repeatability, indication error, control chart, control state, record, loop) are implemented and tested. Waiting for: scene review and 600-step stillness test, robot-skill confirmations, and repeat counts."
     },
     {
      "id": "lab_main",
@@ -261,7 +261,7 @@ window.STATUS = {
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "11 experiments compiled; first pilot-fit protocol (balance check) being compiled as experiment 12"
+   "line": "12 experiments compiled, incl. the balance routine check (18 steps); none runnable yet"
   },
   {
    "name": "Lab execution",
@@ -270,6 +270,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-06 20:25",
+   "text": "Experiment 12 (balance routine check) compiled: 18-step plan, control-chart steps tested."
+  },
   {
    "t": "11-06 20:00",
    "text": "Progress site online."

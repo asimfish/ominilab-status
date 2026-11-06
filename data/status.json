@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 20:15",
+  "updated": "2026-11-06 20:30",
   "tz": "UTC+8",
   "session": {
     "online": false,
@@ -13,18 +13,114 @@
       "title": "Base scenes",
       "blurb": "5 original scenes and 7 new rooms. Pick one to open it live in Isaac Sim: play, pause, reset, move the camera, inspect instruments.",
       "items": [
-        {"id": "legacy_l0", "title": "Intelligent chemistry robot platform", "tag": "Base", "live": true, "status": "pending", "line": "Not yet re-run on the current version", "details": "96 objects."},
-        {"id": "legacy_l1", "title": "Organic synthesis lab", "tag": "Base", "live": true, "status": "pending", "line": "Not yet re-run on the current version", "details": "90 objects."},
-        {"id": "legacy_l2", "title": "Analysis centre + weighing unit", "tag": "Base", "live": true, "status": "fail", "line": "Stops at step 14: dispenser tips 0.55°", "details": "86 objects; holds the pilot balance station. Titration bottle-top dispenser overhangs its support by 2.2 mm; fix candidate ready. Five beaker supports and the pestle already fixed."},
-        {"id": "legacy_l3", "title": "Electrochemistry & energy materials lab", "tag": "Base", "live": true, "status": "pending", "line": "Not yet re-run on the current version", "details": "87 objects."},
-        {"id": "legacy_l4", "title": "FR3 100 mL weighing & recovery unit", "tag": "Base", "live": true, "status": "pending", "line": "Not yet re-run on the current version", "details": "Standalone robot weighing cell."},
-        {"id": "room_double_island", "title": "Double-island wet-chemistry hall", "tag": "New", "live": true, "status": "fail", "line": "Water knob spins at step 1; render timeout", "details": "93 objects: fume hoods, dosing, weighing, reaction, washing."},
-        {"id": "room_u_workcell", "title": "U-shaped bio / electrochemistry cell", "tag": "New", "live": true, "status": "fail", "line": "Failed at step 1 (11-05); not re-run", "details": "25 objects."},
-        {"id": "room_linear_flow", "title": "Continuous-flow corridor", "tag": "New", "live": true, "status": "fail", "line": "Simulator crash before step 1", "details": "25 objects. Crash narrowed to one group of 6 root objects."},
-        {"id": "room_l_suite", "title": "L-shaped digestion / separation suite", "tag": "New", "live": true, "status": "pending", "line": "No native run yet", "details": "32 objects."},
-        {"id": "room_spine_analysis", "title": "Six-bay analysis centre", "tag": "New", "live": true, "status": "blocked", "line": "Blocked by a stripped balance variant", "details": "54 objects: elemental, chromatography, spectroscopy, imaging, metrology."},
-        {"id": "room_racetrack", "title": "Ring logistics hall", "tag": "New", "live": true, "status": "fail", "line": "Simulator crash before step 1", "details": "44 objects. Crash narrowed to two groups of 11 root objects."},
-        {"id": "room_inert_suite", "title": "Inert multi-room suite", "tag": "New", "live": true, "status": "fail", "line": "Valves / doors fail at step 1", "details": "29 objects: glovebox transfer, heat treatment, characterisation. Oven fix is physics-stable; shutdown hang fixed in the next run."}
+        {
+          "id": "legacy_l0",
+          "title": "Intelligent chemistry robot platform",
+          "tag": "Base",
+          "live": true,
+          "status": "pending",
+          "line": "Not yet re-run on the current version",
+          "details": "96 objects."
+        },
+        {
+          "id": "legacy_l1",
+          "title": "Organic synthesis lab",
+          "tag": "Base",
+          "live": true,
+          "status": "pending",
+          "line": "Not yet re-run on the current version",
+          "details": "90 objects."
+        },
+        {
+          "id": "legacy_l2",
+          "title": "Analysis centre + weighing unit",
+          "tag": "Base",
+          "live": true,
+          "status": "fail",
+          "line": "Stops at step 14: dispenser tips 0.55°",
+          "details": "86 objects; holds the pilot balance station. Titration bottle-top dispenser overhangs its support by 2.2 mm; fix candidate ready. Five beaker supports and the pestle already fixed."
+        },
+        {
+          "id": "legacy_l3",
+          "title": "Electrochemistry & energy materials lab",
+          "tag": "Base",
+          "live": true,
+          "status": "pending",
+          "line": "Not yet re-run on the current version",
+          "details": "87 objects."
+        },
+        {
+          "id": "legacy_l4",
+          "title": "FR3 100 mL weighing & recovery unit",
+          "tag": "Base",
+          "live": true,
+          "status": "pending",
+          "line": "Not yet re-run on the current version",
+          "details": "Standalone robot weighing cell."
+        },
+        {
+          "id": "room_double_island",
+          "title": "Double-island wet-chemistry hall",
+          "tag": "New",
+          "live": true,
+          "status": "fail",
+          "line": "Water knob spins at step 1; render timeout",
+          "details": "93 objects: fume hoods, dosing, weighing, reaction, washing."
+        },
+        {
+          "id": "room_u_workcell",
+          "title": "U-shaped bio / electrochemistry cell",
+          "tag": "New",
+          "live": true,
+          "status": "fail",
+          "line": "Failed at step 1 (11-05); not re-run",
+          "details": "25 objects."
+        },
+        {
+          "id": "room_linear_flow",
+          "title": "Continuous-flow corridor",
+          "tag": "New",
+          "live": true,
+          "status": "fail",
+          "line": "Simulator crash before step 1",
+          "details": "25 objects. Crash narrowed to one group of 6 root objects."
+        },
+        {
+          "id": "room_l_suite",
+          "title": "L-shaped digestion / separation suite",
+          "tag": "New",
+          "live": true,
+          "status": "pending",
+          "line": "No native run yet",
+          "details": "32 objects."
+        },
+        {
+          "id": "room_spine_analysis",
+          "title": "Six-bay analysis centre",
+          "tag": "New",
+          "live": true,
+          "status": "blocked",
+          "line": "Blocked by a stripped balance variant",
+          "details": "54 objects: elemental, chromatography, spectroscopy, imaging, metrology."
+        },
+        {
+          "id": "room_racetrack",
+          "title": "Ring logistics hall",
+          "tag": "New",
+          "live": true,
+          "status": "fail",
+          "line": "Simulator crash before step 1",
+          "details": "44 objects. Crash narrowed to two groups of 11 root objects."
+        },
+        {
+          "id": "room_inert_suite",
+          "title": "Inert multi-room suite",
+          "tag": "New",
+          "live": true,
+          "status": "fail",
+          "line": "Valves / doors fail at step 1",
+          "details": "29 objects: glovebox transfer, heat treatment, characterisation. Oven fix is physics-stable; shutdown hang fixed in the next run."
+        }
       ]
     },
     {
@@ -32,12 +128,60 @@
       "title": "Auto-built scenes",
       "blurb": "Scenes generated automatically from protocols. They join the live viewer after a quick review by the base-scene agent.",
       "items": [
-        {"id": "auto_balance_routine_check", "title": "Balance routine check (NIST IR 6969)", "tag": "From protocol", "live": false, "status": "partial", "line": "Layout 12 pass / 4 unknown; under review", "details": "Robot bench, robot, balance and 4 reference weights in storage spots, empty pan. Minimum clearance 105 mm. Robot reach not yet verified."},
-        {"id": "auto_hplc", "title": "HPLC", "tag": "From paper", "live": false, "status": "pending", "line": "Layout generated; not run natively", "details": ""},
-        {"id": "auto_liang2021", "title": "liang2021", "tag": "From paper", "live": false, "status": "pending", "line": "Layout generated; not run natively", "details": ""},
-        {"id": "auto_meloxicam2022", "title": "meloxicam2022", "tag": "From paper", "live": false, "status": "pending", "line": "Layout generated; not run natively", "details": ""},
-        {"id": "auto_titration", "title": "titration", "tag": "From paper", "live": false, "status": "pending", "line": "Layout generated; not run natively", "details": ""},
-        {"id": "auto_moisture_lod", "title": "moisture_LOD", "tag": "From paper", "live": false, "status": "pending", "line": "Layout generated; not run natively", "details": ""}
+        {
+          "id": "auto_balance_routine_check",
+          "title": "Balance routine check (NIST IR 6969)",
+          "tag": "From protocol",
+          "live": false,
+          "status": "partial",
+          "line": "Layout 12 pass / 4 unknown; under review",
+          "details": "Robot bench, robot, balance and 4 reference weights in storage spots, empty pan. Minimum clearance 105 mm. Robot reach not yet verified."
+        },
+        {
+          "id": "auto_hplc",
+          "title": "HPLC",
+          "tag": "From paper",
+          "live": false,
+          "status": "pending",
+          "line": "Layout generated; not run natively",
+          "details": ""
+        },
+        {
+          "id": "auto_liang2021",
+          "title": "liang2021",
+          "tag": "From paper",
+          "live": false,
+          "status": "pending",
+          "line": "Layout generated; not run natively",
+          "details": ""
+        },
+        {
+          "id": "auto_meloxicam2022",
+          "title": "meloxicam2022",
+          "tag": "From paper",
+          "live": false,
+          "status": "pending",
+          "line": "Layout generated; not run natively",
+          "details": ""
+        },
+        {
+          "id": "auto_titration",
+          "title": "titration",
+          "tag": "From paper",
+          "live": false,
+          "status": "pending",
+          "line": "Layout generated; not run natively",
+          "details": ""
+        },
+        {
+          "id": "auto_moisture_lod",
+          "title": "moisture_LOD",
+          "tag": "From paper",
+          "live": false,
+          "status": "pending",
+          "line": "Layout generated; not run natively",
+          "details": ""
+        }
       ]
     },
     {
@@ -45,28 +189,118 @@
       "title": "Lab execution",
       "blurb": "The robot doing real tasks. Recorded runs replay in the live viewer so each motion can be paused and inspected.",
       "items": [
-        {"id": "lab_skill_trial", "title": "Robot skill trial: move to pose and back", "tag": "Isolated FR3", "live": false, "status": "pass", "line": "4/4 pass · 0.43–0.94 mm · ≤ 0.13°", "details": "First native robot trial; independent verifier agrees on all 44 values. Replay in the viewer is being added."},
-        {"id": "lab_balance_fixture", "title": "Balance station: reference-weight readings", "tag": "Pilot station", "live": false, "status": "partial", "line": "Average correct, still jittery", "details": "100 g – 2 kg read within 0.1 % on average; jitter 14–327 g vs 0.1 g needed. Locked-pan fixture in progress."},
-        {"id": "lab_motion_over_pan", "title": "Plan-driven motion over the balance pan", "tag": "Pilot station", "live": false, "status": "blocked", "line": "Waiting for the empty-pan scene", "details": "3 moves: 100 mm → 50 mm above the pan → back, ≥ 5 mm clearance, no contact."},
-        {"id": "lab_pick_place", "title": "Pick and place a 100 g weight", "tag": "Pilot station", "live": false, "status": "blocked", "line": "Gripper range fix in progress", "details": "Gripper currently stops at 40 mm; the weight is 24 mm wide."},
-        {"id": "lab_balance_check", "title": "Experiment 12: balance routine check", "tag": "Full experiment", "live": false, "status": "pending", "line": "Plan compiling; not run", "details": "18 steps: robot 6, instrument program 10, manual 2."},
-        {"id": "lab_main", "title": "Main lab (pilot station in place)", "tag": "Complete lab", "live": true, "scene": "legacy_l2", "status": "fail", "line": "Whole room not yet still (step 14)", "details": "Opens the main lab live; robot motion here starts after the fixture runs pass."}
+        {
+          "id": "lab_skill_trial",
+          "title": "Robot skill trial: move to pose and back",
+          "tag": "Isolated FR3",
+          "live": false,
+          "status": "pass",
+          "line": "4/4 pass · 0.43–0.94 mm · ≤ 0.13°",
+          "details": "First native robot trial; independent verifier agrees on all 44 values. Replay in the viewer is being added."
+        },
+        {
+          "id": "lab_balance_fixture",
+          "title": "Balance station: reference-weight readings",
+          "tag": "Pilot station",
+          "live": false,
+          "status": "partial",
+          "line": "Average correct, still jittery",
+          "details": "100 g – 2 kg read within 0.1 % on average; jitter 14–327 g vs 0.1 g needed. Locked-pan fixture in progress."
+        },
+        {
+          "id": "lab_motion_over_pan",
+          "title": "Plan-driven motion over the balance pan",
+          "tag": "Pilot station",
+          "live": false,
+          "status": "blocked",
+          "line": "Waiting for the empty-pan scene",
+          "details": "3 moves: 100 mm → 50 mm above the pan → back, ≥ 5 mm clearance, no contact."
+        },
+        {
+          "id": "lab_pick_place",
+          "title": "Pick and place a 100 g weight",
+          "tag": "Pilot station",
+          "live": false,
+          "status": "blocked",
+          "line": "Gripper range fix in progress",
+          "details": "Gripper currently stops at 40 mm; the weight is 24 mm wide."
+        },
+        {
+          "id": "lab_balance_check",
+          "title": "Experiment 12: balance routine check",
+          "tag": "Full experiment",
+          "live": false,
+          "status": "partial",
+          "line": "Plan compiled (18 steps); 0 steps runnable yet",
+          "details": "Robot 6 / instrument program 10 / manual 2. The 6 calculation steps (repeatability, indication error, control chart, control state, record, loop) are implemented and tested. Waiting for: scene review and 600-step stillness test, robot-skill confirmations, and repeat counts."
+        },
+        {
+          "id": "lab_main",
+          "title": "Main lab (pilot station in place)",
+          "tag": "Complete lab",
+          "live": true,
+          "scene": "legacy_l2",
+          "status": "fail",
+          "line": "Whole room not yet still (step 14)",
+          "details": "Opens the main lab live; robot motion here starts after the fixture runs pass."
+        }
       ]
     }
   ],
   "summary": [
-    {"name": "Base scenes", "status": "partial", "line": "0 of 12 rooms pass as a whole; 5 isolated fixtures pass"},
-    {"name": "Auto-built scenes", "status": "partial", "line": "7 rooms + 12 protocol scenes generated; none verified natively yet"},
-    {"name": "Papers → orchestrated tasks", "status": "partial", "line": "11 experiments compiled; first pilot-fit protocol (balance check) being compiled as experiment 12"},
-    {"name": "Lab execution", "status": "partial", "line": "No complete experiment yet; first robot skill trial 4/4"}
+    {
+      "name": "Base scenes",
+      "status": "partial",
+      "line": "0 of 12 rooms pass as a whole; 5 isolated fixtures pass"
+    },
+    {
+      "name": "Auto-built scenes",
+      "status": "partial",
+      "line": "7 rooms + 12 protocol scenes generated; none verified natively yet"
+    },
+    {
+      "name": "Papers → orchestrated tasks",
+      "status": "partial",
+      "line": "12 experiments compiled, incl. the balance routine check (18 steps); none runnable yet"
+    },
+    {
+      "name": "Lab execution",
+      "status": "partial",
+      "line": "No complete experiment yet; first robot skill trial 4/4"
+    }
   ],
   "timeline": [
-    {"t": "11-06 20:00", "text": "Progress site online."},
-    {"t": "11-06 19:49", "text": "Balance routine check being compiled as experiment 12."},
-    {"t": "11-06 19:45", "text": "Balance routine-check protocol (NIST IR 6969) extracted and its scene auto-built."},
-    {"t": "11-06 19:30", "text": "Verifier and executor agree on all 44 robot-trial values."},
-    {"t": "11-06 16:55", "text": "First native robot skill trial passes 4/4."},
-    {"t": "11-06 09:00", "text": "GPU jobs fixed (CUDA device mapping)."},
-    {"t": "11-06 03:15", "text": "OpenBalance and XPR204E balances pass in isolation."}
+    {
+      "t": "11-06 20:25",
+      "text": "Experiment 12 (balance routine check) compiled: 18-step plan, control-chart steps tested."
+    },
+    {
+      "t": "11-06 20:00",
+      "text": "Progress site online."
+    },
+    {
+      "t": "11-06 19:49",
+      "text": "Balance routine check being compiled as experiment 12."
+    },
+    {
+      "t": "11-06 19:45",
+      "text": "Balance routine-check protocol (NIST IR 6969) extracted and its scene auto-built."
+    },
+    {
+      "t": "11-06 19:30",
+      "text": "Verifier and executor agree on all 44 robot-trial values."
+    },
+    {
+      "t": "11-06 16:55",
+      "text": "First native robot skill trial passes 4/4."
+    },
+    {
+      "t": "11-06 09:00",
+      "text": "GPU jobs fixed (CUDA device mapping)."
+    },
+    {
+      "t": "11-06 03:15",
+      "text": "OpenBalance and XPR204E balances pass in isolation."
+    }
   ]
 }
