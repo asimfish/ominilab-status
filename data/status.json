@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 19:50",
+  "updated": "2026-11-06 19:55",
   "tz": "UTC+8",
   "headline": "No complete chemistry experiment has run end to end yet. In the real simulator the robot already moves accurately and the balance gives correct average readings; whole rooms do not yet pass the stillness test (0 of 12).",
   "agents": [
@@ -14,15 +14,15 @@
       "id": 2,
       "system": "autoscene",
       "name": "Agent 2 · Papers → protocols → auto scenes",
-      "state": "running",
-      "doing": "Extracting a robot balance routine-check protocol from public-domain sources and auto-building its scene (weight rack + balance + robot bench)."
+      "state": "waiting",
+      "doing": "Delivered the balance routine-check protocol (NIST IR 6969) and its auto-built scene; waiting for scene review and skill results."
     },
     {
       "id": 3,
       "system": "paper",
       "name": "Agent 3 · Orchestration",
-      "state": "waiting",
-      "doing": "Waiting for the new protocol (Agent 2) and the next robot-trial results (Agent 4)."
+      "state": "running",
+      "doing": "Compiling the balance routine check into experiment 12: 18-step plan, control-chart program steps, robot-skill binding request."
     },
     {
       "id": 4,
@@ -45,14 +45,14 @@
       "num": 2,
       "title": "Automatic scene construction",
       "state": "partial",
-      "metric": "7 rooms built · 11 paper scenes proposed"
+      "metric": "7 rooms built · 11 paper scenes · balance-check scene auto-built"
     },
     {
       "sys": "paper",
       "num": 3,
       "title": "Papers → protocols → orchestrated tasks",
       "state": "partial",
-      "metric": "11 experiments compiled · 0 tolerances from source"
+      "metric": "First pilot-fit protocol extracted (18 steps) · 0 tolerances from source"
     },
     {
       "sys": "exec",
@@ -250,7 +250,7 @@
         },
         {
           "label": "Paper-driven scene proposals",
-          "value": 11,
+          "value": 12,
           "status": "partial"
         },
         {
@@ -277,6 +277,11 @@
           "detail": "One command from protocol to layout; reruns are byte-identical (5/5)."
         },
         {
+          "name": "Balance routine-check scene",
+          "status": "partial",
+          "detail": "Auto-built from the protocol: robot bench, robot, balance and 4 reference weights in storage positions, empty pan, SI units. Layout checks 12 pass / 0 fail / 4 unknown; min clearance 105 mm; reach not yet verified. Waiting for Agent 1 review."
+        },
+        {
           "name": "Layout assembler",
           "status": "partial",
           "detail": "Earlier layout failures were all missing assets, now routed to Agent 1."
@@ -298,11 +303,12 @@
         "moisture_LOD",
         "readiness",
         "titration",
-        "ura2019"
+        "ura2019",
+        "balance_routine_check"
       ],
       "now": [
-        "Auto-building the balance routine-check scene: weight rack, balance and robot bench in SI units, ≥ 5 mm clearance, reach checked against the robot's kinematics.",
-        "Agent 1 then reviews it as a new fixture variant before anyone runs it."
+        "Agent 1 reviews the auto-built balance-check scene, adds the pan latch and runs the 600-step stillness test.",
+        "Robot reach and grasp clearance for the storage positions are verified by Agent 4 once the gripper fix lands."
       ]
     },
     "paper": {
@@ -311,11 +317,11 @@
       "kpis": [
         {
           "label": "Papers / protocols processed",
-          "value": 10
+          "value": 11
         },
         {
           "label": "Source spans verified",
-          "value": 73,
+          "value": 87,
           "status": "pass"
         },
         {
@@ -418,13 +424,13 @@
         },
         {
           "name": "Pilot-fit protocol",
-          "status": "partial",
-          "detail": "No paper so far fits the pilot station (no liquid handling). Balance routine check in progress."
+          "status": "pass",
+          "detail": "Balance routine check from NIST IR 6969 (public domain): 18 steps (robot 6, instrument program 10, manual 2); 14 source spans verified. Only control-chart rules are stated in the source; absolute acceptance values stay unresolved."
         }
       ],
       "now": [
-        "Agent 2: balance routine-check protocol (repeatability + linearity with reference weights), sourced from public-domain documents.",
-        "Agent 3 will compile it once it arrives; first plan-driven motion request already issued to Agent 4."
+        "Agent 3: compile the balance routine check as experiment 12, implement the control-chart program steps, and send the robot-skill binding request to Agent 4.",
+        "In simulation, one 'independent measurement' = one fresh simulator process with a new placement seed (marked as a simulation analog of NIST's separate-day rule)."
       ]
     },
     "exec": {
@@ -637,7 +643,7 @@
           "status": "blocked"
         },
         {
-          "step": "Balance routine-check protocol compiled into a plan",
+          "step": "Balance routine-check protocol extracted and compiled into a plan",
           "owner": "Agent 2 + 3",
           "status": "running"
         },
@@ -720,6 +726,16 @@
       "t": "11-06 19:40",
       "sys": "exec",
       "text": "Skill-approval job re-submitted after a launcher fix."
+    },
+    {
+      "t": "11-06 19:45",
+      "sys": "autoscene",
+      "text": "Balance routine-check protocol extracted from NIST IR 6969 (18 steps) and its scene auto-built with an empty pan and 4 stored weights."
+    },
+    {
+      "t": "11-06 19:49",
+      "sys": "paper",
+      "text": "Orchestration starts compiling the balance routine check as experiment 12."
     }
   ]
 }
