@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OminiLab Progress</title>
+<meta name="description" content="Progress of the four OminiLab systems: base scenes, automatic scene construction, paper-to-plan orchestration and lab execution.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">◎</span>
+      <div>
+        <div class="brand-name">OminiLab Progress</div>
+        <div class="brand-sub" id="updated">Loading…</div>
+      </div>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme">Theme: auto</button>
+  </div>
+  <nav class="wrap tabs" id="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button role="tab" data-tab="scenes">1 · Base scenes</button>
+    <button role="tab" data-tab="autoscene">2 · Auto scenes</button>
+    <button role="tab" data-tab="paper">3 · Paper → plan</button>
+    <button role="tab" data-tab="exec">4 · Lab execution</button>
+    <button role="tab" data-tab="debug">Debug window</button>
+    <button role="tab" data-tab="timeline">Timeline</button>
+  </nav>
+</header>
+
+<main class="wrap" id="main">
+  <section id="tab-overview" class="tab-panel"></section>
+  <section id="tab-scenes" class="tab-panel" hidden></section>
+  <section id="tab-autoscene" class="tab-panel" hidden></section>
+  <section id="tab-paper" class="tab-panel" hidden></section>
+  <section id="tab-exec" class="tab-panel" hidden></section>
+  <section id="tab-debug" class="tab-panel" hidden></section>
+  <section id="tab-timeline" class="tab-panel" hidden></section>
+</main>
+
+<footer class="wrap foot">
+  Status is curated from the agents' reports and published without internal hosts, paths, ids or credentials.
+  Verdict words: <b>L0</b> = 600 quiet physics steps; <b>native</b> = run in the real simulator; <b>diagnostic</b> = locates a cause, approves nothing.
+</footer>
+
+<script src="data/status.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

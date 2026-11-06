@@ -1,0 +1,725 @@
+window.STATUS = {
+ "updated": "2026-11-06 19:50",
+ "tz": "UTC+8",
+ "headline": "No complete chemistry experiment has run end to end yet. In the real simulator the robot already moves accurately and the balance gives correct average readings; whole rooms do not yet pass the stillness test (0 of 12).",
+ "agents": [
+  {
+   "id": 1,
+   "system": "scenes",
+   "name": "Agent 1 · Base scenes",
+   "state": "running",
+   "doing": "Preparing a full-room sweep job: every unstable object in the main lab recorded in one run, plus the locked-pan balance fixture."
+  },
+  {
+   "id": 2,
+   "system": "autoscene",
+   "name": "Agent 2 · Papers → protocols → auto scenes",
+   "state": "running",
+   "doing": "Extracting a robot balance routine-check protocol from public-domain sources and auto-building its scene (weight rack + balance + robot bench)."
+  },
+  {
+   "id": 3,
+   "system": "paper",
+   "name": "Agent 3 · Orchestration",
+   "state": "waiting",
+   "doing": "Waiting for the new protocol (Agent 2) and the next robot-trial results (Agent 4)."
+  },
+  {
+   "id": 4,
+   "system": "exec",
+   "name": "Agent 4 · Execution, skills, evaluation",
+   "state": "running",
+   "doing": "Re-running the skill-approval job; preparing gripper closing for the 24 mm weight and the whole-path clearance check."
+  }
+ ],
+ "pipeline": [
+  {
+   "sys": "scenes",
+   "num": 1,
+   "title": "Base scene construction & inspection",
+   "state": "partial",
+   "metric": "0/12 rooms · 5 isolated L0 passes"
+  },
+  {
+   "sys": "autoscene",
+   "num": 2,
+   "title": "Automatic scene construction",
+   "state": "partial",
+   "metric": "7 rooms built · 11 paper scenes proposed"
+  },
+  {
+   "sys": "paper",
+   "num": 3,
+   "title": "Papers → protocols → orchestrated tasks",
+   "state": "partial",
+   "metric": "11 experiments compiled · 0 tolerances from source"
+  },
+  {
+   "sys": "exec",
+   "num": 4,
+   "title": "Orchestrated execution in a complete lab",
+   "state": "partial",
+   "metric": "0 full experiments · first robot skill trial 4/4"
+  }
+ ],
+ "systems": {
+  "scenes": {
+   "title": "1 · Base scene construction & inspection",
+   "subtitle": "5 base scenes and 7 new rooms, checked in Isaac Sim 5.1 on cloud GPUs.",
+   "kpis": [
+    {
+     "label": "Rooms passing whole-room L0",
+     "value": 0,
+     "of": 12,
+     "status": "fail"
+    },
+    {
+     "label": "Isolated fixtures passing L0",
+     "value": 5,
+     "status": "pass",
+     "note": "OpenBalance, XPR204E, dispenser holder, reference-weight drop, 2 kg combined fix"
+    },
+    {
+     "label": "Authored objects in the 12 scenes",
+     "value": 662
+    },
+    {
+     "label": "Open asset defects",
+     "value": 90,
+     "status": "partial"
+    }
+   ],
+   "method": [
+    "L0 = 60 warm-up steps + 600 quiet physics steps: every object tilts ≤ 0.5° and drifts ≤ 5 mm, zero engine errors, healthy process exit, complete logs.",
+    "Diagnostic runs only locate causes; they never grant L0, instrument, readout or robot approval.",
+    "Physics: CPU MBP/TGS solver, dt 1/120 s, gravity −9.81 m/s² along Z; scene root in SI units (metres, Z up)."
+   ],
+   "rooms": [
+    {
+     "name": "legacy_l0",
+     "group": "base",
+     "objects": 96,
+     "status": "pending",
+     "finding": "Part of the main lab; no run on the current scene version yet."
+    },
+    {
+     "name": "legacy_l1",
+     "group": "base",
+     "objects": 90,
+     "status": "pending",
+     "finding": "Part of the main lab; no run on the current scene version yet."
+    },
+    {
+     "name": "legacy_l2",
+     "group": "base",
+     "objects": 86,
+     "status": "fail",
+     "finding": "Holds the pilot balance station. Main-lab run stops at step 14: titration bottle-top dispenser tips 0.55° / 3.5 mm (centre of mass overhangs its support by 2.2 mm). Fix candidate ready."
+    },
+    {
+     "name": "legacy_l3",
+     "group": "base",
+     "objects": 87,
+     "status": "pending",
+     "finding": "Part of the main lab; no run on the current scene version yet."
+    },
+    {
+     "name": "legacy_l4",
+     "group": "base",
+     "objects": 1,
+     "status": "pending",
+     "finding": "No run on the current scene version yet."
+    },
+    {
+     "name": "double_island",
+     "group": "new",
+     "objects": 93,
+     "status": "fail",
+     "finding": "Wet-chemistry double island. Render watchdog timeout; a water knob spins at 476 rad/s at step 1."
+    },
+    {
+     "name": "spine_analysis",
+     "group": "new",
+     "objects": 54,
+     "status": "blocked",
+     "finding": "Analysis centre. Blocked by a balance variant whose mechanism was stripped by old code; not re-run since 11-05."
+    },
+    {
+     "name": "racetrack",
+     "group": "new",
+     "objects": 44,
+     "status": "fail",
+     "finding": "Simulator crashes before step 1; narrowed to two groups of 11 root objects."
+    },
+    {
+     "name": "l_suite",
+     "group": "new",
+     "objects": 32,
+     "status": "pending",
+     "finding": "Digestion / separation L-suite. No native run started yet."
+    },
+    {
+     "name": "inert_suite",
+     "group": "new",
+     "objects": 29,
+     "status": "fail",
+     "finding": "Inert / materials suite. Fails at step 1 on valves and doors; oven fix is physics-stable but hung on shutdown (fast-exit fix in the next job)."
+    },
+    {
+     "name": "u_workcell",
+     "group": "new",
+     "objects": 25,
+     "status": "fail",
+     "finding": "Bio / electrochemistry U-cell. Failed at step 1 on 11-05; not re-run since."
+    },
+    {
+     "name": "linear_flow",
+     "group": "new",
+     "objects": 25,
+     "status": "fail",
+     "finding": "Continuous-flow corridor. Simulator crashes before step 1; narrowed to one group of 6 root objects."
+    }
+   ],
+   "components": [
+    {
+     "name": "OpenBalance balance (isolated)",
+     "status": "pass",
+     "detail": "L0 pass, zero engine errors"
+    },
+    {
+     "name": "XPR204E balance (isolated)",
+     "status": "pass",
+     "detail": "L0 pass, zero engine errors"
+    },
+    {
+     "name": "Dispenser holder (isolated)",
+     "status": "pass",
+     "detail": "L0 pass with fitted collar"
+    },
+    {
+     "name": "Reference-weight drop fixture",
+     "status": "pass",
+     "detail": "L0 pass, 600 quiet steps"
+    },
+    {
+     "name": "2 kg weight, combined fix",
+     "status": "pass",
+     "detail": "L0 pass (centred, 1 mm drop, pad material)"
+    },
+    {
+     "name": "Five 50 ml beaker supports",
+     "status": "partial",
+     "detail": "Each stable 600 steps in isolation (diagnostic)"
+    },
+    {
+     "name": "ESCo cabinet cavities",
+     "status": "partial",
+     "detail": "Stable 600 steps (diagnostic)"
+    },
+    {
+     "name": "PureSolv cavity",
+     "status": "partial",
+     "detail": "Stable 600 steps (diagnostic)"
+    },
+    {
+     "name": "Oven (articulated)",
+     "status": "partial",
+     "detail": "Physics stable, process hung on shutdown"
+    }
+   ],
+   "now": [
+    "One cloud job (4 GPUs, low priority, ≤ 45 min): full main-lab sweep listing every unstable object at once instead of one blocker per round.",
+    "Oven re-run with the fast-exit shutdown that already works for the robot jobs.",
+    "New locked-pan balance fixtures for 100 g / 500 g / 1 kg / 2 kg, so balance readings can settle.",
+    "Next layer of the crash bisection for racetrack and linear_flow; two cases per GPU to use card time better."
+   ]
+  },
+  "autoscene": {
+   "title": "2 · Automatic scene construction",
+   "subtitle": "Rule-based room population, plus scenes generated from paper protocols.",
+   "kpis": [
+    {
+     "label": "Rooms auto-populated from rules",
+     "value": 7,
+     "status": "pass"
+    },
+    {
+     "label": "Asset classes placed at real scale",
+     "value": 262,
+     "note": "203 ChemLab + 59 SafeLab"
+    },
+    {
+     "label": "Paper-driven scene proposals",
+     "value": 11,
+     "status": "partial"
+    },
+    {
+     "label": "Proposals passing native checks",
+     "value": 0,
+     "of": 11,
+     "status": "pending"
+    }
+   ],
+   "components": [
+    {
+     "name": "Room population builder",
+     "status": "pass",
+     "detail": "A rules file sets asset domains, instrument ownership, work-zone preferences and spacing; rooms grow instead of shrinking assets. 239 geometric checks pass."
+    },
+    {
+     "name": "Work-surface semantics",
+     "status": "partial",
+     "detail": "98 operation-surface checks still need review."
+    },
+    {
+     "name": "Paper → scene CLI",
+     "status": "pass",
+     "detail": "One command from protocol to layout; reruns are byte-identical (5/5)."
+    },
+    {
+     "name": "Layout assembler",
+     "status": "partial",
+     "detail": "Earlier layout failures were all missing assets, now routed to Agent 1."
+    },
+    {
+     "name": "Native verification of generated scenes",
+     "status": "fail",
+     "detail": "None of the 11 proposals has passed in the real simulator yet."
+    }
+   ],
+   "proposals": [
+    "HPLC",
+    "ceroni",
+    "dwiasi",
+    "ferrite2024",
+    "liang2021",
+    "meloxicam2022",
+    "michael2022",
+    "moisture_LOD",
+    "readiness",
+    "titration",
+    "ura2019"
+   ],
+   "now": [
+    "Auto-building the balance routine-check scene: weight rack, balance and robot bench in SI units, ≥ 5 mm clearance, reach checked against the robot's kinematics.",
+    "Agent 1 then reviews it as a new fixture variant before anyone runs it."
+   ]
+  },
+  "paper": {
+   "title": "3 · Papers → protocols → orchestrated tasks",
+   "subtitle": "Every extracted number is tied to a quoted span of the source text, then compiled into robot, instrument-program and manual steps.",
+   "kpis": [
+    {
+     "label": "Papers / protocols processed",
+     "value": 10
+    },
+    {
+     "label": "Source spans verified",
+     "value": 73,
+     "status": "pass"
+    },
+    {
+     "label": "Success criteria with a source tolerance",
+     "value": 0,
+     "of": 38,
+     "status": "pending"
+    },
+    {
+     "label": "Experiments compiled into plans",
+     "value": 11,
+     "status": "partial"
+    }
+   ],
+   "routes_asof": "as of 11-05",
+   "routes": [
+    {
+     "name": "Robot",
+     "value": 1490
+    },
+    {
+     "name": "Instrument program",
+     "value": 1279
+    },
+    {
+     "name": "Hybrid",
+     "value": 617
+    },
+    {
+     "name": "Manual",
+     "value": 99
+    }
+   ],
+   "experiments": [
+    {
+     "name": "HPLC",
+     "criteria": 5
+    },
+    {
+     "name": "ceroni",
+     "criteria": 4
+    },
+    {
+     "name": "dwiasi",
+     "criteria": 3
+    },
+    {
+     "name": "ferrite2024",
+     "criteria": 3
+    },
+    {
+     "name": "liang2021",
+     "criteria": 4
+    },
+    {
+     "name": "meloxicam2022",
+     "criteria": 4
+    },
+    {
+     "name": "michael2022",
+     "criteria": 3
+    },
+    {
+     "name": "moisture_LOD",
+     "criteria": 3
+    },
+    {
+     "name": "readiness",
+     "criteria": 0
+    },
+    {
+     "name": "titration",
+     "criteria": 5
+    },
+    {
+     "name": "ura2019",
+     "criteria": 4
+    }
+   ],
+   "components": [
+    {
+     "name": "Span-verified extraction",
+     "status": "pass",
+     "detail": "Agent-drafted values are accepted only when a mechanical verifier finds them in the source text."
+    },
+    {
+     "name": "Plan compiler + scheduler",
+     "status": "pass",
+     "detail": "Compiles protocols into skill calls and instrument jobs; constraint-solver schedule; board regenerates byte-identically."
+    },
+    {
+     "name": "Simulator runtime rule set v3",
+     "status": "pass",
+     "detail": "Exact allow-list of the simulator's own runtime edits; anything else blocks a run."
+    },
+    {
+     "name": "Independent skill verifier",
+     "status": "pass",
+     "detail": "Recomputes robot trial results from raw traces with its own code; 44/44 values agree with the executor."
+    },
+    {
+     "name": "Pilot-fit protocol",
+     "status": "partial",
+     "detail": "No paper so far fits the pilot station (no liquid handling). Balance routine check in progress."
+    }
+   ],
+   "now": [
+    "Agent 2: balance routine-check protocol (repeatability + linearity with reference weights), sourced from public-domain documents.",
+    "Agent 3 will compile it once it arrives; first plan-driven motion request already issued to Agent 4."
+   ]
+  },
+  "exec": {
+   "title": "4 · Orchestrated execution in a complete lab",
+   "subtitle": "Franka FR3 with cuRobo motion planning in Isaac Sim 5.1; pilot station = robot bench + OpenBalance.",
+   "kpis": [
+    {
+     "label": "Complete experiments executed",
+     "value": 0,
+     "status": "pending"
+    },
+    {
+     "label": "Skills approved",
+     "value": 0,
+     "of": 20,
+     "status": "pending"
+    },
+    {
+     "label": "Robot skill trial (native)",
+     "value": "4/4",
+     "status": "pass",
+     "note": "0.43–0.94 mm, ≤ 0.13°, zero unexpected contacts"
+    },
+    {
+     "label": "Station checks observed",
+     "value": 20,
+     "of": 28,
+     "status": "partial",
+     "note": "raw observations, 0 certified"
+    }
+   ],
+   "capabilities": [
+    {
+     "name": "GPU jobs on the cloud cluster",
+     "status": "pass",
+     "detail": "Device mapping fixed (numeric index + PCI match); CUDA in use."
+    },
+    {
+     "name": "Balance readout chain",
+     "status": "partial",
+     "detail": "Mean error < 0.1 % for 100 g – 2 kg, but jitter 14–327 g vs 0.1 g needed. Waiting for the locked-pan fixture."
+    },
+    {
+     "name": "Move-to-pose / joint path",
+     "status": "pass",
+     "detail": "First native trial 4/4; independent verifier agrees 44/44."
+    },
+    {
+     "name": "Skill approval (≥ 12 varied trials + refused bad targets)",
+     "status": "running",
+     "detail": "Job re-submitted after a launcher fix; no GPU time was lost."
+    },
+    {
+     "name": "First plan-driven motion over the balance",
+     "status": "blocked",
+     "detail": "Needs an empty-pan fixture (current one holds the 2 kg weight) and a whole-path ≥ 5 mm clearance proof."
+    },
+    {
+     "name": "Grasp / pick / place",
+     "status": "blocked",
+     "detail": "Code and CPU tests ready; gripper currently cannot close below 40 mm, the 100 g weight is 24 mm wide."
+    },
+    {
+     "name": "Liquid handling",
+     "status": "pending",
+     "detail": "Interfaces only (pipette, tips, aspirate, dispense)."
+    }
+   ],
+   "skills": [
+    {
+     "group": "Motion",
+     "items": [
+      {
+       "id": "move_to_pose",
+       "status": "pass",
+       "label": "Native trial"
+      },
+      {
+       "id": "curobo_joint_path",
+       "status": "pass",
+       "label": "Native trial"
+      },
+      {
+       "id": "screened_joint_path",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "retreat_exact_joint_endpoint",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "verify_return",
+       "status": "pending",
+       "label": "Candidate"
+      }
+     ]
+    },
+    {
+     "group": "Grasp",
+     "items": [
+      {
+       "id": "parallel_grasp",
+       "status": "blocked",
+       "label": "Gripper range"
+      },
+      {
+       "id": "parallel_release",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "pick",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "place_closed_loop",
+       "status": "pending",
+       "label": "Candidate"
+      }
+     ]
+    },
+    {
+     "group": "Balance",
+     "items": [
+      {
+       "id": "measure_pan",
+       "status": "partial",
+       "label": "Observed, unstable"
+      },
+      {
+       "id": "balance_command",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "verify_tare_state",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "set_balance_unit",
+       "status": "pending",
+       "label": "Candidate"
+      },
+      {
+       "id": "verify_repeatability",
+       "status": "pending",
+       "label": "Candidate"
+      }
+     ]
+    },
+    {
+     "group": "Liquid",
+     "items": [
+      {
+       "id": "pipette_pick",
+       "status": "pending",
+       "label": "Interface"
+      },
+      {
+       "id": "pipette_place",
+       "status": "pending",
+       "label": "Interface"
+      },
+      {
+       "id": "tip_attach",
+       "status": "pending",
+       "label": "Interface"
+      },
+      {
+       "id": "aspirate",
+       "status": "pending",
+       "label": "Interface"
+      },
+      {
+       "id": "dispense",
+       "status": "pending",
+       "label": "Interface"
+      },
+      {
+       "id": "tip_eject",
+       "status": "pending",
+       "label": "Interface"
+      }
+     ]
+    }
+   ],
+   "roadmap": [
+    {
+     "step": "Stable balance pan (locked-pan fixture)",
+     "owner": "Agent 1",
+     "status": "running"
+    },
+    {
+     "step": "Stable readings: 1 s window, peak-to-peak ≤ 0.1 g",
+     "owner": "Agent 4",
+     "status": "pending"
+    },
+    {
+     "step": "Movement skills approved (varied repeats, refused targets, independent check)",
+     "owner": "Agent 4 + 3",
+     "status": "running"
+    },
+    {
+     "step": "Native pick-and-place of a reference weight",
+     "owner": "Agent 4",
+     "status": "blocked"
+    },
+    {
+     "step": "Balance routine-check protocol compiled into a plan",
+     "owner": "Agent 2 + 3",
+     "status": "running"
+    },
+    {
+     "step": "End-to-end run in the fixture scene, then in the main lab",
+     "owner": "Agent 4",
+     "status": "pending"
+    }
+   ]
+  }
+ },
+ "debug": {
+  "running": false,
+  "note": "No debug window is running right now. A window is opened as a separate 4-GPU job (GPU 0 streams the native Isaac GUI, GPUs 1–3 run bounded physics diagnostics) for at most 4 hours.",
+  "default_port": 18640,
+  "gpus": [
+   0,
+   1,
+   2,
+   3
+  ]
+ },
+ "timeline": [
+  {
+   "t": "11-05 13:35",
+   "sys": "paper",
+   "text": "Simulator runtime rule set v2 active."
+  },
+  {
+   "t": "11-05 20:15",
+   "sys": "scenes",
+   "text": "Main lab root fixed to SI units (metres, Z up)."
+  },
+  {
+   "t": "11-06 03:15",
+   "sys": "scenes",
+   "text": "OpenBalance and XPR204E balances pass isolated L0."
+  },
+  {
+   "t": "11-06 04:10",
+   "sys": "exec",
+   "text": "Balance readout chain works natively: 100 g reads 0.1000 kg."
+  },
+  {
+   "t": "11-06 05:00",
+   "sys": "exec",
+   "text": "First interference-free readings for 100 g – 2 kg: means within 0.1 %, still jittery."
+  },
+  {
+   "t": "11-06 09:00",
+   "sys": "exec",
+   "text": "Root cause of 'no CUDA device' in GPU jobs found and fixed (GPU id mismatch)."
+  },
+  {
+   "t": "11-06 16:55",
+   "sys": "exec",
+   "text": "First native robot skill trial passes 4/4."
+  },
+  {
+   "t": "11-06 17:53",
+   "sys": "autoscene",
+   "text": "Balance routine-check protocol + auto scene started."
+  },
+  {
+   "t": "11-06 18:20",
+   "sys": "paper",
+   "text": "Independent verifier and first plan-driven execution request."
+  },
+  {
+   "t": "11-06 18:35",
+   "sys": "scenes",
+   "text": "Five beaker supports and the 2 kg weight fix pass; next blocker found (dispenser)."
+  },
+  {
+   "t": "11-06 19:30",
+   "sys": "paper",
+   "text": "Verifier and executor agree on all 44 values after aligning the angle definition."
+  },
+  {
+   "t": "11-06 19:40",
+   "sys": "exec",
+   "text": "Skill-approval job re-submitted after a launcher fix."
+  }
+ ]
+};
