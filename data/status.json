@@ -256,7 +256,7 @@
         {
           "label": "Proposals passing native checks",
           "value": 0,
-          "of": 11,
+          "of": 12,
           "status": "pending"
         }
       ],
@@ -289,7 +289,7 @@
         {
           "name": "Native verification of generated scenes",
           "status": "fail",
-          "detail": "None of the 11 proposals has passed in the real simulator yet."
+          "detail": "None of the 12 proposals has passed in the real simulator yet."
         }
       ],
       "proposals": [
