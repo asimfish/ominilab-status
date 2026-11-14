@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 03:36",
+ "updated": "2026-11-15 04:22",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
@@ -157,7 +157,7 @@ window.STATUS = {
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Inspection scene ready; stability run queued",
+     "line": "Passed source review; simulator checks waiting",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -165,9 +165,9 @@ window.STATUS = {
      "title": "Titration",
      "tag": "From paper",
      "live": false,
-     "status": "partial",
-     "line": "Inspection scene ready; stability run queued",
-     "details": "Real instruments, robot and bench; robot starts empty-handed. Passes the support check (116 pass, 11 warnings). Waits for the 600-step stability run."
+     "status": "blocked",
+     "line": "Returned for repair: 2 parts lack collision shapes",
+     "details": "Real instruments, robot and bench. The stir bar and the piston of the titrator have no collision shape, so the scene went back to the auto-builder. The other checks pass."
     },
     {
      "id": "auto_hplc",
@@ -175,7 +175,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Inspection scene ready; stability run queued",
+     "line": "Passed source review; simulator checks waiting",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -193,7 +193,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Inspection scene ready; stability run queued",
+     "line": "Passed source review; simulator checks waiting",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -303,6 +303,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 04:13",
+   "text": "Four of the five auto-built scenes pass the base-scene review; titration goes back for two missing collision shapes."
+  },
   {
    "t": "11-15 03:30",
    "text": "Live-window connection rehearsal passes all three fault drills; the session itself is on hold because the relay machine stopped answering."
