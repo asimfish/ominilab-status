@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 04:52",
+  "updated": "2026-11-15 05:27",
   "tz": "UTC+8",
   "snapshots_taken": "2026-11-08",
   "session": {
@@ -70,8 +70,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "87 unstable parts at the last sweep (11-09)",
-          "details": "Mostly doors, lids, buttons and valves that do not hold their position. First GPU-physics run worked but needs a larger contact buffer.",
+          "line": "87 unstable parts; cause analysis done, fixes prepared",
+          "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move, 5 lack a restoring drive. A joint-frame fix on one magnetic-stirrer cable is prepared for the next run.",
           "img": "assets/snapshots/room_double_island.jpg"
         },
         {
@@ -80,8 +80,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "98 unstable parts at the last sweep (11-09)",
-          "details": "Got worse after one repair (85 → 98); the regression is being traced. A freezer door handle no longer turns.",
+          "line": "98 unstable parts; cause analysis done, fixes prepared",
+          "details": "All 98 have a position drive but still move. A merge of rigidly joined parts on one instrument is prepared for the next run; the drive targets and strengths are being checked against gravity on CPU.",
           "img": "assets/snapshots/room_u_workcell.jpg"
         },
         {
@@ -90,8 +90,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "12 unstable parts at the last sweep (11-09)",
-          "details": "Down from 17. The earlier simulator crash is gone after merging rigidly joined parts of the large instruments.",
+          "line": "12 unstable parts; cause analysis done",
+          "details": "6 have a position drive but still move; 6 are robot gripper parts whose source model is not available locally.",
           "img": "assets/snapshots/room_linear_flow.jpg"
         },
         {
@@ -100,8 +100,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "23 unstable parts at the last sweep (11-09)",
-          "details": "",
+          "line": "23 unstable parts; cause analysis done",
+          "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive.",
           "img": "assets/snapshots/room_l_suite.jpg"
         },
         {
@@ -111,7 +111,7 @@
           "live": true,
           "status": "fail",
           "line": "Simulator still crashes at step 1",
-          "details": "Crash narrowing continues.",
+          "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
           "img": "assets/snapshots/room_spine_analysis.jpg"
         },
         {
@@ -121,7 +121,7 @@
           "live": true,
           "status": "fail",
           "line": "Crashes at step 1 because of one instrument",
-          "details": "Runs all 660 steps without the particle-size analyser; that instrument crashes on its own.",
+          "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
           "img": "assets/snapshots/room_racetrack.jpg"
         },
         {
@@ -130,8 +130,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "22 unstable parts at the last sweep (11-09)",
-          "details": "Down from 28. The oven repair runs 660 steps with 0 blockers.",
+          "line": "22 unstable parts; cause analysis done",
+          "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive.",
           "img": "assets/snapshots/room_inert_suite.jpg"
         }
       ]
@@ -303,6 +303,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-15 05:23",
+      "text": "New rooms: all 242 unstable parts classified by evidence (74% have a position drive but still move); 19 test cases prepared for the next run."
+    },
     {
       "t": "11-15 04:35",
       "text": "Formal request for the 100 g balance run is ready: 37 calls, rehearsed end to end with a simulated robot."
