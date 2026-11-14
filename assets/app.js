@@ -80,11 +80,13 @@
       body = '<iframe title="Live Isaac Sim view" src="' + esc(viewerUrl(item)) + '" allow="fullscreen; autoplay"></iframe>';
     } else {
       var msg;
-      if (!item.live) msg = "This scene joins the live viewer soon.";
+      if (!item.live) msg = "Not in the live viewer yet.";
       else if (!sess.online) msg = "Opens live here when a debug session is running.";
       else msg = "Open your SSH tunnel, then press “Open live”.";
-      body = '<div class="placeholder">' + (item.img ? '<img alt="" src="' + esc(item.img) + '">' : '<div class="ph-icon" aria-hidden="true">⬚</div>') +
-        '<div class="ph-msg">' + esc(msg) + "</div></div>";
+      body = item.img
+        ? '<div class="placeholder has-img"><img alt="' + esc(item.title) + ' (snapshot)" src="' + esc(item.img) + '">' +
+          '<div class="ph-cap">Snapshot' + (S.snapshots_taken ? " " + esc(S.snapshots_taken) : "") + " · " + esc(msg) + "</div></div>"
+        : '<div class="placeholder"><div class="ph-icon" aria-hidden="true">⬚</div><div class="ph-msg">' + esc(msg) + "</div></div>";
     }
     v.innerHTML = head + '<div class="stage">' + body + "</div>" +
       (item.details ? '<details class="vdetails"><summary>Details</summary><p>' + esc(item.details) + "</p></details>" : "");
