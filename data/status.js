@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 02:15",
+ "updated": "2026-11-15 02:58",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
   "online": false,
   "expires": null,
-  "note": "No live session right now. The last one ran on 11-08 with all 15 scenes opened. A session on 11-14 started but its connection never came up; the reconnect fix is in progress."
+  "note": "No live session right now. The connection bug that wasted the 11-14 session is fixed; the next session starts after a no-GPU rehearsal of the connection."
  },
  "default_port": 18640,
  "groups": [
@@ -203,14 +203,14 @@ window.STATUS = {
      "live": false,
      "status": "pending",
      "line": "19 papers in the pipeline; none passes full operation yet",
-     "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). About 300 native checks are still open."
+     "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). The pipeline now refuses to overwrite an earlier scene when its inputs change. About 300 native checks are still open."
     }
    ]
   },
   {
    "id": "lab",
    "title": "Lab execution",
-   "blurb": "The robot doing real tasks in the simulator. Four skills are approved; pick-and-place and the first full experiment are next.",
+   "blurb": "The robot doing real tasks in the simulator. Five skills are approved, pick-and-place included; the first full experiment is next.",
    "items": [
     {
      "id": "lab_skill_trial",
@@ -234,11 +234,11 @@ window.STATUS = {
     {
      "id": "lab_pick_place",
      "title": "Pick and place a 100 g weight",
-     "tag": "Pilot station",
+     "tag": "Approved skill",
      "live": false,
-     "status": "partial",
-     "line": "5 complete passes across two runs; approval pending",
-     "details": "First run: 3 of 4 attempts picked, lifted, held, placed and released the weight (placement error 0.34–0.37 mm, limit 5 mm; slip while held 0.04–0.07 mm, limit 2 mm); one failed a grip-force check. Second run: 2 of 4; the other two were stopped by a real-time limit while the simulated lift took only 40 s. The independent check of the full recordings is in progress."
+     "status": "pass",
+     "line": "Approved: 5 complete passes, independently re-checked",
+     "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check recomputed 35,352 simulation steps and 4.1 million contact pairs with zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
      "id": "lab_motion_over_pan",
@@ -255,8 +255,8 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "running",
-     "line": "All 37 calls bound to the scene; first trial run next",
-     "details": "Chosen as the first full native experiment. The next job runs the motion over the pan, 4 pick-and-place attempts and a first diagnostic run of the weighing routine in the balance scene."
+     "line": "All 37 calls bound; evidence checklist ready; first trial run next",
+     "details": "Chosen as the first full native experiment. The next job runs the motion over the pan, 4 pick-and-place attempts and a first diagnostic run of the weighing routine in the balance scene, recording 307 evidence items across the 25 robot and instrument calls. The three operator pre-checks are automated and labelled as simulated."
     },
     {
      "id": "lab_moisture",
@@ -299,10 +299,14 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "4 skills approved; pick-and-place 5 passes in 8; no complete experiment has run yet"
+   "line": "5 skills approved, pick-and-place included; no complete experiment has run yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 02:55",
+   "text": "Pick-and-place approved for the isolated robot cell after an independent re-check of both runs."
+  },
   {
    "t": "11-15 01:55",
    "text": "Disk space recovered; all four agents working again."
