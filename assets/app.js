@@ -102,7 +102,7 @@
     var list = g.items.map(function (it) {
       return '<button class="scene-btn" type="button" data-id="' + esc(it.id) + '">' +
         '<span class="sname">' + esc(it.title) + "</span>" +
-        '<span class="smeta">' + pill(it.status) + '<span class="stag">' + esc(it.tag) + (it.live ? "" : " · soon") + "</span></span></button>";
+        '<span class="smeta">' + pill(it.status) + '<span class="stag">' + esc(it.tag) + "</span></span></button>";
     }).join("");
     $("#main").innerHTML = '<p class="blurb">' + esc(g.blurb) + '</p><div class="console"><div class="scenes" role="list">' + list +
       '</div><div class="viewer-col" id="viewer"></div></div>';
