@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 02:58",
+  "updated": "2026-11-15 03:22",
   "tz": "UTC+8",
   "snapshots_taken": "2026-11-08",
   "session": {
@@ -139,7 +139,7 @@
     {
       "id": "auto",
       "title": "Auto-built scenes",
-      "blurb": "Scenes generated automatically from papers and protocols: one command goes from paper to protocol to scene, and the robot is placed automatically.",
+      "blurb": "Scenes generated automatically from papers and protocols: one command goes from paper to protocol to scene, and the robot is placed automatically. Five are packaged for the live viewer.",
       "items": [
         {
           "id": "auto_balance_routine_check",
@@ -157,7 +157,7 @@
           "tag": "From protocol",
           "live": false,
           "status": "partial",
-          "line": "Scene passes stability; analyser lid repair in progress",
+          "line": "Inspection scene ready; stability run queued",
           "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
         },
         {
@@ -165,18 +165,18 @@
           "title": "Titration",
           "tag": "From paper",
           "live": false,
-          "status": "pending",
-          "line": "Layout fits 1 robot station; not run natively",
-          "details": ""
+          "status": "partial",
+          "line": "Inspection scene ready; stability run queued",
+          "details": "Real instruments, robot and bench; robot starts empty-handed. Passes the support check (116 pass, 11 warnings). Waits for the 600-step stability run."
         },
         {
           "id": "auto_hplc",
           "title": "HPLC",
           "tag": "From paper",
           "live": false,
-          "status": "pending",
-          "line": "Layout fits 2 robot stations; not run natively",
-          "details": ""
+          "status": "partial",
+          "line": "Inspection scene ready; stability run queued",
+          "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
         },
         {
           "id": "auto_liang2021",
@@ -192,9 +192,9 @@
           "title": "meloxicam2022",
           "tag": "From paper",
           "live": false,
-          "status": "pending",
-          "line": "Layout fits 2 robot stations; not run natively",
-          "details": ""
+          "status": "partial",
+          "line": "Inspection scene ready; stability run queued",
+          "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
         },
         {
           "id": "auto_more",
@@ -303,6 +303,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-15 03:15",
+      "text": "Five auto-built scenes packaged for the live viewer (balance, moisture, titration, HPLC, meloxicam); stability runs queued."
+    },
     {
       "t": "11-15 02:55",
       "text": "Pick-and-place approved for the isolated robot cell after an independent re-check of both runs."
