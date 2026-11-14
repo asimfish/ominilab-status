@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 03:22",
+ "updated": "2026-11-15 03:36",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
   "online": false,
   "expires": null,
-  "note": "No live session right now. The connection bug that wasted the 11-14 session is fixed; the next session starts after a no-GPU rehearsal of the connection."
+  "note": "No live session right now. The connection rehearsal passed all three fault drills (crash, low disk, late start). The next session is on hold: the relay machine stopped answering at about 03:16."
  },
  "default_port": 18640,
  "groups": [
@@ -284,7 +284,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet; 7 of 15 instrument mechanisms work"
+   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet (all 7 prepared for a new run); 7 of 15 instrument mechanisms work"
   },
   {
    "name": "Auto-built scenes",
@@ -303,6 +303,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 03:30",
+   "text": "Live-window connection rehearsal passes all three fault drills; the session itself is on hold because the relay machine stopped answering."
+  },
   {
    "t": "11-15 03:15",
    "text": "Five auto-built scenes packaged for the live viewer (balance, moisture, titration, HPLC, meloxicam); stability runs queued."
