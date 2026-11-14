@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 04:42",
+ "updated": "2026-11-15 04:52",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
@@ -166,8 +166,8 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "blocked",
-     "line": "Returned for repair: 2 parts lack collision shapes",
-     "details": "Real instruments, robot and bench. The stir bar and the piston of the titrator have no collision shape, so the scene went back to the auto-builder. The other checks pass."
+     "line": "On hold: 2 parts have no collision shape in the source asset",
+     "details": "Real instruments, robot and bench. The titrator's stir bar and piston have a body and a visible mesh in the source model but no collision shape, so this is an asset gap, not an export error. The repair goes to the base-scene agent; no geometry was invented."
     },
     {
      "id": "auto_hplc",
