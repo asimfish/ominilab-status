@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 05:27",
+ "updated": "2026-11-15 06:12",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
@@ -71,7 +71,7 @@ window.STATUS = {
      "live": true,
      "status": "fail",
      "line": "87 unstable parts; cause analysis done, fixes prepared",
-     "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move, 5 lack a restoring drive. A joint-frame fix on one magnetic-stirrer cable is prepared for the next run.",
+     "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Fixes for the micropipette and one stirrer cable are prepared for the next run.",
      "img": "assets/snapshots/room_double_island.jpg"
     },
     {
@@ -81,7 +81,7 @@ window.STATUS = {
      "live": true,
      "status": "fail",
      "line": "98 unstable parts; cause analysis done, fixes prepared",
-     "details": "All 98 have a position drive but still move. A merge of rigidly joined parts on one instrument is prepared for the next run; the drive targets and strengths are being checked against gravity on CPU.",
+     "details": "All 98 have a position drive but still move. A check of every drive against gravity found the drives strong enough on paper and their targets consistent, so the cause lies in the dynamics, not the settings; joint-frame, mass-ratio and parent-chain checks are next, with per-step recordings planned for the next run.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
     {
@@ -165,9 +165,9 @@ window.STATUS = {
      "title": "Titration",
      "tag": "From paper",
      "live": false,
-     "status": "blocked",
-     "line": "On hold: 2 parts have no collision shape in the source asset",
-     "details": "Real instruments, robot and bench. The titrator's stir bar and piston have a body and a visible mesh in the source model but no collision shape, so this is an asset gap, not an export error. The repair goes to the base-scene agent; no geometry was invented."
+     "status": "partial",
+     "line": "Collision shapes added from the source meshes; re-export next",
+     "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
      "id": "auto_hplc",
@@ -303,6 +303,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 06:05",
+   "text": "New rooms: drive strength and targets ruled out as the cause for 177 of 179 moving parts; titrator collision shapes repaired from its own meshes."
+  },
   {
    "t": "11-15 05:23",
    "text": "New rooms: all 242 unstable parts classified by evidence (74% have a position drive but still move); 19 test cases prepared for the next run."
