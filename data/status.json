@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 06:12",
+  "updated": "2026-11-15 06:55",
   "tz": "UTC+8",
   "snapshots_taken": "2026-11-08",
   "session": {
@@ -81,7 +81,7 @@
           "live": true,
           "status": "fail",
           "line": "98 unstable parts; cause analysis done, fixes prepared",
-          "details": "All 98 have a position drive but still move. A check of every drive against gravity found the drives strong enough on paper and their targets consistent, so the cause lies in the dynamics, not the settings; joint-frame, mass-ratio and parent-chain checks are next, with per-step recordings planned for the next run.",
+          "details": "98 unstable parts, all on joints with a position drive. Joint frames line up at start (checked), drive targets and strength look right on paper. 82 of the 98 hang below another part that also moves, so the real number of root causes is much smaller; 61 are very light parts on heavy instruments, a known numerical risk. Per-step recordings on the worst instruments are planned for the next run.",
           "img": "assets/snapshots/room_u_workcell.jpg"
         },
         {
@@ -284,7 +284,7 @@
     {
       "name": "Base scenes",
       "status": "partial",
-      "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet (all 7 prepared for a new run); 7 of 15 instrument mechanisms work"
+      "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. About 40 root causes behind the 242 moving parts; test cases ready for the next run"
     },
     {
       "name": "Auto-built scenes",
@@ -303,6 +303,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-15 06:49",
+      "text": "New rooms: most moving parts just follow a moving parent; about 40 root causes remain to be confirmed in the next run."
+    },
     {
       "t": "11-15 06:05",
       "text": "New rooms: drive strength and targets ruled out as the cause for 177 of 179 moving parts; titrator collision shapes repaired from its own meshes."
