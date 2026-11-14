@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 04:22",
+  "updated": "2026-11-15 04:42",
   "tz": "UTC+8",
   "snapshots_taken": "2026-11-08",
   "session": {
@@ -238,7 +238,7 @@
           "live": false,
           "status": "pass",
           "line": "Approved: 5 complete passes, independently re-checked",
-          "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check recomputed 35,352 simulation steps and 4.1 million contact pairs with zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
+          "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
         },
         {
           "id": "lab_motion_over_pan",
@@ -255,8 +255,8 @@
           "tag": "Full experiment",
           "live": false,
           "status": "running",
-          "line": "All 37 calls bound; evidence checklist ready; first trial run next",
-          "details": "Chosen as the first full native experiment. The next job runs the motion over the pan, 4 pick-and-place attempts and a first diagnostic run of the weighing routine in the balance scene, recording 307 evidence items across the 25 robot and instrument calls. The three operator pre-checks are automated and labelled as simulated."
+          "line": "Formal run request ready (37 calls); waits for the trial job",
+          "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is ready to submit once the relay machine is reachable again."
         },
         {
           "id": "lab_moisture",
@@ -303,6 +303,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-15 04:35",
+      "text": "Formal request for the 100 g balance run is ready: 37 calls, rehearsed end to end with a simulated robot."
+    },
     {
       "t": "11-15 04:13",
       "text": "Four of the five auto-built scenes pass the base-scene review; titration goes back for two missing collision shapes."
