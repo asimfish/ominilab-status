@@ -1,13 +1,13 @@
 {
- "updated": "2026-11-15 19:25",
+ "updated": "2026-11-15 19:50",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
-  "online": false,
-  "expires": null,
-  "note": "No live session yet. The base-scene agent is sealing inputs and running its start-up check before submitting the session; it opens here when its connection is up."
+  "online": true,
+  "expires": "11-15 23:26",
+  "note": "Live until 23:26 (Beijing time). Debug view only: physics starts paused, and rooms that have not passed their checks stay labelled as such. Open your SSH tunnel on port 18621, pick a scene, then press Open live."
  },
- "default_port": 18640,
+ "default_port": 18621,
  "groups": [
   {
    "id": "base",
@@ -133,6 +133,26 @@
      "line": "22 unstable parts; cause analysis done",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_inert_suite.jpg"
+    },
+    {
+     "id": "station_centrifuge",
+     "title": "Centrifuge station",
+     "tag": "Station",
+     "live": true,
+     "status": "pending",
+     "line": "Operation station in the live viewer; no stability result recorded here yet",
+     "details": [],
+     "scene": "round28_centrifuge"
+    },
+    {
+     "id": "station_oven",
+     "title": "Oven station",
+     "tag": "Station",
+     "live": true,
+     "status": "pending",
+     "line": "Operation station in the live viewer; no stability result recorded here yet",
+     "details": [],
+     "scene": "round28_oven"
     }
    ]
   },
@@ -262,10 +282,11 @@
      "id": "lab_moisture",
      "title": "Experiment 13: moisture test",
      "tag": "Full experiment",
-     "live": false,
+     "live": true,
      "status": "pending",
      "line": "Plan compiled (6 steps); waits for sample-pan and lid skills",
-     "details": ""
+     "details": "",
+     "scene": "round28_experiment13"
     },
     {
      "id": "lab_main",
@@ -284,7 +305,7 @@
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. 40 of 41 root parts start with overlapping collision shapes; 21 test cases ready for the next run"
+   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. Live session running until 23:26 with 21 test cases for the new rooms"
   },
   {
    "name": "Auto-built scenes",
@@ -303,6 +324,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 19:37",
+   "text": "Live debug session is up: 18 scenes loaded, picture verified in a browser, open until 23:26. The 21 test cases for the new rooms run alongside it."
+  },
   {
    "t": "11-15 19:23",
    "text": "Independent review caught an ordering defect in the balance-check code: the gripper opened before support under the weight was confirmed. It is being fixed before the trial job is submitted."
