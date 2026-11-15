@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 01:45",
+ "updated": "2026-11-16 01:55",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -20,7 +20,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
+     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
      "details": "A three-neck flask that tipped at step 7 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l0.jpg"
     },
@@ -30,7 +30,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
+     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
      "details": "A pestle that tipped at step 5 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l1.jpg"
     },
@@ -40,7 +40,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
+     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
      "details": "Holds the pilot balance station. A 50 ml beaker standing on a 0.4 mm contact point got a 1 mm flat foot; the dispenser, oven and titrator repairs hold.",
      "img": "assets/snapshots/legacy_l2.jpg"
     },
@@ -50,7 +50,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
+     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
      "details": "A free-standing vessel that tipped at step 1 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l3.jpg"
     },
@@ -155,6 +155,33 @@ window.STATUS = {
      "details": "",
      "scene": "round28_oven",
      "img": "assets/snapshots/station_oven.jpg"
+    },
+    {
+     "id": "rebuilt_balance",
+     "title": "Weighing room (rebuilt)",
+     "tag": "Rebuilt",
+     "live": false,
+     "status": "partial",
+     "line": "Structure gate passed 19/19; picture and simulator run pending",
+     "details": ""
+    },
+    {
+     "id": "rebuilt_moisture",
+     "title": "Moisture and drying room (rebuilt)",
+     "tag": "Rebuilt",
+     "live": false,
+     "status": "partial",
+     "line": "Structure gate passed 22/22; picture and simulator run pending",
+     "details": ""
+    },
+    {
+     "id": "rebuilt_thermal",
+     "title": "Thermal workcell (rebuilt)",
+     "tag": "Rebuilt",
+     "live": false,
+     "status": "partial",
+     "line": "Structure gate passed 18/18; picture and simulator run pending",
+     "details": ""
     }
    ]
   },
@@ -307,7 +334,7 @@ window.STATUS = {
      "tag": "Goal",
      "live": false,
      "status": "pending",
-     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5: joining the five original rooms is feasible with conditions (doors and robot definitions to unify); planning model drafted; floor plan spec in progress",
+     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5 done on paper: floor plan finalised (two rows, 2.2 m corridor, sliding doors, 1 transport robot and 4 fixed arms). Building not assembled yet",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
@@ -317,7 +344,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "All 18 scenes audited against the new structure gate; none passes yet. The 4 original labs meet the density, lighting, hood and sink rules but still lack waste stations, legible exit signs and some support evidence. The 7 new rooms and the station scenes will be rebuilt on a shared room kit"
+   "line": "Three rebuilt rooms (weighing, moisture and drying, thermal) pass the structure gate; pictures and simulator runs come with the next batch job. The 4 original labs need a waste station, legible exit signs and a few support fixes to pass. The 7 rough rooms await rebuilding"
   },
   {
    "name": "Auto-built scenes",
@@ -337,10 +364,18 @@ window.STATUS = {
   {
    "name": "Multi-room laboratory",
    "status": "pending",
-   "line": "Goal set 11-15. Design stage: joining the five original rooms is feasible with conditions; planning model and request formats drafted; no building assembled yet"
+   "line": "Goal set 11-15. Floor plan finalised on paper (two rows of rooms, 2.2 m corridor, sliding doors); planning model and request formats drafted; no building assembled yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 01:50",
+   "text": "First three rebuilt rooms pass the structure gate on every item: a weighing room (17 m²), a moisture and drying room (34 m²) and a thermal workcell (17 m²), each with full walls, roof, door, light fixtures on hangers, exit sign, extinguisher and waste station. They have not been rendered or run in the simulator yet, so appearance, stability and operation are still open."
+  },
+  {
+   "t": "11-16 01:50",
+   "text": "The four original labs do not pass the structure gate yet, with geometry untouched: floor use, benches, fixture counts, hoods, sinks, eyewash and extinguishers pass; missing are a waste station, legible exit signs (the boards are blank), lane markings in three of them, and a few unresolved support checks. Repairs approved as add-on layers. Floor plan for the multi-room lab finalised on paper: two rows of rooms, a 2.2 m corridor, automatic sliding doors."
+  },
   {
    "t": "11-16 01:34",
    "text": "Auto-built scenes: with the newly published instrument assets, 17 of the 19 pipeline items now pass the target-simulator library checks (12 distinct scenes, since several papers share one). The remaining 2 wait for an X-ray diffractometer cooling unit and for a verified DSC model. All 19 are still benches without a room, so all fail the structure gate."
