@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 05:05",
+ "updated": "2026-11-16 05:45",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -295,7 +295,7 @@
      "tag": "Pilot station",
      "live": false,
      "status": "partial",
-     "line": "All three steps completed in the simulator (about 1 mm error, 39 mm minimum clearance, no unexpected contact); awaiting independent review before approval",
+     "line": "Three steps completed in the simulator per the executor; reviewer has not yet read the raw files. Approval needs 3 independent runs plus an obstacle test (this is run 1 once confirmed)",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -304,7 +304,7 @@
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "Steps 1–4 of 10 reported passed with raw readings (review pending); step 5 refused: motion timing turned a 6.9 s path into 33.7 s; timing method being corrected",
+     "line": "Steps 1–3 of 10 independently confirmed; step 4 (taring) readings verified, rule exception approved; step 5 refused by a motion-timing fault being corrected",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -359,7 +359,7 @@
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Third simulator run: motion over the balance pan completed all three steps; pick-and-place lifted and held but stopped on time and log limits; balance check stops at picking up the weight because of a motion-timing fault. Independent review pending; no complete experiment yet"
+   "line": "6 skills approved. Third simulator run independently reviewed: first three balance-check steps and the timing confirmed, no physical failure found; motion over the pan awaits raw files for the reviewer; pick-and-place stopped on time and log limits. No complete experiment yet"
   },
   {
    "name": "Multi-room laboratory",
@@ -368,6 +368,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 05:37",
+   "text": "Independent review of the third run: 6 of 18 criteria confirmed (up from 2), no physical failure, 12 not yet observable. Confirmed: the 2.5× timing, the first three balance-check steps, the raw taring readings, and that both pick-and-place stops were time and log limits, not physical failures. Not confirmed: motion over the pan, only because the reviewer could not read the raw files; they are being exported to it. Approval rule set for motion over the pan: three independent complete runs plus one obstacle test, each independently reviewed."
+  },
   {
    "t": "11-16 04:56",
    "text": "Third lab-execution run gave the first substantial simulator results (all still to be confirmed by independent review). Motion over the balance pan: all three steps completed, about 1 mm position error, at least 39 mm clearance, no unexpected contact. Both pick-and-place trials lifted and held the weight with 0.04–0.06 mm slip; one then hit a 60-second holding limit before placing, the other placed within 0.35 mm and then hit a log-size limit while retreating. Balance check: steps 1–4 reported passed, this time with raw force and mass readings; step 5 (pick up the weight) was refused again because motion timing stretched a 6.9-second path to 33.7 seconds. Recording overhead fell from 7.2 to 2.5 times real time."
