@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15 21:50",
+ "updated": "2026-11-15 22:05",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -341,6 +341,14 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 22:01",
+   "text": "The running session cannot accept more test cases once started, so the second batch (the room fixes, the 8 auto-built scenes, crash narrowing) moves to the next job. Accepting extra cases at run time becomes a required feature before the next session."
+  },
+  {
+   "t": "11-15 21:55",
+   "text": "Base scenes: construction-and-acceptance checks are now in code. Seven separate checks (building, layout, appearance, physics, instrument function, robot service, utilities); any failure or missing evidence blocks acceptance. The seven rooms have repair candidates with roof, lights and materials; they are not in the live viewer yet."
+  },
   {
    "t": "11-15 21:47",
    "text": "Auto-built scenes: room requirements derived from the 8 protocols. Of 297 individual requirements, 61 are stated in the source text and 212 are not stated by the papers at all (bench length, ventilation, waste, transfer limits), so they need project-defined defaults. Request formats for a room and for a floor drafted; three experiments have a two-zone floor draft."
