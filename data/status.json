@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 06:55",
+  "updated": "2026-11-15 08:36",
   "tz": "UTC+8",
   "snapshots_taken": "2026-11-08",
   "session": {
@@ -71,7 +71,7 @@
           "live": true,
           "status": "fail",
           "line": "87 unstable parts; cause analysis done, fixes prepared",
-          "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Fixes for the micropipette and one stirrer cable are prepared for the next run.",
+          "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Nearly all root parts start with overlapping collision shapes; fixes are prepared for the next run.",
           "img": "assets/snapshots/room_double_island.jpg"
         },
         {
@@ -80,8 +80,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "98 unstable parts; cause analysis done, fixes prepared",
-          "details": "98 unstable parts, all on joints with a position drive. Joint frames line up at start (checked), drive targets and strength look right on paper. 82 of the 98 hang below another part that also moves, so the real number of root causes is much smaller; 61 are very light parts on heavy instruments, a known numerical risk. Per-step recordings on the worst instruments are planned for the next run.",
+          "line": "98 unstable parts; likely cause found for the main instrument",
+          "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
           "img": "assets/snapshots/room_u_workcell.jpg"
         },
         {
@@ -90,8 +90,8 @@
           "tag": "New",
           "live": true,
           "status": "fail",
-          "line": "12 unstable parts; cause analysis done",
-          "details": "6 have a position drive but still move; 6 are robot gripper parts whose source model is not available locally.",
+          "line": "12 unstable parts; one cause matched to a starting overlap",
+          "details": "A desorber lid starts 25.422 mm inside a neighbouring tube and jumps 25.422 mm on start-up. 6 other parts are robot gripper parts whose source model is not available locally.",
           "img": "assets/snapshots/room_linear_flow.jpg"
         },
         {
@@ -101,7 +101,7 @@
           "live": true,
           "status": "fail",
           "line": "23 unstable parts; cause analysis done",
-          "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive.",
+          "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive. Two valves turn to their 180° stop on the first step; a latch test with a control is prepared.",
           "img": "assets/snapshots/room_l_suite.jpg"
         },
         {
@@ -131,7 +131,7 @@
           "live": true,
           "status": "fail",
           "line": "22 unstable parts; cause analysis done",
-          "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive.",
+          "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
           "img": "assets/snapshots/room_inert_suite.jpg"
         }
       ]
@@ -284,7 +284,7 @@
     {
       "name": "Base scenes",
       "status": "partial",
-      "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. About 40 root causes behind the 242 moving parts; test cases ready for the next run"
+      "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. 40 of 41 root parts start with overlapping collision shapes; 21 test cases ready for the next run"
     },
     {
       "name": "Auto-built scenes",
@@ -303,6 +303,10 @@
     }
   ],
   "timeline": [
+    {
+      "t": "11-15 08:32",
+      "text": "New rooms: 40 of the 41 root parts start with overlapping collision shapes; for 7 the overlap depth matches the start-up jump to five digits."
+    },
     {
       "t": "11-15 06:49",
       "text": "New rooms: most moving parts just follow a moving parent; about 40 root causes remain to be confirmed in the next run."
