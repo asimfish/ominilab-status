@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15 19:50",
+ "updated": "2026-11-15 20:05",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
@@ -257,7 +257,7 @@
      "tag": "Approved skill",
      "live": false,
      "status": "pass",
-     "line": "Approved: 5 complete passes, independently re-checked",
+     "line": "Approved for release from 1.5 mm above a table (5 complete passes); support-before-release version written, not yet run",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -275,7 +275,7 @@
      "tag": "Full experiment",
      "live": false,
      "status": "running",
-     "line": "Formal run request ready (37 calls); a release-order fix goes in before the trial job",
+     "line": "Formal run request ready (37 calls); release-order fix passes CPU tests; trial job not submitted yet",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -284,7 +284,7 @@
      "tag": "Full experiment",
      "live": true,
      "status": "pending",
-     "line": "Plan compiled (6 steps); waits for sample-pan and lid skills",
+     "line": "Plan compiled (6 steps, 14 calls): 7 calls covered by approved skills, 7 need new skills (pan transfer, lid, instrument readout)",
      "details": "",
      "scene": "round28_experiment13"
     },
@@ -315,15 +315,23 @@
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "Experiments 12 and 13 compiled and dry-run end to end; 11 task graphs, 130 task templates"
+   "line": "Experiments 12 and 13 compiled and dry-run end to end; 11 task graphs, 130 task templates; skill gaps for the moisture pilot listed"
   },
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved, pick-and-place included; trial job waits for one release-order fix; no complete experiment has run yet"
+   "line": "6 skills approved, pick-and-place included (placing releases 1.5 mm above the surface); trial job waits for final checks; no complete experiment has run yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 20:00",
+   "text": "Disk space on the agents' machine fell below the stop line because of another project's data; three agents paused, then resumed under a narrower rule that still allows small control files. The trial job is not submitted yet."
+  },
+  {
+   "t": "11-15 19:52",
+   "text": "Balance-check release order fixed and tested on CPU: the weight is lowered in 0.1 mm steps until support is measured, and only then released. The same review showed the approved placing skill releases 1.5 mm above the surface and confirms support afterwards, so its approval is now stated with that limit."
+  },
   {
    "t": "11-15 19:37",
    "text": "Live debug session is up: 18 scenes loaded, picture verified in a browser, open until 23:26. The 21 test cases for the new rooms run alongside it."
