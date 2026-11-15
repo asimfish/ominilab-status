@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 22:20",
+ "updated": "2026-11-15 23:30",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
-  "online": true,
-  "expires": "11-15 23:26",
-  "note": "Live until 23:26 (Beijing time). Debug view only: physics starts paused, and rooms that have not passed their checks stay labelled as such. Open your SSH tunnel on port 18621, pick a scene, then press Open live."
+  "online": false,
+  "expires": null,
+  "note": "No live session right now. The last one ran 19:37–23:26 on 11-15 with 18 scenes. The next session will carry the repaired rooms and the auto-built scenes, and its diagnostic GPUs will take test cases while it runs."
  },
  "default_port": 18621,
  "groups": [
@@ -18,7 +18,7 @@ window.STATUS = {
      "id": "legacy_l0",
      "title": "Intelligent chemistry robot platform",
      "tag": "Base",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Passes the strict 600-step stability test",
      "details": "A three-neck flask that tipped at step 7 is fixed. Full sweep: 0 blockers.",
@@ -28,7 +28,7 @@ window.STATUS = {
      "id": "legacy_l1",
      "title": "Organic synthesis lab",
      "tag": "Base",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Passes the strict 600-step stability test",
      "details": "A pestle that tipped at step 5 is fixed. Full sweep: 0 blockers.",
@@ -38,7 +38,7 @@ window.STATUS = {
      "id": "legacy_l2",
      "title": "Analysis centre + weighing unit",
      "tag": "Base",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Passes the strict 600-step stability test",
      "details": "Holds the pilot balance station. A 50 ml beaker standing on a 0.4 mm contact point got a 1 mm flat foot; the dispenser, oven and titrator repairs hold.",
@@ -48,7 +48,7 @@ window.STATUS = {
      "id": "legacy_l3",
      "title": "Electrochemistry & energy materials lab",
      "tag": "Base",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Passes the strict 600-step stability test",
      "details": "A free-standing vessel that tipped at step 1 is fixed. Full sweep: 0 blockers.",
@@ -58,7 +58,7 @@ window.STATUS = {
      "id": "legacy_l4",
      "title": "FR3 100 mL weighing & recovery unit",
      "tag": "Base",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Passes the strict 600-step stability test",
      "details": "Two sample objects had been placed 7 mm above their support; with a 1 mm gap the room passes.",
@@ -68,7 +68,7 @@ window.STATUS = {
      "id": "room_double_island",
      "title": "Double-island wet-chemistry hall",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. 87 unstable parts; cause analysis done, fixes prepared",
      "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Nearly all root parts start with overlapping collision shapes; fixes are prepared for the next run.",
@@ -78,7 +78,7 @@ window.STATUS = {
      "id": "room_u_workcell",
      "title": "U-shaped bio / electrochemistry cell",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. 98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
@@ -88,7 +88,7 @@ window.STATUS = {
      "id": "room_linear_flow",
      "title": "Continuous-flow corridor",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. 12 unstable parts; one cause matched to a starting overlap",
      "details": "A desorber lid starts 25.422 mm inside a neighbouring tube and jumps 25.422 mm on start-up. 6 other parts are robot gripper parts whose source model is not available locally.",
@@ -98,7 +98,7 @@ window.STATUS = {
      "id": "room_l_suite",
      "title": "L-shaped digestion / separation suite",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. 23 unstable parts; cause analysis done",
      "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive. Two valves turn to their 180° stop on the first step; a latch test with a control is prepared.",
@@ -108,7 +108,7 @@ window.STATUS = {
      "id": "room_spine_analysis",
      "title": "Six-bay analysis centre",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
@@ -118,7 +118,7 @@ window.STATUS = {
      "id": "room_racetrack",
      "title": "Ring logistics hall",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
@@ -128,7 +128,7 @@ window.STATUS = {
      "id": "room_inert_suite",
      "title": "Inert multi-room suite",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft room; building shell now checks out, other gates open. 22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
@@ -138,7 +138,7 @@ window.STATUS = {
      "id": "station_centrifuge",
      "title": "Centrifuge station",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
      "details": "",
@@ -149,7 +149,7 @@ window.STATUS = {
      "id": "station_oven",
      "title": "Oven station",
      "tag": "Draft",
-     "live": true,
+     "live": false,
      "status": "fail",
      "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
      "details": "",
@@ -167,7 +167,7 @@ window.STATUS = {
      "id": "auto_balance_routine_check",
      "title": "Balance routine check (NIST IR 6969)",
      "tag": "From protocol",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Stability test passed; used for the 100 g pilot",
      "details": "Robot bench, robot, balance and reference weights, empty pan with pan lock. Passes the shared support rules (54 checks, 0 fail) and the 600-step stability test. The 100 g pilot package passes its 109 checks.",
@@ -247,7 +247,7 @@ window.STATUS = {
      "id": "lab_balance_fixture",
      "title": "Balance reading · wait for stable",
      "tag": "Approved skills",
-     "live": true,
+     "live": false,
      "status": "pass",
      "line": "Stable readings; approved for 100 g and 500 g",
      "details": "First stable reading: the 100 g weight read 99.99995 g, settled within 0.01 g one second after release. Approved for 100 g and 500 g in the calibration fixture with a 0.2 s display filter. 1 kg and 2 kg are still on hold.",
@@ -277,14 +277,14 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "blocked",
-     "line": "Trial job failed on a coordinator software fault before giving physical results; retry after a fix and a CPU dress rehearsal",
+     "line": "Trial job failed on a coordinator software fault with no physical result; retry approved once the fixes pass their checks",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
      "id": "lab_moisture",
      "title": "Experiment 13: moisture test",
      "tag": "Full experiment",
-     "live": true,
+     "live": false,
      "status": "pending",
      "line": "Plan compiled (6 steps, 14 calls): 7 calls covered by approved skills, 7 need new skills (pan transfer, lid, instrument readout)",
      "details": "",
@@ -295,7 +295,7 @@ window.STATUS = {
      "id": "lab_main",
      "title": "Main lab (pilot station in place)",
      "tag": "Complete lab",
-     "live": true,
+     "live": false,
      "status": "pending",
      "line": "Room is stable; no robot run here yet",
      "details": "The main lab passed the 600-step stability test on 11-07. Robot work moves here after the fixture runs pass.",
@@ -307,7 +307,7 @@ window.STATUS = {
      "tag": "Goal",
      "live": false,
      "status": "pending",
-     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5 under way: planning model drafted (3 of 11 experiments need two rooms); floor plan spec and joining of the five original rooms under review",
+     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5: joining the five original rooms is feasible with conditions (doors and robot definitions to unify); planning model drafted; floor plan spec in progress",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
@@ -317,7 +317,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "The 5 original scenes pass the strict stability test and are the reference standard. The 7 new rooms are drafts: ceilings, lights and materials were just added and pass the building check; rendering, facilities, stability and operation are still open. Five-gate acceptance and a shared room kit are being set up"
+   "line": "The 5 original scenes pass the strict stability test and are the reference standard. All 18 scenes audited: station scenes lack a complete shell; the 7 new rooms are drafts with repair candidates (roof, lights, materials) not yet run in the simulator. Five-gate acceptance is in force"
   },
   {
    "name": "Auto-built scenes",
@@ -332,15 +332,27 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "blocked",
-   "line": "6 skills approved, pick-and-place included (placing releases 1.5 mm above the surface); the trial job failed on a coordinator software fault with no physical result; no complete experiment has run yet"
+   "line": "6 skills approved, pick-and-place included (placing releases 1.5 mm above the surface); the first trial job failed on a coordinator fault with no physical result; one retry approved after fixes; no complete experiment has run yet"
   },
   {
    "name": "Multi-room laboratory",
    "status": "pending",
-   "line": "Goal set 11-15. Design stage: floor plan spec, room connectivity and robot routes; no building assembled yet"
+   "line": "Goal set 11-15. Design stage: joining the five original rooms is feasible with conditions; planning model and request formats drafted; no building assembled yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 23:26",
+   "text": "Live debug session ended on schedule (19:37–23:26). Results: 21 test cases, 18 scene snapshots, and the owner review that led to the new acceptance gates."
+  },
+  {
+   "t": "11-15 23:21",
+   "text": "All 18 scenes audited for structure: some station scenes have no complete shell, and the seven rooms still lack proper doorways, facilities, light fixtures and use of space. Joining the five original rooms with a corridor is feasible with conditions (door mechanisms and robot definitions must be unified first)."
+  },
+  {
+   "t": "11-15 23:21",
+   "text": "Lab execution: retry preparation. One worker's bookkeeping error no longer stops the other three (shown in a four-process test); 39 kinds of operation classified into auxiliary, infrastructure and safety. An independent review agrees the failed job stopped before anything physical ran."
+  },
   {
    "t": "11-15 22:07",
    "text": "Lab-execution trial job failed on a software fault in its own coordinator (a file scan collided with a folder being deleted), after the platform took 51 minutes to create it. No physical result; nothing can be concluded about the balance check or pick-and-place. A fix, a test for it and a CPU dress rehearsal are required before a retry."
