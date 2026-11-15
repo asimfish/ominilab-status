@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15 21:25",
+ "updated": "2026-11-15 21:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -70,7 +70,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. 87 unstable parts; cause analysis done, fixes prepared",
+     "line": "Draft room; building shell now checks out, other gates open. 87 unstable parts; cause analysis done, fixes prepared",
      "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Nearly all root parts start with overlapping collision shapes; fixes are prepared for the next run.",
      "img": "assets/snapshots/room_double_island.jpg"
     },
@@ -80,7 +80,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. 98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
+     "line": "Draft room; building shell now checks out, other gates open. 98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
@@ -90,7 +90,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. 12 unstable parts; one cause matched to a starting overlap",
+     "line": "Draft room; building shell now checks out, other gates open. 12 unstable parts; one cause matched to a starting overlap",
      "details": "A desorber lid starts 25.422 mm inside a neighbouring tube and jumps 25.422 mm on start-up. 6 other parts are robot gripper parts whose source model is not available locally.",
      "img": "assets/snapshots/room_linear_flow.jpg"
     },
@@ -100,7 +100,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. 23 unstable parts; cause analysis done",
+     "line": "Draft room; building shell now checks out, other gates open. 23 unstable parts; cause analysis done",
      "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive. Two valves turn to their 180° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_l_suite.jpg"
     },
@@ -110,7 +110,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
+     "line": "Draft room; building shell now checks out, other gates open. Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_spine_analysis.jpg"
     },
@@ -120,7 +120,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
+     "line": "Draft room; building shell now checks out, other gates open. Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_racetrack.jpg"
     },
@@ -130,7 +130,7 @@
      "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Draft room, not structurally complete. 22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
+     "line": "Draft room; building shell now checks out, other gates open. 22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_inert_suite.jpg"
     },
@@ -317,7 +317,7 @@
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "The 5 original scenes pass the strict stability test and are the reference standard. The 7 new rooms and the station scenes are drafts: too rough to accept, some without a ceiling. A five-gate acceptance (structure, appearance, stability, operable, task-ready) and a shared room kit are being set up"
+   "line": "The 5 original scenes pass the strict stability test and are the reference standard. The 7 new rooms are drafts: ceilings, lights and materials were just added and pass the building check; rendering, facilities, stability and operation are still open. Five-gate acceptance and a shared room kit are being set up"
   },
   {
    "name": "Auto-built scenes",
@@ -341,6 +341,18 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 21:47",
+   "text": "Auto-built scenes: room requirements derived from the 8 protocols. Of 297 individual requirements, 61 are stated in the source text and 212 are not stated by the papers at all (bench length, ventilation, waste, transfer limits), so they need project-defined defaults. Request formats for a room and for a floor drafted; three experiments have a two-zone floor draft."
+  },
+  {
+   "t": "11-15 21:45",
+   "text": "Base scenes: the seven draft rooms now pass the building part of the structure check (ceiling, visible lights, wall and floor materials) on the simulator libraries; rendering, physics and instrument checks are still open, so they remain drafts."
+  },
+  {
+   "t": "11-15 21:42",
+   "text": "Task planning: the location model is now a runnable pre-check over all 11 task graphs and 130 templates; it lists, per owner, what is missing before a cross-room task can be dispatched (floor plan, sample hand-over declarations, skills)."
+  },
   {
    "t": "11-15 21:21",
    "text": "Auto-built scenes: all 19 pipeline items were run on the reference machine. 8 now pass the target-simulator library checks (3 new: marinade titration, buckwheat phenols, shrimp moisture); the other 11 wait for instrument assets that are not yet published. None has a room shell yet, so none passes the new structure gate."
