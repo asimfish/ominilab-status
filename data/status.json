@@ -141,7 +141,7 @@
      "live": true,
      "status": "pending",
      "line": "Operation station in the live viewer; no stability result recorded here yet",
-     "details": [],
+     "details": "",
      "scene": "round28_centrifuge"
     },
     {
@@ -151,7 +151,7 @@
      "live": true,
      "status": "pending",
      "line": "Operation station in the live viewer; no stability result recorded here yet",
-     "details": [],
+     "details": "",
      "scene": "round28_oven"
     }
    ]
