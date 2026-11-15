@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 19:20",
+ "updated": "2026-11-15 19:25",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
@@ -157,7 +157,7 @@ window.STATUS = {
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Passed source review; simulator checks waiting",
+     "line": "Passes CPU library checks; target-simulator checks next",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -166,7 +166,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Re-exported with both collision shapes; support check 116 pass, 0 fail; simulator checks waiting",
+     "line": "Re-exported with both collision shapes; passes CPU library checks; target-simulator checks next",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -175,7 +175,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passed source review; simulator checks waiting",
+     "line": "Passes CPU library checks; target-simulator checks next",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -193,7 +193,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passed source review; simulator checks waiting",
+     "line": "Passes CPU library checks; target-simulator checks next",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -255,7 +255,7 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "running",
-     "line": "Formal run request ready (37 calls); waits for the trial job",
+     "line": "Formal run request ready (37 calls); a release-order fix goes in before the trial job",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -289,7 +289,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "One command from paper to scene, robot placed automatically; 19 papers in; 2 pilot scenes pass stability"
+   "line": "One command from paper to scene, robot placed automatically; 19 papers in; 5 scenes pass CPU library checks, 2 pilot scenes pass stability"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -299,10 +299,18 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "5 skills approved, pick-and-place included; no complete experiment has run yet"
+   "line": "6 skills approved, pick-and-place included; trial job waits for one release-order fix; no complete experiment has run yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 19:23",
+   "text": "Independent review caught an ordering defect in the balance-check code: the gripper opened before support under the weight was confirmed. It is being fixed before the trial job is submitted."
+  },
+  {
+   "t": "11-15 19:19",
+   "text": "Auto-built scenes: the new export passes 5 of 5 scenes on two CPU library versions; the run on the target simulator libraries is next."
+  },
   {
    "t": "11-15 19:15",
    "text": "Lab execution was stopped before submitting by an identity check on its reference machine. Cause found: the machine is unchanged but its connection address moved. Corrected instructions sent; the trial job follows."
