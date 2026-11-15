@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 20:35",
+ "updated": "2026-11-15 20:40",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -179,7 +179,7 @@ window.STATUS = {
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Passes CPU library checks; target-simulator checks next",
+     "line": "Passes target-simulator library checks; in-simulator stability run queued",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -188,7 +188,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Re-exported with both collision shapes; passes CPU library checks; target-simulator checks next",
+     "line": "Re-exported with both collision shapes; passes target-simulator library checks; stability run queued",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -197,7 +197,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passes CPU library checks; target-simulator checks next",
+     "line": "Passes target-simulator library checks; in-simulator stability run queued",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -215,7 +215,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passes CPU library checks; target-simulator checks next",
+     "line": "Passes target-simulator library checks; in-simulator stability run queued",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -313,7 +313,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "One command from paper to scene, robot placed automatically; 19 papers in; 5 scenes pass CPU library checks, 2 pilot scenes pass stability"
+   "line": "One command from paper to scene, robot placed automatically; 19 papers in; 5 scenes pass target-simulator library checks, 2 pilot scenes pass stability"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -327,6 +327,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 20:18",
+   "text": "Auto-built scenes: all 5 pass the checks on the target simulator's CPU libraries. Next is the in-simulator run (materials, collision shapes, 600-step stability), queued for the idle diagnostic GPUs of the live session."
+  },
   {
    "t": "11-15 20:12",
    "text": "New-room test cases finished: 12 of 21 ran to completion, 7 timed out, 2 crashed at the first step. Start-up contacts between overlapping collision shapes are confirmed in the simulator for one instrument; removing the overlap on one of its six heads cleared 3 of its 18 unstable parts. Latching the glovebox doors cleared that instrument. No room has passed yet. Snapshots of all 18 scenes refreshed."
