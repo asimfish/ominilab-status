@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 01:55",
+ "updated": "2026-11-16 02:05",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -286,7 +286,7 @@ window.STATUS = {
      "tag": "Approved skill",
      "live": false,
      "status": "pass",
-     "line": "Approved for release from 1.5 mm above a table (5 complete passes); the retry job hit a software regression before any command, so nothing new observed",
+     "line": "Approved for release from 1.5 mm above a table (5 complete passes); in the retry job only the gripper warm-up ran, the trials were refused by a software regression",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -304,7 +304,7 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "First simulator run: steps 1–4 of 10 passed (pre-checks and taring); step 5 (pick up the weight) stopped in motion timing; fixes under way for a third run",
+     "line": "First simulator run: steps 1–4 of 10 reported passed by the executor but not yet confirmed by independent review (raw readings missing); step 5 stopped in motion timing; third run being prepared",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -359,7 +359,7 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. First simulator data for the 100 g balance check: steps 1–4 of 10 passed; the pick-up step, motion over the pan and pick-and-place all stopped on software issues, not physical failures. Third run approved after fixes"
+   "line": "6 skills approved. First simulator data for the 100 g balance check: steps 1–4 of 10 reported passed, not yet independently confirmed; pick-up, motion over the pan and pick-and-place stopped on software issues, with no physical failure found. Third run approved after fixes"
   },
   {
    "name": "Multi-room laboratory",
@@ -368,6 +368,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 01:52",
+   "text": "Correction after independent review of the retry job: the first 4 balance-check steps were reported as passed by the executing system, but the reviewer could not confirm them, because the raw force readings, taring session and mass read-back were not included in the evidence it received. Of its 18 criteria, 2 are confirmed, 0 are physical failures and 16 are not observable yet. Also corrected: the gripper open-and-close warm-up did run on the pick-and-place workers; the trials after it were refused before any command. Raw evidence for the reviewer is now required from every run."
+  },
   {
    "t": "11-16 01:50",
    "text": "First three rebuilt rooms pass the structure gate on every item: a weighing room (17 m²), a moisture and drying room (34 m²) and a thermal workcell (17 m²), each with full walls, roof, door, light fixtures on hangers, exit sign, extinguisher and waste station. They have not been rendered or run in the simulator yet, so appearance, stability and operation are still open."
