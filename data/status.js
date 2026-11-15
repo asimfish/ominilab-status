@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 17:08",
+ "updated": "2026-11-15 17:52",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
   "online": false,
   "expires": null,
-  "note": "No live session right now. The connection rehearsal passed all three fault drills. The next session and both prepared jobs are on hold: the relay machine has not answered since about 03:16 on 11-15."
+  "note": "No live session yet. The relay machine came back at 17:44 on 11-15; the next session is being prepared now (inputs upload, start-up check, then submission). It opens here when its connection is up."
  },
  "default_port": 18640,
  "groups": [
@@ -256,7 +256,7 @@ window.STATUS = {
      "live": false,
      "status": "running",
      "line": "Formal run request ready (37 calls); waits for the trial job",
-     "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is ready to submit once the relay machine is reachable again."
+     "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
      "id": "lab_moisture",
@@ -303,6 +303,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 17:48",
+   "text": "Relay machine back after a restart. The base-scene agent is submitting the live debug session with its 21 test cases."
+  },
   {
    "t": "11-15 17:06",
    "text": "Still waiting on the relay machine (unreachable since 03:16). All prepared jobs are ready to submit when it returns."
