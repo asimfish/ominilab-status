@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-15 20:05",
+ "updated": "2026-11-15 20:35",
  "tz": "UTC+8",
- "snapshots_taken": "2026-11-08",
+ "snapshots_taken": "11-15 19:57",
  "session": {
   "online": true,
   "expires": "11-15 23:26",
@@ -80,7 +80,7 @@
      "tag": "New",
      "live": true,
      "status": "fail",
-     "line": "98 unstable parts; likely cause found for the main instrument",
+     "line": "98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
@@ -110,7 +110,7 @@
      "tag": "New",
      "live": true,
      "status": "fail",
-     "line": "Simulator still crashes at step 1",
+     "line": "Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_spine_analysis.jpg"
     },
@@ -120,7 +120,7 @@
      "tag": "New",
      "live": true,
      "status": "fail",
-     "line": "Crashes at step 1 because of one instrument",
+     "line": "Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_racetrack.jpg"
     },
@@ -130,7 +130,7 @@
      "tag": "New",
      "live": true,
      "status": "fail",
-     "line": "22 unstable parts; cause analysis done",
+     "line": "22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_inert_suite.jpg"
     },
@@ -142,7 +142,8 @@
      "status": "pending",
      "line": "Operation station in the live viewer; no stability result recorded here yet",
      "details": "",
-     "scene": "round28_centrifuge"
+     "scene": "round28_centrifuge",
+     "img": "assets/snapshots/station_centrifuge.jpg"
     },
     {
      "id": "station_oven",
@@ -152,7 +153,8 @@
      "status": "pending",
      "line": "Operation station in the live viewer; no stability result recorded here yet",
      "details": "",
-     "scene": "round28_oven"
+     "scene": "round28_oven",
+     "img": "assets/snapshots/station_oven.jpg"
     }
    ]
   },
@@ -286,7 +288,8 @@
      "status": "pending",
      "line": "Plan compiled (6 steps, 14 calls): 7 calls covered by approved skills, 7 need new skills (pan transfer, lid, instrument readout)",
      "details": "",
-     "scene": "round28_experiment13"
+     "scene": "round28_experiment13",
+     "img": "assets/snapshots/lab_moisture.jpg"
     },
     {
      "id": "lab_main",
@@ -305,7 +308,7 @@
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. Live session running until 23:26 with 21 test cases for the new rooms"
+   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. First 21 test cases done (12 complete, 7 timed out, 2 crashed); a second batch is being prepared. Live session until 23:26"
   },
   {
    "name": "Auto-built scenes",
@@ -324,6 +327,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 20:12",
+   "text": "New-room test cases finished: 12 of 21 ran to completion, 7 timed out, 2 crashed at the first step. Start-up contacts between overlapping collision shapes are confirmed in the simulator for one instrument; removing the overlap on one of its six heads cleared 3 of its 18 unstable parts. Latching the glovebox doors cleared that instrument. No room has passed yet. Snapshots of all 18 scenes refreshed."
+  },
   {
    "t": "11-15 20:00",
    "text": "Disk space on the agents' machine fell below the stop line because of another project's data; three agents paused, then resumed under a narrower rule that still allows small control files. The trial job is not submitted yet."
