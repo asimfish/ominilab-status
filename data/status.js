@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 21:20",
+ "updated": "2026-11-15 21:25",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -223,8 +223,8 @@ window.STATUS = {
      "title": "13 more source papers",
      "tag": "From paper",
      "live": false,
-     "status": "pending",
-     "line": "19 papers in the pipeline; none passes full operation yet",
+     "status": "partial",
+     "line": "19 items run: 8 pass library checks (3 new scenes), 11 wait for instrument assets; no room shell yet",
      "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). The pipeline now refuses to overwrite an earlier scene when its inputs change. About 300 native checks are still open."
     }
    ]
@@ -322,7 +322,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "One command from paper to scene, robot placed automatically; 19 papers in; 5 scenes pass target-simulator library checks, 2 pilot scenes pass stability"
+   "line": "One command from paper to scene, robot placed automatically; of 19 items, 8 pass target-simulator library checks and 11 wait for instrument assets; scenes are a bench without a room, so none passes the new structure gate yet"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -341,6 +341,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 21:21",
+   "text": "Auto-built scenes: all 19 pipeline items were run on the reference machine. 8 now pass the target-simulator library checks (3 new: marinade titration, buckwheat phenols, shrimp moisture); the other 11 wait for instrument assets that are not yet published. None has a room shell yet, so none passes the new structure gate."
+  },
   {
    "t": "11-15 21:10",
    "text": "Lab-execution trial job submitted (one request, 4 GPUs, low priority) after all pre-checks passed, including 1,503 tests on the target simulator libraries. It runs the timing check, motion over the balance pan, pick-and-place, and the first 10 steps of the 100 g balance check with the corrected release order."
