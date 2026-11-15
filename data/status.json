@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15 23:30",
+ "updated": "2026-11-15 23:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -20,7 +20,7 @@
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test",
+     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
      "details": "A three-neck flask that tipped at step 7 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l0.jpg"
     },
@@ -30,7 +30,7 @@
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test",
+     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
      "details": "A pestle that tipped at step 5 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l1.jpg"
     },
@@ -40,7 +40,7 @@
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test",
+     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
      "details": "Holds the pilot balance station. A 50 ml beaker standing on a 0.4 mm contact point got a 1 mm flat foot; the dispenser, oven and titrator repairs hold.",
      "img": "assets/snapshots/legacy_l2.jpg"
     },
@@ -50,7 +50,7 @@
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test",
+     "line": "Passes the strict 600-step stability test; reference for the new structure gate, re-grading in progress",
      "details": "A free-standing vessel that tipped at step 1 is fixed. Full sweep: 0 blockers.",
      "img": "assets/snapshots/legacy_l3.jpg"
     },
@@ -60,7 +60,7 @@
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict 600-step stability test",
+     "line": "Passes the strict 600-step stability test; weighing cell in an oversized room, compact shell planned",
      "details": "Two sample objects had been placed 7 mm above their support; with a 1 mm gap the room passes.",
      "img": "assets/snapshots/legacy_l4.jpg"
     },
@@ -70,7 +70,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. 87 unstable parts; cause analysis done, fixes prepared",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Nearly all root parts start with overlapping collision shapes; fixes are prepared for the next run.",
      "img": "assets/snapshots/room_double_island.jpg"
     },
@@ -80,7 +80,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. 98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
@@ -90,7 +90,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. 12 unstable parts; one cause matched to a starting overlap",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "A desorber lid starts 25.422 mm inside a neighbouring tube and jumps 25.422 mm on start-up. 6 other parts are robot gripper parts whose source model is not available locally.",
      "img": "assets/snapshots/room_linear_flow.jpg"
     },
@@ -100,7 +100,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. 23 unstable parts; cause analysis done",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive. Two valves turn to their 180° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_l_suite.jpg"
     },
@@ -110,7 +110,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_spine_analysis.jpg"
     },
@@ -120,7 +120,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_racetrack.jpg"
     },
@@ -130,7 +130,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room; building shell now checks out, other gates open. 22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
+     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_inert_suite.jpg"
     },
@@ -140,7 +140,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
+     "line": "Draft station scene without a complete shell; to be merged into a rebuilt room",
      "details": "",
      "scene": "round28_centrifuge",
      "img": "assets/snapshots/station_centrifuge.jpg"
@@ -151,7 +151,7 @@
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
+     "line": "Draft station scene without a complete shell; to be merged into a rebuilt room",
      "details": "",
      "scene": "round28_oven",
      "img": "assets/snapshots/station_oven.jpg"
@@ -169,7 +169,7 @@
      "tag": "From protocol",
      "live": false,
      "status": "pass",
-     "line": "Stability test passed; used for the 100 g pilot",
+     "line": "Stability test passed; bare bench without a room, shell version first in the rebuild order",
      "details": "Robot bench, robot, balance and reference weights, empty pan with pan lock. Passes the shared support rules (54 checks, 0 fail) and the 600-step stability test. The 100 g pilot package passes its 109 checks.",
      "img": "assets/snapshots/auto_balance_routine_check.jpg"
     },
@@ -286,7 +286,7 @@
      "tag": "Full experiment",
      "live": false,
      "status": "pending",
-     "line": "Plan compiled (6 steps, 14 calls): 7 calls covered by approved skills, 7 need new skills (pan transfer, lid, instrument readout)",
+     "line": "Station has no ceiling or lighting yet; second in the rebuild order. Plan compiled (14 calls): 7 covered by approved skills, 7 need new skills",
      "details": "",
      "scene": "round28_experiment13",
      "img": "assets/snapshots/lab_moisture.jpg"
@@ -317,7 +317,7 @@
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "The 5 original scenes pass the strict stability test and are the reference standard. All 18 scenes audited: station scenes lack a complete shell; the 7 new rooms are drafts with repair candidates (roof, lights, materials) not yet run in the simulator. Five-gate acceptance is in force"
+   "line": "All 18 scenes audited against the new structure gate; none passes yet. The 5 original scenes need declarations and evidence, not geometry; the 7 new rooms and the station scenes will be rebuilt on a shared room kit, starting with the weighing, moisture and oven scenes"
   },
   {
    "name": "Auto-built scenes",
@@ -341,6 +341,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 23:41",
+   "text": "Structure gate defined with measurable rules, calibrated against the four original labs: closed shell with door leaves, a reviewed list of facilities per room type, floor use between 15% and 40% (the original labs measure 24–30%, the new rooms 3.6–8.2%), one visible light fixture per 10 square metres, every object supported. Rebuild approved for the shared room kit and the first three scenes; next GPU job will be batch-only."
+  },
   {
    "t": "11-15 23:26",
    "text": "Live debug session ended on schedule (19:37–23:26). Results: 21 test cases, 18 scene snapshots, and the owner review that led to the new acceptance gates."
