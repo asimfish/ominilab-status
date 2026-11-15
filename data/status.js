@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 20:40",
+ "updated": "2026-11-15 20:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -67,80 +67,80 @@ window.STATUS = {
     {
      "id": "room_double_island",
      "title": "Double-island wet-chemistry hall",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "87 unstable parts; cause analysis done, fixes prepared",
+     "line": "Draft room, not structurally complete. 87 unstable parts; cause analysis done, fixes prepared",
      "details": "By evidence: 42 are cable links held by constrained joints, 40 have a position drive but still move (2 of them, a micropipette button and dial, have a drive target that differs from the starting pose), 5 lack a restoring drive. Nearly all root parts start with overlapping collision shapes; fixes are prepared for the next run.",
      "img": "assets/snapshots/room_double_island.jpg"
     },
     {
      "id": "room_u_workcell",
      "title": "U-shaped bio / electrochemistry cell",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
+     "line": "Draft room, not structurally complete. 98 unstable parts; start-up overlap confirmed as the cause for the main instrument; fix proven on 1 of 6 heads",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
     {
      "id": "room_linear_flow",
      "title": "Continuous-flow corridor",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "12 unstable parts; one cause matched to a starting overlap",
+     "line": "Draft room, not structurally complete. 12 unstable parts; one cause matched to a starting overlap",
      "details": "A desorber lid starts 25.422 mm inside a neighbouring tube and jumps 25.422 mm on start-up. 6 other parts are robot gripper parts whose source model is not available locally.",
      "img": "assets/snapshots/room_linear_flow.jpg"
     },
     {
      "id": "room_l_suite",
      "title": "L-shaped digestion / separation suite",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "23 unstable parts; cause analysis done",
+     "line": "Draft room, not structurally complete. 23 unstable parts; cause analysis done",
      "details": "21 have a position drive but still move, 1 has a non-zero speed target, 1 lacks a restoring drive. Two valves turn to their 180° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_l_suite.jpg"
     },
     {
      "id": "room_spine_analysis",
      "title": "Six-bay analysis centre",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
+     "line": "Draft room, not structurally complete. Crashes at step 1; narrowed to two groups of 7 instruments; single-instrument runs next",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_spine_analysis.jpg"
     },
     {
      "id": "room_racetrack",
      "title": "Ring logistics hall",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
+     "line": "Draft room, not structurally complete. Crash not reproduced with the suspect instrument split in four; those runs timed out before finishing",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_racetrack.jpg"
     },
     {
      "id": "room_inert_suite",
      "title": "Inert multi-room suite",
-     "tag": "New",
+     "tag": "Draft",
      "live": true,
      "status": "fail",
-     "line": "22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
+     "line": "Draft room, not structurally complete. 22 unstable parts; the glovebox passes alone with its doors latched; room re-test next",
      "details": "14 have a position drive but still move, 6 are robot gripper parts whose source model is not available locally, 2 lack a restoring drive. The two glovebox doors swing to their 90° stop on the first step; a latch test with a control is prepared.",
      "img": "assets/snapshots/room_inert_suite.jpg"
     },
     {
      "id": "station_centrifuge",
      "title": "Centrifuge station",
-     "tag": "Station",
+     "tag": "Draft",
      "live": true,
-     "status": "pending",
-     "line": "Operation station in the live viewer; no stability result recorded here yet",
+     "status": "fail",
+     "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
      "details": "",
      "scene": "round28_centrifuge",
      "img": "assets/snapshots/station_centrifuge.jpg"
@@ -148,10 +148,10 @@ window.STATUS = {
     {
      "id": "station_oven",
      "title": "Oven station",
-     "tag": "Station",
+     "tag": "Draft",
      "live": true,
-     "status": "pending",
-     "line": "Operation station in the live viewer; no stability result recorded here yet",
+     "status": "fail",
+     "line": "Draft station scene: open shell without a ceiling; to be rebuilt on the room kit",
      "details": "",
      "scene": "round28_oven",
      "img": "assets/snapshots/station_oven.jpg"
@@ -308,7 +308,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "All 5 original scenes pass the strict stability test; none of the 7 new rooms yet. First 21 test cases done (12 complete, 7 timed out, 2 crashed); a second batch is being prepared. Live session until 23:26"
+   "line": "The 5 original scenes pass the strict stability test and are the reference standard. The 7 new rooms and the station scenes are drafts: too rough to accept, some without a ceiling. A five-gate acceptance (structure, appearance, stability, operable, task-ready) and a shared room kit are being set up"
   },
   {
    "name": "Auto-built scenes",
@@ -327,6 +327,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 20:45",
+   "text": "Owner review of the live session: apart from the five original scenes, the rooms are too rough and some have no ceiling. Acceptance now has five gates in order: structure complete, appearance (with owner sign-off), physics stability, operable, task-ready. All 18 scenes are being audited against the first gate, and a rebuild on a shared room kit is being planned."
+  },
   {
    "t": "11-15 20:18",
    "text": "Auto-built scenes: all 5 pass the checks on the target simulator's CPU libraries. Next is the in-simulator run (materials, collision shapes, 600-step stability), queued for the idle diagnostic GPUs of the live session."
