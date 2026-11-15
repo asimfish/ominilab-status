@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 02:05",
+ "updated": "2026-11-16 05:05",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -286,7 +286,7 @@ window.STATUS = {
      "tag": "Approved skill",
      "live": false,
      "status": "pass",
-     "line": "Approved for release from 1.5 mm above a table (5 complete passes); in the retry job only the gripper warm-up ran, the trials were refused by a software regression",
+     "line": "Approved for release from 1.5 mm above a table. Third run: lift and hold fine (slip under 0.07 mm); one trial stopped by a holding-time limit, one by a log-size limit after placing within 0.35 mm",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -294,8 +294,8 @@ window.STATUS = {
      "title": "Plan-driven motion over the balance pan",
      "tag": "Pilot station",
      "live": false,
-     "status": "blocked",
-     "line": "Refused at the first step by a stillness check set tighter than numerical noise; check redefined, re-run pending",
+     "status": "partial",
+     "line": "All three steps completed in the simulator (about 1 mm error, 39 mm minimum clearance, no unexpected contact); awaiting independent review before approval",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -304,7 +304,7 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "First simulator run: steps 1–4 of 10 reported passed by the executor but not yet confirmed by independent review (raw readings missing); step 5 stopped in motion timing; third run being prepared",
+     "line": "Steps 1–4 of 10 reported passed with raw readings (review pending); step 5 refused: motion timing turned a 6.9 s path into 33.7 s; timing method being corrected",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -359,7 +359,7 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. First simulator data for the 100 g balance check: steps 1–4 of 10 reported passed, not yet independently confirmed; pick-up, motion over the pan and pick-and-place stopped on software issues, with no physical failure found. Third run approved after fixes"
+   "line": "6 skills approved. Third simulator run: motion over the balance pan completed all three steps; pick-and-place lifted and held but stopped on time and log limits; balance check stops at picking up the weight because of a motion-timing fault. Independent review pending; no complete experiment yet"
   },
   {
    "name": "Multi-room laboratory",
@@ -368,6 +368,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 04:56",
+   "text": "Third lab-execution run gave the first substantial simulator results (all still to be confirmed by independent review). Motion over the balance pan: all three steps completed, about 1 mm position error, at least 39 mm clearance, no unexpected contact. Both pick-and-place trials lifted and held the weight with 0.04–0.06 mm slip; one then hit a 60-second holding limit before placing, the other placed within 0.35 mm and then hit a log-size limit while retreating. Balance check: steps 1–4 reported passed, this time with raw force and mass readings; step 5 (pick up the weight) was refused again because motion timing stretched a 6.9-second path to 33.7 seconds. Recording overhead fell from 7.2 to 2.5 times real time."
+  },
   {
    "t": "11-16 01:52",
    "text": "Correction after independent review of the retry job: the first 4 balance-check steps were reported as passed by the executing system, but the reviewer could not confirm them, because the raw force readings, taring session and mass read-back were not included in the evidence it received. Of its 18 criteria, 2 are confirmed, 0 are physical failures and 16 are not observable yet. Also corrected: the gripper open-and-close warm-up did run on the pick-and-place workers; the trials after it were refused before any command. Raw evidence for the reviewer is now required from every run."
