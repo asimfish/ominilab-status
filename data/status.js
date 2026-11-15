@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-15 20:50",
+ "updated": "2026-11-15 20:55",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -300,6 +300,15 @@ window.STATUS = {
      "line": "Room is stable; no robot run here yet",
      "details": "The main lab passed the 600-step stability test on 11-07. Robot work moves here after the fixture runs pass.",
      "img": "assets/snapshots/lab_main.jpg"
+    },
+    {
+     "id": "lab_multiroom",
+     "title": "Multi-room laboratory",
+     "tag": "Goal",
+     "live": false,
+     "status": "pending",
+     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5: floor plan spec and feasibility of joining the five original rooms with a corridor",
+     "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
   }
@@ -324,9 +333,18 @@ window.STATUS = {
    "name": "Lab execution",
    "status": "partial",
    "line": "6 skills approved, pick-and-place included (placing releases 1.5 mm above the surface); trial job waits for final checks; no complete experiment has run yet"
+  },
+  {
+   "name": "Multi-room laboratory",
+   "status": "pending",
+   "line": "Goal set 11-15. Design stage: floor plan spec, room connectivity and robot routes; no building assembled yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 20:52",
+   "text": "New project goal: a large multi-room laboratory where the robot runs experiments across rooms. Scene specs become two-level (rooms, then a floor plan with corridors and doors); the first version is proposed as the five original rooms joined by a corridor, feasibility under review."
+  },
   {
    "t": "11-15 20:45",
    "text": "Owner review of the live session: apart from the five original scenes, the rooms are too rough and some have no ceiling. Acceptance now has five gates in order: structure complete, appearance (with owner sign-off), physics stability, operable, task-ready. All 18 scenes are being audited against the first gate, and a rebuild on a shared room kit is being planned."
