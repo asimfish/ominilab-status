@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 08:36",
+ "updated": "2026-11-15 17:08",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
   "online": false,
   "expires": null,
-  "note": "No live session right now. The connection rehearsal passed all three fault drills (crash, low disk, late start). The next session is on hold: the relay machine stopped answering at about 03:16."
+  "note": "No live session right now. The connection rehearsal passed all three fault drills. The next session and both prepared jobs are on hold: the relay machine has not answered since about 03:16 on 11-15."
  },
  "default_port": 18640,
  "groups": [
@@ -303,6 +303,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 17:06",
+   "text": "Still waiting on the relay machine (unreachable since 03:16). All prepared jobs are ready to submit when it returns."
+  },
   {
    "t": "11-15 08:32",
    "text": "New rooms: 40 of the 41 root parts start with overlapping collision shapes; for 7 the overlap depth matches the start-up jump to five digits."
