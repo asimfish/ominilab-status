@@ -1,11 +1,11 @@
 window.STATUS = {
- "updated": "2026-11-15 17:52",
+ "updated": "2026-11-15 19:20",
  "tz": "UTC+8",
  "snapshots_taken": "2026-11-08",
  "session": {
   "online": false,
   "expires": null,
-  "note": "No live session yet. The relay machine came back at 17:44 on 11-15; the next session is being prepared now (inputs upload, start-up check, then submission). It opens here when its connection is up."
+  "note": "No live session yet. The base-scene agent is sealing inputs and running its start-up check before submitting the session; it opens here when its connection is up."
  },
  "default_port": 18640,
  "groups": [
@@ -166,7 +166,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Collision shapes added from the source meshes; re-export next",
+     "line": "Re-exported with both collision shapes; support check 116 pass, 0 fail; simulator checks waiting",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -246,7 +246,7 @@ window.STATUS = {
      "tag": "Pilot station",
      "live": false,
      "status": "blocked",
-     "line": "Refused by a safety check; fix ready for the next run",
+     "line": "Refused by a safety check; fix ready, trial job about to be submitted",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -303,6 +303,14 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-15 19:15",
+   "text": "Lab execution was stopped before submitting by an identity check on its reference machine. Cause found: the machine is unchanged but its connection address moved. Corrected instructions sent; the trial job follows."
+  },
+  {
+   "t": "11-15 19:09",
+   "text": "Auto-built titration scene re-exported with both functional collision shapes: support check 116 pass, 9 warnings, 0 fail."
+  },
   {
    "t": "11-15 17:48",
    "text": "Relay machine back after a restart. The base-scene agent is submitting the live debug session with its 21 test cases."
