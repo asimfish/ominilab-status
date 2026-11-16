@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 21:45",
+ "updated": "2026-11-16 22:00",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -162,7 +162,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed; held still for 600 simulator steps; pictures came out too dark, lighting being corrected",
+     "line": "Structure gate passed; held still for 600 steps; still no picture: the first frame took longer than the wait allowed, wait fixed, one more run needed",
      "details": ""
     },
     {
@@ -171,7 +171,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "fail",
-     "line": "Held still for 600 steps, but the moisture analyser has 15 internal overlaps: structure gate reopened; fix prepared, picture was black",
+     "line": "Fails the start-up contact check: a large persistent impulse inside the moisture analyser. Structure gate stays reopened; no picture",
      "details": ""
     },
     {
@@ -180,7 +180,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed; held still for 600 simulator steps; pictures came out too dark, lighting being corrected",
+     "line": "Structure gate passed; held still for 600 steps; still no picture: the first frame took longer than the wait allowed, wait fixed, one more run needed",
      "details": ""
     }
    ]
@@ -251,7 +251,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "19 items: 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause (gripper start state), fix queued; none has a room shell yet",
+     "line": "19 items: 17 pass library checks (12 distinct scenes). In the simulator the shared gripper fault is gone; 8 scenes still fail on individual instruments. None has a room shell yet",
      "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). The pipeline now refuses to overwrite an earlier scene when its inputs change. About 300 native checks are still open."
     }
    ]
@@ -285,8 +285,8 @@ window.STATUS = {
      "title": "Pick and place a 100 g weight",
      "tag": "Approved skill",
      "live": false,
-     "status": "pass",
-     "line": "Approved for release from 1.5 mm above a table. Third run: lift and hold fine (slip under 0.07 mm); one trial stopped by a holding-time limit, one by a log-size limit after placing within 0.35 mm",
+     "status": "partial",
+     "line": "Approved with the old motion timing (release from 1.5 mm). With the corrected timing: 2 complete passes in the fourth run (3 confirmed passes needed to extend the approval); old timing stopped at the holding-time limit",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -294,8 +294,8 @@ window.STATUS = {
      "title": "Plan-driven motion over the balance pan",
      "tag": "Pilot station",
      "live": false,
-     "status": "running",
-     "line": "Fourth run in progress: 2 more independent runs plus an obstacle test, now recording clearance and bystander tracking",
+     "status": "partial",
+     "line": "Three complete three-step runs so far plus a correctly refused obstacle test, per the executor; independent review of the last two pending before approval",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -303,8 +303,8 @@ window.STATUS = {
      "title": "Experiment 12: 100 g balance routine check",
      "tag": "Full experiment",
      "live": false,
-     "status": "running",
-     "line": "Steps 1–4 of 10 independently confirmed; fourth run in progress with the corrected motion timing, aiming to reach step 10",
+     "status": "partial",
+     "line": "Steps 1–4 of 10 confirmed. Step 5 now gets past the timing fault and reaches the pre-grasp position, then is refused: the surface supporting the weight was not observed. Next run targets this",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -343,13 +343,13 @@ window.STATUS = {
  "summary": [
   {
    "name": "Goal A · First complete experiment by the robot",
-   "status": "running",
-   "line": "100 g balance check: 4 of 37 steps independently confirmed. Fourth simulator run in progress to carry it through step 10; the full 37-step run follows directly, without waiting for another approval"
+   "status": "partial",
+   "line": "100 g balance check: 4 of 37 steps confirmed. In the fourth run step 5 got past the timing fault and reached the pre-grasp position, then was refused because the support under the weight was not observed. The next run targets that single point; no approval wait"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed. Pictures failed (too dark); a render retest is about to run. To finish, the balance check must also run inside this room and the owner must sign off the pictures"
+   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture: the render path is proven on an original lab, but the new rooms' first frame took longer than the wait allowed. Fixed on CPU; one more short run needed"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -369,7 +369,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Three rebuilt rooms held still for 600 simulator steps; two still pass the structure gate, the moisture room was sent back for internal overlaps. Room pictures failed (too dark or black), so appearance cannot be judged yet; a render retest is approved. The 4 original labs still need add-on repairs; the 7 rough rooms await rebuilding"
+   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate, the moisture room fails its start-up contact check. Render path proven on an original lab, but the rebuilt rooms still have no picture (first frame too slow for the wait; fixed, to be re-run). Draft assembly of the five-room building is next"
   },
   {
    "name": "Auto-built scenes",
@@ -383,11 +383,19 @@ window.STATUS = {
   },
   {
    "name": "Lab execution",
-   "status": "running",
-   "line": "6 skills approved. Balance check: steps 1–4 of 10 independently confirmed. Fourth simulator run in progress (balance check to step 10, motion over the pan, pick-and-place with old and new motion timing); no complete experiment yet"
+   "status": "partial",
+   "line": "6 skills approved. Fourth run: pick-and-place completed twice with the corrected motion timing; motion over the pan completed two more runs and correctly refused the obstacle test; the balance check stops at step 5 on an unobserved support surface. Independent review pending"
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 21:54",
+   "text": "Fourth lab-execution run finished (results as reported by the executor, independent review pending). Pick-and-place with the corrected motion timing completed twice from start to finish; with the old timing both attempts again stopped at the holding-time limit. Motion over the balance pan: two more complete three-step runs, and the obstacle test was correctly refused with no arm movement. Balance check: step 5 got past the earlier timing fault, opened the gripper and moved to the pre-grasp position, then was refused because the supporting surface under the weight was not observed; steps 6–10 did not run."
+  },
+  {
+   "t": "11-16 21:50",
+   "text": "Base-scene retest finished. The original-lab control picture came out clear through the same render path, so the render path works. The rebuilt rooms produced no picture: their first frame took 153–188 seconds, longer than the 120-second wait; the wait is fixed and needs one more run. The moisture room fails its start-up contact check (a large persistent impulse inside the moisture analyser), so it stays sent back. Auto-built scenes no longer share the gripper fault; eight still fail on individual instruments (oven door, a sliding mechanism, instrument feet, sample covers)."
+  },
   {
    "t": "11-16 21:39",
    "text": "Protocol steps sorted into three kinds for all 19 items: from the paper, from a standard, and project handling steps. Result: 10 protocols are fully sourced (one of them, the balance check, with project handling steps), 7 have real gaps where the paper leaves out something that affects the measurement (for example sample mass), and 2 only lack an instrument cleaning procedure. For the moisture experiment the missing pieces are being looked up in the instrument maker's operating instructions."
