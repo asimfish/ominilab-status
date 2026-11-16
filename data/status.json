@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17 01:50",
+ "updated": "2026-11-17 02:12",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -346,12 +346,12 @@
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. The step-5 support-surface fault is fixed on CPU and all pre-submission checks for the fifth run pass; submission paused on a connection-handling fault in the submit tool, which is being fixed. No GPU time used yet for this run. Target: the first 10 steps, then the full 37"
+   "line": "100 g balance check: 4 of 37 steps confirmed. The fifth run was submitted at 01:51 and the platform created the job at 02:09; it is waiting for GPUs. It targets the first 10 steps; if they pass, the full 37-step run follows without a further approval wait"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). The picture job was submitted at 00:31 but the platform has not started it yet (over an hour in its queue). Fit-out to the original labs' level is still to do"
+   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). Still no properly lit picture: the picture job submitted at 00:31 hung inside the platform (accepted, never created), so it is being resubmitted as a new job. Fit-out to the original labs' level is still to do"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -371,7 +371,7 @@
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate. Still no properly lit picture of a rebuilt room: the job for it is waiting in the platform queue. The draft building's assembly fault (bench left behind) is fixed and under re-verification; results from the queued job apply to the old draft and will be labelled diagnostic only"
+   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate. The picture job hung on the platform side and is being resubmitted, this time with the corrected building. Current honest state, as told to the project owner: rebuilt rooms have shell and facilities but are not yet realistic enough; existing renders are under-exposed"
   },
   {
    "name": "Auto-built scenes",
@@ -386,10 +386,14 @@
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Fourth run reviewed: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. Fifth run: all checks pass (135 launch-configuration replays), submission held by a connection fault in the submit tool, being fixed"
+   "line": "6 skills approved. Fourth run reviewed: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. Fifth run: job created at 02:09, waiting for GPUs (4 low-priority cards, 75 minutes at most)"
   }
  ],
  "timeline": [
+  {
+   "t": "11-17 02:09",
+   "text": "Fifth run of the balance check is now a job on the platform, waiting for GPUs. Separately, the base-scene picture job from 00:31 turned out to be stuck inside the platform: its creation request has shown no progress for 100 minutes while a later request completed in 18. It will be resubmitted as a new job that also carries the corrected building."
+  },
   {
    "t": "11-17 01:31",
    "text": "Correction to the multi-room draft: the building check reported the weighing room's weights 0.9 m above the floor. Cause: the bench was flagged to ignore parent transforms, so the assembler moved the room but left the bench behind. Assembler fixed, with a new check that static parts move with their room; the building is being rebuilt and re-verified. The earlier draft is kept unchanged and counts only as a diagnostic."
