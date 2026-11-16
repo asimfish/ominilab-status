@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 21:00",
+ "updated": "2026-11-16 21:15",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -294,8 +294,8 @@ window.STATUS = {
      "title": "Plan-driven motion over the balance pan",
      "tag": "Pilot station",
      "live": false,
-     "status": "partial",
-     "line": "Run 1 endpoints and contacts confirmed, clearance and bystander tracking not yet provable; fourth run records them and adds 2 runs plus an obstacle test",
+     "status": "running",
+     "line": "Fourth run in progress: 2 more independent runs plus an obstacle test, now recording clearance and bystander tracking",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -303,8 +303,8 @@ window.STATUS = {
      "title": "Experiment 12: 100 g balance routine check",
      "tag": "Full experiment",
      "live": false,
-     "status": "partial",
-     "line": "Steps 1–4 of 10 independently confirmed; step 5 fixed on CPU (6.97 s motion); fourth run approved to go through to step 10",
+     "status": "running",
+     "line": "Steps 1–4 of 10 independently confirmed; fourth run in progress with the corrected motion timing, aiming to reach step 10",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -354,12 +354,12 @@ window.STATUS = {
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "11 task graphs and 130 templates compiled. A source audit of the underlying protocols passes 3 of the 11 (balance check, titration, one milling paper), finds 1 that merged procedures, and cannot yet judge 7; unverified steps are barred from dispatch"
+   "line": "11 task graphs, 130 task steps. After the protocol source audit, 43 steps (three fully verified experiments) clear the source check and 87 are held back; no cross-room experiment is dispatchable yet"
   },
   {
    "name": "Lab execution",
-   "status": "partial",
-   "line": "6 skills approved. Balance check: steps 1–4 of 10 independently confirmed; the pick-up fault is fixed on CPU. Motion over the pan: first run partly confirmed. Fourth simulator run approved; no complete experiment yet"
+   "status": "running",
+   "line": "6 skills approved. Balance check: steps 1–4 of 10 independently confirmed. Fourth simulator run in progress (balance check to step 10, motion over the pan, pick-and-place with old and new motion timing); no complete experiment yet"
   },
   {
    "name": "Multi-room laboratory",
@@ -368,6 +368,14 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 21:12",
+   "text": "Task planning now carries the protocol audit: of 130 task steps, 83 trace to a verified source, 10 belong to a protocol that merged procedures, 37 are unjudged. Counting whole experiments, 87 of 130 steps are held back; only the three fully verified experiments (43 steps) clear this check. No cross-room experiment can be dispatched yet. A written limit now states what a completed balance check may and may not be claimed to show."
+  },
+  {
+   "t": "11-16 20:55",
+   "text": "Fourth lab-execution run submitted and running; its first stage (240 measured simulator steps) completed. The base-scene retest passed its start-up checks and platform admission and is about to be submitted."
+  },
   {
    "t": "11-16 20:55",
    "text": "Protocol audit of all 19 pipeline items with the two new checks: 3 pass (the balance check, titration and one milling paper), 3 took steps from outside the paper's own methods, 2 merged separate procedures, and 11 cannot be judged yet, mostly because only a web-page copy of the paper is available. The first cross-room candidate was one of the merged ones and is withdrawn. Structured originals are now being fetched and the affected protocols re-extracted."
