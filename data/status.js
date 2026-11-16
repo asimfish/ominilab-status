@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 23:25",
+ "updated": "2026-11-16 23:45",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -217,7 +217,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Built as a full room by one command: 22 of 23 structure checks pass; 12 overlaps remain between moving parts and their guides, being re-judged under the refined rule",
+     "line": "Built as a full room by one command: 22 of 23 structure checks pass; 2 overlaps remain (a piston in a part modelled without a bore), a real asset fault awaiting the asset owner",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -356,7 +356,7 @@ window.STATUS = {
   {
    "name": "Goal C · Second experiment, taken from a paper",
    "status": "pending",
-   "line": "Moisture analysis: its room now passes all 23 structure checks on CPU after filtering collisions between rigidly fixed instrument parts; simulator confirmation is the next step. Sample mass and handling steps are sourced from the maker's instructions. 7 of its 14 task steps still lack robot skills"
+   "line": "Moisture analysis: its room passes all 23 structure checks on CPU (simulator confirmation pending). Now being prepared: a handling concept with a handled sample carrier the robot can grip, the pilot room containing it, and the task package for planning. 7 of 14 task steps still lack robot skills"
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
@@ -366,7 +366,7 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "One command produces three room-shelled scenes; all pass support and library checks. Structure gate on CPU: weighing room passes, moisture room passes pending simulator confirmation, titration room has 12 guide-related overlaps being re-judged. Protocol extraction is still agent-drafted and checked"
+   "line": "One command produces three room-shelled scenes; all pass support and library checks. Structure gate on CPU: weighing room passes, moisture room passes pending simulator confirmation, titration room is one check short (2 overlaps from an asset modelled without a bore). Protocol extraction is still agent-drafted and checked"
   },
   {
    "name": "Base scenes",
@@ -390,6 +390,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 23:36",
+   "text": "Titration room: the gantry-on-rails overlaps qualified under the refined rule, leaving 2 of the original 58 pairs. Those two are a piston inside a part that the source model draws as a solid cylinder with no bore, so they stay as a real asset fault and the titration room stays one check short. Work moves to the moisture experiment: a handling concept in which the robot places a handled sample carrier onto the analyser, with the lid and measurement run by the instrument program."
+  },
   {
    "t": "11-16 23:18",
    "text": "Instrument-internal overlaps handled by filtering collisions only between parts that are rigidly fixed to each other: 46 of 58 overlapping pairs in three instruments qualified. The moisture room now passes all 23 structure checks on CPU; this stands only if the simulator shows no abnormal start-up contact. The titration room has 12 pairs left, all between a moving part and its guide (a gantry on its rails, a piston in its cylinder); the rule was refined to cover guides and those pairs are being re-judged."
