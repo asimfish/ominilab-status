@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 22:40",
+ "updated": "2026-11-16 22:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -162,8 +162,9 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed; held still for 600 steps; still no picture: the first frame took longer than the wait allowed, wait fixed, one more run needed",
-     "details": ""
+     "line": "Structure gate and 600-step stability passed. Preview only: this picture is a too-dark render brightened for viewing, not an accepted image. Walls and fit-out are still bare compared with the original labs; lighting being recalibrated",
+     "details": "",
+     "img": "assets/snapshots/rebuilt_balance.jpg"
     },
     {
      "id": "rebuilt_moisture",
@@ -180,8 +181,9 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed; held still for 600 steps; still no picture: the first frame took longer than the wait allowed, wait fixed, one more run needed",
-     "details": ""
+     "line": "Structure gate and 600-step stability passed. Preview only: a too-dark render brightened for viewing, not an accepted image. Fit-out still bare compared with the original labs; lighting being recalibrated",
+     "details": "",
+     "img": "assets/snapshots/rebuilt_thermal.jpg"
     }
    ]
   },
@@ -349,7 +351,7 @@ window.STATUS = {
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture (first frame too slow for the wait; fixed on CPU, re-run pending). The balance check is now being mapped onto this room so it can run here after it completes in the test cell"
+   "line": "Weighing room: structure gate and 600-step stability passed. A brightened diagnostic preview is on this page; no properly lit picture yet, and the room is still plain compared with the original labs (bare walls, one bench). Lighting and fit-out are being brought up to that level; the balance check is being mapped onto this room"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -388,6 +390,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:45",
+   "text": "Rebuilt weighing room and thermal workcell: two diagnostic previews added to this page. They are the too-dark renders from this morning, brightened so the content can be seen; they are not accepted pictures. They show complete rooms (walls, tiled floor, bench, balance, robot, oven, extinguisher) that are still plain compared with the original labs: bare walls, one bench, one light. Fit-out to the level of the original labs and correct lighting are the next steps."
+  },
   {
    "t": "11-16 22:31",
    "text": "Multi-room lab, first traversal check on the floor plan: the robot fits through every door with 11–27 cm to spare on each side and can turn in the corridor. Two robots passing side by side fit for the measured robot size but fall 7.6 cm short once a 10 cm safety margin per side is added. Paths inside the rooms cannot be judged yet because bench positions and docking marks are not exported. The weighing room's binding data has been handed to planning, which is now mapping the balance check onto that room."
