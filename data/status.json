@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 22:25",
+ "updated": "2026-11-16 22:40",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -349,7 +349,7 @@
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture: the render path works for an original lab, but the new rooms' first frame took 150–190 s against a 120 s wait. Wait fixed on CPU; next short run re-tests it and the lighting"
+   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture (first frame too slow for the wait; fixed on CPU, re-run pending). The balance check is now being mapped onto this room so it can run here after it completes in the test cell"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -359,7 +359,7 @@
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "pending",
-   "line": "Floor plan final on paper; draft assembly of the five original rooms plus corridor is starting. The first cross-room target is defined: a 15-step transport-only task needing nine skills that do not exist yet. A CPU check of whether the robot can travel between all rooms is running"
+   "line": "Floor plan final on paper; draft assembly of the five rooms plus corridor is starting. Door and corridor widths check out for one robot (11–27 cm spare per side); two-robot passing is 7.6 cm short with a safety margin. In-room paths not yet checkable. First cross-room target defined: a 15-step transport-only task needing nine new skills"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
@@ -388,6 +388,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:31",
+   "text": "Multi-room lab, first traversal check on the floor plan: the robot fits through every door with 11–27 cm to spare on each side and can turn in the corridor. Two robots passing side by side fit for the measured robot size but fall 7.6 cm short once a 10 cm safety margin per side is added. Paths inside the rooms cannot be judged yet because bench positions and docking marks are not exported. The weighing room's binding data has been handed to planning, which is now mapping the balance check onto that room."
+  },
   {
    "t": "11-16 22:16",
    "text": "Fourth lab-execution run, full report (executor figures, review pending): pick-and-place with the corrected motion timing finished twice, placing within 0.27 and 0.30 mm and holding the weight for about 22.5 seconds in total, against the 60-second limit the old timing kept hitting. Motion over the pan: two runs with about 1 mm error and at least 38.9 mm clearance, but the two were identical, so they count as one independent observation. Balance check: stopped at step 5 because the support-surface check accepted only points within 10 nanometres of the highest one; the check is being corrected. Job used about 2 GPU-hours."
