@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17 00:10",
+ "updated": "2026-11-17 00:40",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -315,7 +315,7 @@
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "Pilot room with a handled sample carrier passes all 23 structure checks on CPU; task package being handed to planning. Simulator confirmation and the carrier pick-and-place, lid and readout skills are still to come",
+     "line": "Compiled into tasks: 21 steps per sample cycle (63 for the paper's three measurements); pilot room passes all structure checks on CPU; 0 of 21 steps covered by an approved skill yet",
      "details": "",
      "scene": "round28_experiment13",
      "img": "assets/snapshots/lab_moisture.jpg"
@@ -351,17 +351,17 @@
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed. A brightened diagnostic preview is on this page; no properly lit picture yet, and the room is still plain compared with the original labs (bare walls, one bench). Lighting and fit-out are being brought up to that level; the balance check is being mapped onto this room"
+   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). A job is running now to produce its first properly lit pictures. Fit-out to the original labs' level is still to do"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
    "status": "pending",
-   "line": "Moisture analysis: the pilot room with a handled sample carrier passes all 23 structure checks on CPU in both resting positions (simulator confirmation pending); task package going to planning. Skills for carrying the carrier, operating the lid by program and reading the result do not exist yet"
+   "line": "Moisture analysis: pilot room passes all 23 structure checks on CPU (simulator confirmation pending) and the experiment is compiled into 21 steps per sample cycle, 63 for the paper's three measurements. None of the 21 is covered by an approved skill yet; skill work starts after the balance check"
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "partial",
-   "line": "First draft building assembled and loading on CPU: four original labs plus the weighing room on a 2.2 m corridor, one transport robot and four fixed arms. Not yet rendered or simulated; doors are static. Door and corridor widths check out for one robot. First cross-room target is a 15-step transport-only task needing nine new skills"
+   "line": "Draft building assembled (four original labs plus the weighing room on a 2.2 m corridor) and loading on CPU; a job is running now for its first render and stability run. Doors are static. First cross-room target: a 15-step transport-only task needing nine new skills"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
@@ -390,6 +390,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-17 00:31",
+   "text": "Base-scene job submitted (four low-priority GPUs, batch only, 30 minutes at most): pictures of the weighing room and the first render and stability run of the draft multi-room building. Its queue runs on its own once the job starts. Separately, the moisture experiment was compiled into tasks: one sample cycle is 21 steps (8 by the robot, 7 by the instrument program, 6 checks and readings); the paper's three measurements are 63. None of the 21 is covered by an approved skill yet."
+  },
   {
    "t": "11-17 00:03",
    "text": "Independent review of the fourth run so far: both pick-and-place passes with the corrected motion timing are confirmed complete (2 of the 3 needed); the two stops with the old timing were the holding-time limit, not physical failures; the obstacle test is confirmed as a correct refusal; balance-check steps 1–4 confirmed again. For the moisture experiment, the pilot room with the handled sample carrier passes all 23 structure checks on CPU in both resting positions, with at least 6.5 mm clearance to the lid over its whole travel."
