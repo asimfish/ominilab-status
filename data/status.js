@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 21:40",
+ "updated": "2026-11-16 21:45",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -354,7 +354,7 @@ window.STATUS = {
   {
    "name": "Goal C · Second experiment, taken from a paper",
    "status": "pending",
-   "line": "Moisture analysis: its room was sent back for internal overlaps (fix prepared); handling steps the paper does not describe are being classified; 7 of its 14 task steps still lack robot skills"
+   "line": "Moisture analysis: its room was sent back for internal overlaps (fix prepared). Protocol: the paper leaves out the sample mass and the loading and unloading steps; these are being taken from the instrument maker's instructions. 7 of its 14 task steps still lack robot skills"
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
@@ -364,7 +364,7 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "10 of 19 extracted protocols pass the source check after corrections; scenes are still benches without rooms. Next: one command produces a room-shelled scene for three experiments"
+   "line": "10 of 19 extracted protocols are fully sourced, 7 have real method gaps, 2 lack an instrument cleaning procedure. Scenes are still benches without rooms. Next: one command produces a room-shelled scene for three experiments"
   },
   {
    "name": "Base scenes",
@@ -374,7 +374,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol source check: 10 of 19 pass after corrections; 9 contain handling steps no paper describes, now being classified separately. None has a room shell yet"
+   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol sourcing: 10 of 19 fully sourced, 7 with method gaps, 2 lacking a cleaning procedure. None has a room shell yet"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -388,6 +388,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 21:39",
+   "text": "Protocol steps sorted into three kinds for all 19 items: from the paper, from a standard, and project handling steps. Result: 10 protocols are fully sourced (one of them, the balance check, with project handling steps), 7 have real gaps where the paper leaves out something that affects the measurement (for example sample mass), and 2 only lack an instrument cleaning procedure. For the moisture experiment the missing pieces are being looked up in the instrument maker's operating instructions."
+  },
   {
    "t": "11-16 21:35",
    "text": "Work re-anchored on five milestones toward the overall goal (see Summary). Agents may now submit a limited number of simulator jobs per day once their own checks pass, instead of waiting for each approval; assembly of the multi-room building starts as a draft; work not on a milestone path is time-boxed."
