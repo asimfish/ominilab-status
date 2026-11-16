@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 22:55",
+ "updated": "2026-11-16 23:15",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -335,8 +335,8 @@
      "title": "Multi-room laboratory",
      "tag": "Goal",
      "live": false,
-     "status": "pending",
-     "line": "Goal: one large lab of several rooms where the robot works across rooms. Floor plan finalised on paper; the first cross-room experiment candidate was withdrawn (its protocol merged procedures), a replacement is being evaluated. Building not assembled yet",
+     "status": "partial",
+     "line": "Draft building assembled: four original labs plus the weighing room on a 2.2 m corridor, loads on CPU. Doors static, not yet rendered or simulated; inherits 51 broken material links from the original labs. Pictures and a stability run are next",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
@@ -360,8 +360,8 @@
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
-   "status": "pending",
-   "line": "Floor plan final on paper; draft assembly of the five rooms plus corridor is starting. Door and corridor widths check out for one robot (11–27 cm spare per side); two-robot passing is 7.6 cm short with a safety margin. In-room paths not yet checkable. First cross-room target defined: a 15-step transport-only task needing nine new skills"
+   "status": "partial",
+   "line": "First draft building assembled and loading on CPU: four original labs plus the weighing room on a 2.2 m corridor, one transport robot and four fixed arms. Not yet rendered or simulated; doors are static. Door and corridor widths check out for one robot. First cross-room target is a 15-step transport-only task needing nine new skills"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
@@ -390,6 +390,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 23:10",
+   "text": "Multi-room lab: the first draft building has been assembled and loads on CPU. It joins the four original labs and the compact weighing room along a central 2.2 m corridor, with five door interfaces and one transport robot plus four fixed arms. It is a draft: doors are static, nothing has been rendered or run in the simulator, and it inherits 51 broken material links from the original lab files, so it fails the structure gate for now. Pictures of the building and a stability run are planned for the next batch job."
+  },
   {
    "t": "11-16 22:42",
    "text": "First full round of \"one command to a room\": three room-shelled scenes built automatically (weighing, moisture, and a titration room whose two instruments were placed by the layout engine). All three pass the support check and the target-simulator library check. The weighing room passes all 20 structure checks, matching the room builder's own result. The other two fail one structure check: overlapping collision shapes inside three instruments. Repair candidates for those instruments are now being prepared."
