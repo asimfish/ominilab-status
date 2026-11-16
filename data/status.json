@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17 00:40",
+ "updated": "2026-11-17 01:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -336,7 +336,7 @@
      "tag": "Goal",
      "live": false,
      "status": "partial",
-     "line": "Draft building assembled: four original labs plus the weighing room on a 2.2 m corridor, loads on CPU. Doors static, not yet rendered or simulated; inherits 51 broken material links from the original labs. Pictures and a stability run are next",
+     "line": "First draft had an assembly fault: one room's bench did not move with its room (weights ended about 0.9 m above the floor). Caught by the support check, assembler fixed, five-room building being re-verified on CPU. Not yet rendered or simulated; doors static; inherits 51 broken material links from the original labs",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
@@ -346,12 +346,12 @@
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 now reaches the pre-grasp position and is stopped only by an over-tight support-surface check, which is being corrected on CPU; the next run follows without an approval wait, then the full 37 steps"
+   "line": "100 g balance check: 4 of 37 steps confirmed. The step-5 support-surface fault is fixed on CPU and all pre-submission checks for the fifth run pass; submission paused on a connection-handling fault in the submit tool, which is being fixed. No GPU time used yet for this run. Target: the first 10 steps, then the full 37"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). A job is running now to produce its first properly lit pictures. Fit-out to the original labs' level is still to do"
+   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). The picture job was submitted at 00:31 but the platform has not started it yet (over an hour in its queue). Fit-out to the original labs' level is still to do"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -361,17 +361,17 @@
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "partial",
-   "line": "Draft building assembled (four original labs plus the weighing room on a 2.2 m corridor) and loading on CPU; a job is running now for its first render and stability run. Doors are static. First cross-room target: a 15-step transport-only task needing nine new skills"
+   "line": "Correction: the first draft building had an assembly fault. The weighing room's bench stayed at its old position while the rest of the room moved, leaving the weights about 0.9 m above the floor. The base-scene checks caught it; the assembler is fixed and the five-room building is being re-verified on CPU. The earlier \"draft assembled\" entry does not count. First cross-room target unchanged: a 15-step transport-only task needing nine new skills"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "One command produces three room-shelled scenes; all pass support and library checks. Structure gate on CPU: weighing room passes, moisture room passes pending simulator confirmation, titration room is one check short (2 overlaps from an asset modelled without a bore). Protocol extraction is still agent-drafted and checked"
+   "line": "One command produces three room-shelled scenes; all pass support and library checks. Structure gate on CPU: weighing room passes, moisture room passes pending simulator confirmation, titration room is one check short (2 overlaps from an asset modelled without a bore). Now binding the compiled titration procedure to its room, so a third experiment has paper, room and task plan. Protocol extraction is still agent-drafted and checked"
   },
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate, the moisture room fails its start-up contact check. Render path proven on an original lab, but the rebuilt rooms still have no picture (first frame too slow for the wait; fixed, to be re-run). Draft assembly of the five-room building is next"
+   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate. Still no properly lit picture of a rebuilt room: the job for it is waiting in the platform queue. The draft building's assembly fault (bench left behind) is fixed and under re-verification; results from the queued job apply to the old draft and will be labelled diagnostic only"
   },
   {
    "name": "Auto-built scenes",
@@ -381,15 +381,23 @@
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "11 task graphs, 130 task steps. After the protocol source audit, 43 steps (three fully verified experiments) clear the source check and 87 are held back; no cross-room experiment is dispatchable yet"
+   "line": "11 task graphs, 130 task steps. After the protocol source audit, 43 steps (three fully verified experiments) clear the source check and 87 are held back. In progress: titration procedure bound to its auto-built room, and one ranked list of the skills still missing across the balance check, moisture, titration and transport tasks"
   },
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Fourth run reviewed so far: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. The step-5 support-surface fault is fixed on CPU and the fifth run is being prepared (1,673 library tests pass)"
+   "line": "6 skills approved. Fourth run reviewed: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. Fifth run: all checks pass (135 launch-configuration replays), submission held by a connection fault in the submit tool, being fixed"
   }
  ],
  "timeline": [
+  {
+   "t": "11-17 01:31",
+   "text": "Correction to the multi-room draft: the building check reported the weighing room's weights 0.9 m above the floor. Cause: the bench was flagged to ignore parent transforms, so the assembler moved the room but left the bench behind. Assembler fixed, with a new check that static parts move with their room; the building is being rebuilt and re-verified. The earlier draft is kept unchanged and counts only as a diagnostic."
+  },
+  {
+   "t": "11-17 01:36",
+   "text": "Fifth run not yet submitted: every pre-submission check passed, then the submit tool stopped because a shared connection had closed with an earlier step. No job was created and no GPU time used; the tool is being fixed to refuse cleanly instead of falling back to another connection."
+  },
   {
    "t": "11-17 00:31",
    "text": "Base-scene job submitted (four low-priority GPUs, batch only, 30 minutes at most): pictures of the weighing room and the first render and stability run of the draft multi-room building. Its queue runs on its own once the job starts. Separately, the moisture experiment was compiled into tasks: one sample cycle is 21 steps (8 by the robot, 7 by the instrument program, 6 checks and readings); the paper's three measurements are 63. None of the 21 is covered by an approved skill yet."
