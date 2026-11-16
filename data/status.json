@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 21:25",
+ "updated": "2026-11-16 21:40",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -342,6 +342,31 @@
  ],
  "summary": [
   {
+   "name": "Goal A · First complete experiment by the robot",
+   "status": "running",
+   "line": "100 g balance check: 4 of 37 steps independently confirmed. Fourth simulator run in progress to carry it through step 10; the full 37-step run follows directly, without waiting for another approval"
+  },
+  {
+   "name": "Goal B · First accepted complete room",
+   "status": "partial",
+   "line": "Weighing room: structure gate and 600-step stability passed. Pictures failed (too dark); a render retest is about to run. To finish, the balance check must also run inside this room and the owner must sign off the pictures"
+  },
+  {
+   "name": "Goal C · Second experiment, taken from a paper",
+   "status": "pending",
+   "line": "Moisture analysis: its room was sent back for internal overlaps (fix prepared); handling steps the paper does not describe are being classified; 7 of its 14 task steps still lack robot skills"
+  },
+  {
+   "name": "Goal D · Multi-room laboratory with cross-room work",
+   "status": "pending",
+   "line": "Floor plan final on paper. Assembly of the five original rooms plus corridor starts now as a draft building. First target is a transport-only task between two rooms, then a cross-room experiment"
+  },
+  {
+   "name": "Goal E · From paper to runnable lab automatically",
+   "status": "partial",
+   "line": "10 of 19 extracted protocols pass the source check after corrections; scenes are still benches without rooms. Next: one command produces a room-shelled scene for three experiments"
+  },
+  {
    "name": "Base scenes",
    "status": "partial",
    "line": "Three rebuilt rooms held still for 600 simulator steps; two still pass the structure gate, the moisture room was sent back for internal overlaps. Room pictures failed (too dark or black), so appearance cannot be judged yet; a render retest is approved. The 4 original labs still need add-on repairs; the 7 rough rooms await rebuilding"
@@ -360,14 +385,13 @@
    "name": "Lab execution",
    "status": "running",
    "line": "6 skills approved. Balance check: steps 1–4 of 10 independently confirmed. Fourth simulator run in progress (balance check to step 10, motion over the pan, pick-and-place with old and new motion timing); no complete experiment yet"
-  },
-  {
-   "name": "Multi-room laboratory",
-   "status": "pending",
-   "line": "Goal set 11-15. Floor plan finalised on paper (two rows of rooms, 2.2 m corridor, sliding doors); planning model and request formats drafted; no building assembled yet"
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 21:35",
+   "text": "Work re-anchored on five milestones toward the overall goal (see Summary). Agents may now submit a limited number of simulator jobs per day once their own checks pass, instead of waiting for each approval; assembly of the multi-room building starts as a draft; work not on a milestone path is time-boxed."
+  },
   {
    "t": "11-16 21:18",
    "text": "Protocols re-extracted: structured open-access originals were obtained for all four papers that only had a web-page copy. Three flawed protocols were split into single procedures (four, two and four). Counting the corrected versions, 10 of 19 now pass the source check and 9 remain open. Those 9 are open because they contain steps no paper describes (loading the sample, cleaning, shutting down); such steps now form their own category that needs an instrument manual or project rule as its source and may never change what is measured."
