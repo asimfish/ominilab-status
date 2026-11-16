@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 05:45",
+ "updated": "2026-11-16 20:20",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -80,7 +80,7 @@ window.STATUS = {
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
+     "line": "Draft room, to be rebuilt. Its main instrument is now fixed: all 18 unstable parts gone after removing the starting overlaps",
      "details": "About 40 root causes sit behind the moving parts in the new rooms. On the WTW OxiTop here, each of the six sensor heads starts with its collision shape 24.000 mm inside its sleeve, and each head jumps 24.0001 mm on the first step, a match to five digits. A collision-shape fix for one head and a latch are both prepared, with an untouched control, for the next run. Not yet confirmed in the simulator.",
      "img": "assets/snapshots/room_u_workcell.jpg"
     },
@@ -110,7 +110,7 @@ window.STATUS = {
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
+     "line": "Draft room, to be rebuilt. The step-1 crash is traced to one instrument that crashes on its own",
      "details": "Two groups of 13 and 14 instruments each crash at step 1; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_spine_analysis.jpg"
     },
@@ -120,7 +120,7 @@ window.STATUS = {
      "tag": "Draft",
      "live": false,
      "status": "fail",
-     "line": "Draft room: floor mostly empty (under 9% used), two doorways without doors, no registered facilities; to be rebuilt on the room kit",
+     "line": "Draft room, to be rebuilt. The suspect instrument no longer crashes when split in four, but has about 130 unstable parts",
      "details": "Runs all 660 steps without the particle-size analyser. That instrument crashes as a whole but each half runs, so no single part is isolated yet; 7 narrowing cases are prepared.",
      "img": "assets/snapshots/room_racetrack.jpg"
     },
@@ -162,7 +162,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed 19/19; picture and simulator run pending",
+     "line": "Structure gate passed; held still for 600 simulator steps; pictures came out too dark, lighting being corrected",
      "details": ""
     },
     {
@@ -170,8 +170,8 @@ window.STATUS = {
      "title": "Moisture and drying room (rebuilt)",
      "tag": "Rebuilt",
      "live": false,
-     "status": "partial",
-     "line": "Structure gate passed 22/22; picture and simulator run pending",
+     "status": "fail",
+     "line": "Held still for 600 steps, but the moisture analyser has 15 internal overlaps: structure gate reopened; fix prepared, picture was black",
      "details": ""
     },
     {
@@ -180,7 +180,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate passed 18/18; picture and simulator run pending",
+     "line": "Structure gate passed; held still for 600 simulator steps; pictures came out too dark, lighting being corrected",
      "details": ""
     }
    ]
@@ -195,8 +195,8 @@ window.STATUS = {
      "title": "Balance routine check (NIST IR 6969)",
      "tag": "From protocol",
      "live": false,
-     "status": "pass",
-     "line": "Stability test passed; bare bench without a room, shell version first in the rebuild order",
+     "status": "partial",
+     "line": "Earlier pilot export passed stability; the current export failed the stability run (gripper start state), fix queued; shell version exists as the rebuilt weighing room",
      "details": "Robot bench, robot, balance and reference weights, empty pan with pan lock. Passes the shared support rules (54 checks, 0 fail) and the 600-step stability test. The 100 g pilot package passes its 109 checks.",
      "img": "assets/snapshots/auto_balance_routine_check.jpg"
     },
@@ -251,7 +251,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "19 items run: 17 pass library checks (12 distinct scenes), 2 wait for instrument assets; none has a room shell yet",
+     "line": "19 items: 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause (gripper start state), fix queued; none has a room shell yet",
      "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). The pipeline now refuses to overwrite an earlier scene when its inputs change. About 300 native checks are still open."
     }
    ]
@@ -295,7 +295,7 @@ window.STATUS = {
      "tag": "Pilot station",
      "live": false,
      "status": "partial",
-     "line": "Three steps completed in the simulator per the executor; reviewer has not yet read the raw files. Approval needs 3 independent runs plus an obstacle test (this is run 1 once confirmed)",
+     "line": "Run 1 endpoints and contacts confirmed, clearance and bystander tracking not yet provable; fourth run records them and adds 2 runs plus an obstacle test",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -304,7 +304,7 @@ window.STATUS = {
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "Steps 1–3 of 10 independently confirmed; step 4 (taring) readings verified, rule exception approved; step 5 refused by a motion-timing fault being corrected",
+     "line": "Steps 1–4 of 10 independently confirmed; step 5 fixed on CPU (6.97 s motion); fourth run approved to go through to step 10",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -344,12 +344,12 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Three rebuilt rooms (weighing, moisture and drying, thermal) pass the structure gate; pictures and simulator runs come with the next batch job. The 4 original labs need a waste station, legible exit signs and a few support fixes to pass. The 7 rough rooms await rebuilding"
+   "line": "Three rebuilt rooms held still for 600 simulator steps; two still pass the structure gate, the moisture room was sent back for internal overlaps. Room pictures failed (too dark or black), so appearance cannot be judged yet; a render retest is approved. The 4 original labs still need add-on repairs; the 7 rough rooms await rebuilding"
   },
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "One command from paper to scene, robot placed automatically; of 19 items, 17 pass target-simulator library checks (12 distinct scenes) and 2 wait for instrument assets; all are benches without a room, so none passes the structure gate yet"
+   "line": "Of 19 items, 17 pass library checks (12 distinct scenes). In the simulator all 12 failed the stability run for one shared cause, now fixed on CPU and queued for retest. None has a room shell yet"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -359,7 +359,7 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Third simulator run independently reviewed: first three balance-check steps and the timing confirmed, no physical failure found; motion over the pan awaits raw files for the reviewer; pick-and-place stopped on time and log limits. No complete experiment yet"
+   "line": "6 skills approved. Balance check: steps 1–4 of 10 independently confirmed; the pick-up fault is fixed on CPU. Motion over the pan: first run partly confirmed. Fourth simulator run approved; no complete experiment yet"
   },
   {
    "name": "Multi-room laboratory",
@@ -368,6 +368,22 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 20:05",
+   "text": "Approved: a fourth lab-execution run (balance check with the corrected motion timing, two more motion-over-pan runs plus an obstacle test, pick-and-place with old and new timing side by side) and a short base-scene retest that first proves rendering works and then, in the same job, takes the full set of room views."
+  },
+  {
+   "t": "11-16 16:03",
+   "text": "Lab execution: the corrected motion timing turns the refused pick-up path into a 6.97-second motion within all limits, confirmed on CPU by the executor and independently by the reviewer. Cause of the holding-time stop found: the old timing made lifts take 35–40 seconds, leaving almost no margin under the 60-second limit."
+  },
+  {
+   "t": "11-16 15:16",
+   "text": "Auto-built scenes: the common cause of the simulator failures was found and fixed on CPU: gripper finger joints had no starting state. Re-test queued."
+  },
+  {
+   "t": "11-16 07:24",
+   "text": "Base-scene batch job finished (43 cases, four GPU lanes 71–77% busy). All three rebuilt rooms held still for the full 600 steps. The weighing and thermal rooms still pass the structure gate; the moisture room was sent back because the moisture analyser has 15 internal overlaps. Room pictures failed: only 5 of 172 images were produced, two far too dark and one black, so there is still no picture to show. One instrument fix removed all 18 unstable parts; a single instrument was identified as the cause of the crashing room. All 12 auto-built scenes failed the stability run."
+  },
   {
    "t": "11-16 05:37",
    "text": "Independent review of the third run: 6 of 18 criteria confirmed (up from 2), no physical failure, 12 not yet observable. Confirmed: the 2.5× timing, the first three balance-check steps, the raw taring readings, and that both pick-and-place stops were time and log limits, not physical failures. Not confirmed: motion over the pan, only because the reviewer could not read the raw files; they are being exported to it. Approval rule set for motion over the pan: three independent complete runs plus one obstacle test, each independently reviewed."
