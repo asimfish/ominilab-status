@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 22:00",
+ "updated": "2026-11-16 22:10",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -195,8 +195,8 @@
      "title": "Balance routine check (NIST IR 6969)",
      "tag": "From protocol",
      "live": false,
-     "status": "partial",
-     "line": "Earlier pilot export passed stability; the current export failed the stability run (gripper start state), fix queued; shell version exists as the rebuilt weighing room",
+     "status": "pass",
+     "line": "Holds still for the full 600 simulator steps; still a bench without a room (shell version is the rebuilt weighing room)",
      "details": "Robot bench, robot, balance and reference weights, empty pan with pan lock. Passes the shared support rules (54 checks, 0 fail) and the 600-step stability test. The 100 g pilot package passes its 109 checks.",
      "img": "assets/snapshots/auto_balance_routine_check.jpg"
     },
@@ -206,7 +206,7 @@
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Passes library checks; 4 handling steps are not described by the paper and are being reclassified as project steps with their own source",
+     "line": "Holds still for the full 600 simulator steps; handling steps now sourced from the maker's instructions; no room shell yet",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -215,7 +215,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Protocol passes the source check; scene passes library checks; failed the simulator stability run (gripper start state), fix queued",
+     "line": "Holds still for the full 600 simulator steps; protocol fully sourced; being placed into a room by the auto layout",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -224,7 +224,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passes library checks; one clean-up step is not from the paper and is being reclassified as a project step",
+     "line": "Holds still for the full 600 simulator steps; one clean-up step lacks a source; no room shell yet",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -242,7 +242,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Protocol corrected: split into 4 separate procedures that each pass the source check; scene and room binding to follow",
+     "line": "Protocol corrected (4 separate procedures); scene fails stability at step 1 on a lid hinge",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -251,7 +251,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "19 items: 17 pass library checks (12 distinct scenes). In the simulator the shared gripper fault is gone; 8 scenes still fail on individual instruments. None has a room shell yet",
+     "line": "12 distinct scenes: 4 pass the 600-step stability run, 8 fail on one identified part each; 2 of 19 items still wait for instrument assets; no room shell yet",
      "details": "Every layout is checked against each instrument's real physics data (moving parts, collision shapes, joints). The pipeline now refuses to overwrite an earlier scene when its inputs change. About 300 native checks are still open."
     }
    ]
@@ -349,7 +349,7 @@
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture: the render path is proven on an original lab, but the new rooms' first frame took longer than the wait allowed. Fixed on CPU; one more short run needed"
+   "line": "Weighing room: structure gate and 600-step stability passed. Still no picture: the render path works for an original lab, but the new rooms' first frame took 150–190 s against a 120 s wait. Wait fixed on CPU; next short run re-tests it and the lighting"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -364,7 +364,7 @@
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "10 of 19 extracted protocols are fully sourced, 7 have real method gaps, 2 lack an instrument cleaning procedure. Scenes are still benches without rooms. Next: one command produces a room-shelled scene for three experiments"
+   "line": "10 of 19 protocols fully sourced; 4 of 12 auto-built scenes pass the 600-step stability run. Scenes are still benches without rooms; one command to a room-shelled scene is being wired up for three experiments"
   },
   {
    "name": "Base scenes",
@@ -374,7 +374,7 @@
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol sourcing: 10 of 19 fully sourced, 7 with method gaps, 2 lacking a cleaning procedure. None has a room shell yet"
+   "line": "Of 12 distinct scenes, 4 now hold still for 600 simulator steps (balance check, HPLC, moisture analysis, titration); 8 fail on one identified part each. Protocols: 10 of 19 fully sourced. None has a room shell yet; one-command room building is being wired up"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -388,6 +388,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:03",
+   "text": "Auto-built scenes in the simulator, after the gripper fix: 4 of the 12 distinct scenes now hold still for the full 600 steps (balance check, HPLC, moisture analysis, titration). The other 8 each fail on one identified part at the first step: a sliding axis that jumps 25 mm (2 scenes), an oven door that swings 6.6° (2), an instrument foot (2), a lid hinge (1) and a sample lid (1)."
+  },
   {
    "t": "11-16 21:54",
    "text": "Fourth lab-execution run finished (results as reported by the executor, independent review pending). Pick-and-place with the corrected motion timing completed twice from start to finish; with the old timing both attempts again stopped at the holding-time limit. Motion over the balance pan: two more complete three-step runs, and the obstacle test was correctly refused with no arm movement. Balance check: step 5 got past the earlier timing fault, opened the gripper and moved to the pre-grasp position, then was refused because the supporting surface under the weight was not observed; steps 6–10 did not run."
