@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 22:50",
+ "updated": "2026-11-16 22:55",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -198,7 +198,7 @@ window.STATUS = {
      "tag": "From protocol",
      "live": false,
      "status": "pass",
-     "line": "Holds still for the full 600 simulator steps; still a bench without a room (shell version is the rebuilt weighing room)",
+     "line": "One command now builds it as the full weighing room: all 20 structure checks pass; bench version holds still for 600 simulator steps",
      "details": "Robot bench, robot, balance and reference weights, empty pan with pan lock. Passes the shared support rules (54 checks, 0 fail) and the 600-step stability test. The 100 g pilot package passes its 109 checks.",
      "img": "assets/snapshots/auto_balance_routine_check.jpg"
     },
@@ -208,7 +208,7 @@ window.STATUS = {
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Holds still for the full 600 simulator steps; handling steps now sourced from the maker's instructions; no room shell yet",
+     "line": "One command now builds it as the full moisture room: 22 of 23 structure checks pass; fails on 15 overlaps inside the moisture analyser (fix prepared, simulator ruling pending)",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -217,7 +217,7 @@ window.STATUS = {
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Holds still for the full 600 simulator steps; protocol fully sourced; being placed into a room by the auto layout",
+     "line": "Built automatically as a full room (instruments placed by the layout engine); passes 22 of 23 structure checks, fails on overlapping collision shapes inside the instruments; repair candidates in preparation",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -366,7 +366,7 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "One command now rebuilds two room-shelled scenes (weighing, moisture) byte-identical to the published rooms; gate checks running; titration instruments being placed into a room automatically. 10 of 19 protocols fully sourced; 4 of 12 bench scenes pass the stability run"
+   "line": "One command now produces three room-shelled scenes (weighing, moisture, titration); all pass support and library checks, 1 of 3 passes the structure gate, the other two fail only on overlaps inside three instruments, now being repaired. Protocol extraction itself is still agent-drafted and checked, not automatic"
   },
   {
    "name": "Base scenes",
@@ -376,7 +376,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 12 distinct scenes, 4 now hold still for 600 simulator steps (balance check, HPLC, moisture analysis, titration); 8 fail on one identified part each. Protocols: 10 of 19 fully sourced. None has a room shell yet; one-command room building is being wired up"
+   "line": "One command builds three full rooms; the weighing room passes the structure gate, two fail on instrument-internal overlaps. Bench scenes: 4 of 12 pass the 600-step stability run. Protocols: 10 of 19 fully sourced"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -390,6 +390,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:42",
+   "text": "First full round of \"one command to a room\": three room-shelled scenes built automatically (weighing, moisture, and a titration room whose two instruments were placed by the layout engine). All three pass the support check and the target-simulator library check. The weighing room passes all 20 structure checks, matching the room builder's own result. The other two fail one structure check: overlapping collision shapes inside three instruments. Repair candidates for those instruments are now being prepared."
+  },
   {
    "t": "11-16 22:45",
    "text": "Rebuilt weighing room and thermal workcell: two diagnostic previews added to this page. They are the too-dark renders from this morning, brightened so the content can be seen; they are not accepted pictures. They show complete rooms (walls, tiled floor, bench, balance, robot, oven, extinguisher) that are still plain compared with the original labs: bare walls, one bench, one light. Fit-out to the level of the original labs and correct lighting are the next steps."
