@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 20:20",
+ "updated": "2026-11-16 20:35",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -349,7 +349,7 @@ window.STATUS = {
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 19 items, 17 pass library checks (12 distinct scenes). In the simulator all 12 failed the stability run for one shared cause, now fixed on CPU and queued for retest. None has a room shell yet"
+   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued for retest. Two extracted protocols were found wrong and are on hold; all 19 are being re-audited for the same error. None has a room shell yet"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -368,6 +368,14 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 20:26",
+   "text": "Auto-built scenes: 9 room requests delivered in the room builder's format (1 weighing, 2 moisture, 6 thermal). While preparing them, two extracted protocols were found to be wrong: one took its method from another group's work described in the paper's introduction, the other merged a main procedure with a reference branch. Both are on hold. Extraction now gets two extra checks (the step must come from the paper's own methods section, and all steps must belong to one procedure), and all 19 items are being re-audited, starting with the experiments already compiled into tasks."
+  },
+  {
+   "t": "11-16 20:12",
+   "text": "Base scenes: cause of the dark room pictures narrowed down. The rebuilt rooms' lights carry roughly one ninth of the light per square metre of the original labs. The retest renders both settings from the same camera, with an original lab as control."
+  },
   {
    "t": "11-16 20:05",
    "text": "Approved: a fourth lab-execution run (balance check with the corrected motion timing, two more motion-over-pan runs plus an obstacle test, pick-and-place with old and new timing side by side) and a short base-scene retest that first proves rendering works and then, in the same job, takes the full set of room views."
