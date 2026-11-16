@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 23:45",
+ "updated": "2026-11-17 00:10",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -288,7 +288,7 @@ window.STATUS = {
      "tag": "Approved skill",
      "live": false,
      "status": "partial",
-     "line": "Approved with the old motion timing. With the corrected timing: 2 complete passes (place error 0.27 and 0.30 mm, about 22.5 s holding); one more confirmed pass needed to extend the approval",
+     "line": "Approved with the old motion timing. With the corrected timing: 2 complete passes independently confirmed; one more needed to extend the approval. Next run uses the corrected timing on both lanes",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -314,8 +314,8 @@ window.STATUS = {
      "title": "Experiment 13: moisture test",
      "tag": "Full experiment",
      "live": false,
-     "status": "pending",
-     "line": "Station has no ceiling or lighting yet; second in the rebuild order. Plan compiled (14 calls): 7 covered by approved skills, 7 need new skills",
+     "status": "partial",
+     "line": "Pilot room with a handled sample carrier passes all 23 structure checks on CPU; task package being handed to planning. Simulator confirmation and the carrier pick-and-place, lid and readout skills are still to come",
      "details": "",
      "scene": "round28_experiment13",
      "img": "assets/snapshots/lab_moisture.jpg"
@@ -356,7 +356,7 @@ window.STATUS = {
   {
    "name": "Goal C · Second experiment, taken from a paper",
    "status": "pending",
-   "line": "Moisture analysis: its room passes all 23 structure checks on CPU (simulator confirmation pending). Now being prepared: a handling concept with a handled sample carrier the robot can grip, the pilot room containing it, and the task package for planning. 7 of 14 task steps still lack robot skills"
+   "line": "Moisture analysis: the pilot room with a handled sample carrier passes all 23 structure checks on CPU in both resting positions (simulator confirmation pending); task package going to planning. Skills for carrying the carrier, operating the lid by program and reading the result do not exist yet"
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
@@ -386,10 +386,14 @@ window.STATUS = {
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Fourth run: pick-and-place completed twice with the corrected motion timing; motion over the pan completed two more runs and correctly refused the obstacle test; the balance check stops at step 5 on an unobserved support surface. Independent review pending"
+   "line": "6 skills approved. Fourth run reviewed so far: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. The step-5 support-surface fault is fixed on CPU and the fifth run is being prepared (1,673 library tests pass)"
   }
  ],
  "timeline": [
+  {
+   "t": "11-17 00:03",
+   "text": "Independent review of the fourth run so far: both pick-and-place passes with the corrected motion timing are confirmed complete (2 of the 3 needed); the two stops with the old timing were the holding-time limit, not physical failures; the obstacle test is confirmed as a correct refusal; balance-check steps 1–4 confirmed again. For the moisture experiment, the pilot room with the handled sample carrier passes all 23 structure checks on CPU in both resting positions, with at least 6.5 mm clearance to the lid over its whole travel."
+  },
   {
    "t": "11-16 23:36",
    "text": "Titration room: the gantry-on-rails overlaps qualified under the refined rule, leaving 2 of the original 58 pairs. Those two are a piston inside a part that the source model draws as a solid cylinder with no bore, so they stay as a real asset fault and the titration room stays one check short. Work moves to the moisture experiment: a handling concept in which the robot places a handled sample carrier onto the analyser, with the lid and measurement run by the instrument program."
