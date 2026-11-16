@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 22:20",
+ "updated": "2026-11-16 22:25",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -286,7 +286,7 @@
      "tag": "Approved skill",
      "live": false,
      "status": "partial",
-     "line": "Approved with the old motion timing (release from 1.5 mm). With the corrected timing: 2 complete passes in the fourth run (3 confirmed passes needed to extend the approval); old timing stopped at the holding-time limit",
+     "line": "Approved with the old motion timing. With the corrected timing: 2 complete passes (place error 0.27 and 0.30 mm, about 22.5 s holding); one more confirmed pass needed to extend the approval",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -295,7 +295,7 @@
      "tag": "Pilot station",
      "live": false,
      "status": "partial",
-     "line": "Three complete three-step runs so far plus a correctly refused obstacle test, per the executor; independent review of the last two pending before approval",
+     "line": "Complete three-step runs with about 1 mm error and at least 38.9 mm clearance; obstacle test correctly refused. The last two runs were identical, so a run from a different starting pose is still needed, plus independent review",
      "details": "A balance button shifted slightly after the route was checked, so the run was refused. Moving parts may now shift up to 0.5 mm before a re-check; fixed parts must still match exactly."
     },
     {
@@ -304,7 +304,7 @@
      "tag": "Full experiment",
      "live": false,
      "status": "partial",
-     "line": "Steps 1–4 of 10 confirmed. Step 5 now gets past the timing fault and reaches the pre-grasp position, then is refused: the surface supporting the weight was not observed. Next run targets this",
+     "line": "Steps 1–4 of 10 confirmed. Step 5 reaches the pre-grasp position, then is refused by an over-tight support-surface check (10 nanometres); check being corrected, next run without approval wait",
      "details": "Chosen as the first full native experiment. The formal request is compiled: 3 automated pre-checks, 25 robot and instrument calls and 9 calculation steps, with 307 evidence items to record. In the balance scene the 25 physical calls run with a diagnostic label until the skills are approved there, so a complete run does not yet count as an experiment pass. The trial job is fully prepared and goes in as soon as the execution agent is back online."
     },
     {
@@ -344,7 +344,7 @@
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. In the fourth run step 5 got past the timing fault and reached the pre-grasp position, then was refused because the support under the weight was not observed. The next run targets that single point; no approval wait"
+   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 now reaches the pre-grasp position and is stopped only by an over-tight support-surface check, which is being corrected on CPU; the next run follows without an approval wait, then the full 37 steps"
   },
   {
    "name": "Goal B · First accepted complete room",
@@ -388,6 +388,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:16",
+   "text": "Fourth lab-execution run, full report (executor figures, review pending): pick-and-place with the corrected motion timing finished twice, placing within 0.27 and 0.30 mm and holding the weight for about 22.5 seconds in total, against the 60-second limit the old timing kept hitting. Motion over the pan: two runs with about 1 mm error and at least 38.9 mm clearance, but the two were identical, so they count as one independent observation. Balance check: stopped at step 5 because the support-surface check accepted only points within 10 nanometres of the highest one; the check is being corrected. Job used about 2 GPU-hours."
+  },
   {
    "t": "11-16 22:15",
    "text": "First \"one command to a room\" result: the paper pipeline rebuilt the weighing room and the moisture room by calling the room builder directly, and every scene layer came out byte-identical to the published rooms. Placement spots for the titration instruments were found on two existing benches. Gate checks on these builds are running. In parallel, a 15-step transport-only task between two rooms was defined as the first cross-room target; it needs nine navigation, docking and carrying skills that do not exist yet."
