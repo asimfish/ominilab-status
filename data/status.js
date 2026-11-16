@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-16 22:10",
+ "updated": "2026-11-16 22:20",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -359,12 +359,12 @@ window.STATUS = {
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "pending",
-   "line": "Floor plan final on paper. Assembly of the five original rooms plus corridor starts now as a draft building. First target is a transport-only task between two rooms, then a cross-room experiment"
+   "line": "Floor plan final on paper; draft assembly of the five original rooms plus corridor is starting. The first cross-room target is defined: a 15-step transport-only task needing nine skills that do not exist yet. A CPU check of whether the robot can travel between all rooms is running"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "10 of 19 protocols fully sourced; 4 of 12 auto-built scenes pass the 600-step stability run. Scenes are still benches without rooms; one command to a room-shelled scene is being wired up for three experiments"
+   "line": "One command now rebuilds two room-shelled scenes (weighing, moisture) byte-identical to the published rooms; gate checks running; titration instruments being placed into a room automatically. 10 of 19 protocols fully sourced; 4 of 12 bench scenes pass the stability run"
   },
   {
    "name": "Base scenes",
@@ -388,6 +388,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 22:15",
+   "text": "First \"one command to a room\" result: the paper pipeline rebuilt the weighing room and the moisture room by calling the room builder directly, and every scene layer came out byte-identical to the published rooms. Placement spots for the titration instruments were found on two existing benches. Gate checks on these builds are running. In parallel, a 15-step transport-only task between two rooms was defined as the first cross-room target; it needs nine navigation, docking and carrying skills that do not exist yet."
+  },
   {
    "t": "11-16 22:03",
    "text": "Auto-built scenes in the simulator, after the gripper fix: 4 of the 12 distinct scenes now hold still for the full 600 steps (balance check, HPLC, moisture analysis, titration). The other 8 each fail on one identified part at the first step: a sliding axis that jumps 25 mm (2 scenes), an oven door that swings 6.6° (2), an instrument foot (2), a lid hinge (1) and a sample lid (1)."
