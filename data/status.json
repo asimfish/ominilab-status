@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 20:35",
+ "updated": "2026-11-16 21:00",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -206,7 +206,7 @@
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Passes target-simulator library checks; in-simulator stability run queued",
+     "line": "Passes library checks; 3 protocol steps cannot be traced to the paper's methods section yet; structured source being fetched",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -215,7 +215,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Re-exported with both collision shapes; passes target-simulator library checks; stability run queued",
+     "line": "Protocol passes the source check; scene passes library checks; failed the simulator stability run (gripper start state), fix queued",
      "details": "The titrator's stir bar and piston had no collision shape in the source model. A repair layer now adds one from each part's own visible mesh (convex hull), with nothing invented. The scene is being re-exported and still needs the simulator checks."
     },
     {
@@ -224,7 +224,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passes target-simulator library checks; in-simulator stability run queued",
+     "line": "Passes library checks; 2 protocol steps cannot be traced to the paper's methods section yet",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -233,7 +233,7 @@
      "tag": "From paper",
      "live": false,
      "status": "pending",
-     "line": "Layout fits 2 robot stations; export waits for one more instrument asset; room requirements drafted",
+     "line": "Protocol passes the source check; export waits for one instrument asset; needs two rooms",
      "details": ""
     },
     {
@@ -241,8 +241,8 @@
      "title": "meloxicam2022",
      "tag": "From paper",
      "live": false,
-     "status": "partial",
-     "line": "Passes target-simulator library checks; in-simulator stability run queued",
+     "status": "blocked",
+     "line": "Protocol on hold: it merged separate procedures from the paper; being re-extracted",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -334,7 +334,7 @@
      "tag": "Goal",
      "live": false,
      "status": "pending",
-     "line": "Goal: one large lab of several rooms where the robot works across rooms. Step 1 of 5 done on paper: floor plan finalised (two rows, 2.2 m corridor, sliding doors, 1 transport robot and 4 fixed arms). Building not assembled yet",
+     "line": "Goal: one large lab of several rooms where the robot works across rooms. Floor plan finalised on paper; the first cross-room experiment candidate was withdrawn (its protocol merged procedures), a replacement is being evaluated. Building not assembled yet",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
     }
    ]
@@ -349,12 +349,12 @@
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued for retest. Two extracted protocols were found wrong and are on hold; all 19 are being re-audited for the same error. None has a room shell yet"
+   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol audit: 3 of 19 pass, 5 have source or branch errors, 11 cannot be judged yet. None has a room shell yet"
   },
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "Experiments 12 and 13 compiled and dry-run end to end; 11 task graphs, 130 task templates; cross-room planning model drafted"
+   "line": "11 task graphs and 130 templates compiled. A source audit of the underlying protocols passes 3 of the 11 (balance check, titration, one milling paper), finds 1 that merged procedures, and cannot yet judge 7; unverified steps are barred from dispatch"
   },
   {
    "name": "Lab execution",
@@ -368,6 +368,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 20:55",
+   "text": "Protocol audit of all 19 pipeline items with the two new checks: 3 pass (the balance check, titration and one milling paper), 3 took steps from outside the paper's own methods, 2 merged separate procedures, and 11 cannot be judged yet, mostly because only a web-page copy of the paper is available. The first cross-room candidate was one of the merged ones and is withdrawn. Structured originals are now being fetched and the affected protocols re-extracted."
+  },
   {
    "t": "11-16 20:26",
    "text": "Auto-built scenes: 9 room requests delivered in the room builder's format (1 weighing, 2 moisture, 6 thermal). While preparing them, two extracted protocols were found to be wrong: one took its method from another group's work described in the paper's introduction, the other merged a main procedure with a reference branch. Both are on hold. Extraction now gets two extra checks (the step must come from the paper's own methods section, and all steps must belong to one procedure), and all 19 items are being re-audited, starting with the experiments already compiled into tasks."
