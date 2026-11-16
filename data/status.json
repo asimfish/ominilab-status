@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 21:15",
+ "updated": "2026-11-16 21:25",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -206,7 +206,7 @@
      "tag": "From protocol",
      "live": false,
      "status": "partial",
-     "line": "Passes library checks; 3 protocol steps cannot be traced to the paper's methods section yet; structured source being fetched",
+     "line": "Passes library checks; 4 handling steps are not described by the paper and are being reclassified as project steps with their own source",
      "details": "Second pilot. One robot station reaches every pick and place point (0.61 rad joint margin). Sample-pan fixture built from the manual (90 mm pan)."
     },
     {
@@ -224,7 +224,7 @@
      "tag": "From paper",
      "live": false,
      "status": "partial",
-     "line": "Passes library checks; 2 protocol steps cannot be traced to the paper's methods section yet",
+     "line": "Passes library checks; one clean-up step is not from the paper and is being reclassified as a project step",
      "details": "Real instruments, robot and bench. Passes the support check (258 pass, 11 warnings). Waits for the 600-step stability run."
     },
     {
@@ -241,8 +241,8 @@
      "title": "meloxicam2022",
      "tag": "From paper",
      "live": false,
-     "status": "blocked",
-     "line": "Protocol on hold: it merged separate procedures from the paper; being re-extracted",
+     "status": "partial",
+     "line": "Protocol corrected: split into 4 separate procedures that each pass the source check; scene and room binding to follow",
      "details": "Real instruments, robot and bench. Passes the support check (360 pass, 12 warnings). Waits for the 600-step stability run."
     },
     {
@@ -349,7 +349,7 @@
   {
    "name": "Auto-built scenes",
    "status": "partial",
-   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol audit: 3 of 19 pass, 5 have source or branch errors, 11 cannot be judged yet. None has a room shell yet"
+   "line": "Of 19 items, 17 pass library checks (12 distinct scenes); all 12 failed the simulator stability run for one shared cause, fixed on CPU and queued. Protocol source check: 10 of 19 pass after corrections; 9 contain handling steps no paper describes, now being classified separately. None has a room shell yet"
   },
   {
    "name": "Papers → orchestrated tasks",
@@ -368,6 +368,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-16 21:18",
+   "text": "Protocols re-extracted: structured open-access originals were obtained for all four papers that only had a web-page copy. Three flawed protocols were split into single procedures (four, two and four). Counting the corrected versions, 10 of 19 now pass the source check and 9 remain open. Those 9 are open because they contain steps no paper describes (loading the sample, cleaning, shutting down); such steps now form their own category that needs an instrument manual or project rule as its source and may never change what is measured."
+  },
   {
    "t": "11-16 21:12",
    "text": "Task planning now carries the protocol audit: of 130 task steps, 83 trace to a verified source, 10 belong to a protocol that merged procedures, 37 are unjudged. Counting whole experiments, 87 of 130 steps are held back; only the three fully verified experiments (43 steps) clear this check. No cross-room experiment can be dispatched yet. A written limit now states what a completed balance check may and may not be claimed to show."
