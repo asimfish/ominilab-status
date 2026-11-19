@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 01:25",
+ "updated": "2026-11-20 01:50",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -228,7 +228,7 @@
      "tag": "Headline",
      "live": false,
      "status": "partial",
-     "line": "First simulator picture of the room for the headline experiment. Structure checks 33 of 33; 600-step stability run passed (largest drift 1.3 mm, 0.3°). Robot operations fully bound: 0 of 6; five fixtures still to add. Appearance not yet reviewed by the owner",
+     "line": "Room for the headline experiment. Structure checks 33 of 33; 600-step stability run passed. Robot operations fully bound on CPU: 2 of 6 (furnace loading and unloading); simulator confirmation of those queued. Appearance not yet reviewed by the owner",
      "details": "",
      "img": "assets/snapshots/auto_alab_overview.jpg"
     },
@@ -238,7 +238,7 @@
      "tag": "View",
      "live": false,
      "status": "partial",
-     "line": "Box furnace for the 1000 °C step. The corrected door shows no start-up kick in the simulator (the old one gave 0.058 N·s); opening to 90° is not tested yet. The door will be driven by the instrument, not pushed by the robot",
+     "line": "Box furnace for the 1000 °C step. The door is now driven by the instrument (0 to 90°), refuses heating while open and pauses a run if opened; a part that blocked the swing now moves with the door. Travel under drive still to be confirmed in the simulator",
      "details": "",
      "img": "assets/snapshots/auto_alab_furnace.jpg"
     },
@@ -407,7 +407,7 @@
   {
    "name": "Headline · One complete paper experiment, every operation, in simulation",
    "status": "pending",
-   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Checked against the paper and the authors' control code: 6 operations happen inside automated stations (dosing, ethanol, mixing, slurry transfer, drying), 6 are done by the lab's robots (furnace loading and unloading, grinding handling, powder preparation, diffractometer loading, storage), 1 is the furnace program and 1 is data analysis. Only the 6 robot operations need full physical simulation; none is fully bound yet (0 of 6), and five fixtures are missing. The furnace door fault is fixed on CPU. Gate: step 5 of the balance check, same robot skills"
+   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Of its 6 robot operations, 2 are now fully bound to the room on CPU (furnace loading and unloading: tray, door travel, cooling rack, hand-off position), covering 8 of 21 robot sub-actions; simulator confirmation is queued. Remaining: diffractometer loading, sample storage, grinding handling, powder preparation. Open design point: bind everything to two fixed arms, as in the paper, because no skill exists for moving a robot base. Gate: step 5 of the balance check, same robot skills"
   },
   {
    "name": "Goal A · First complete experiment by the robot",
@@ -432,7 +432,7 @@
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "Phosphate synthesis room: 33 of 33 structure checks; furnace-door overlaps removed on CPU (6 to 0). Its operations are now split by who performs them in the paper: 6 station programs, 6 robot operations, 1 instrument program, 1 analysis. Robot operations fully bound: 0 of 6. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
+   "line": "Phosphate synthesis room: 33 of 33 structure checks kept after adding a crucible tray, a driven furnace door (0 to 90°, interlocked with heating) and corrected door parts. Robot operations fully bound on CPU: 2 of 6. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
   },
   {
    "name": "Base scenes",
@@ -456,6 +456,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 01:45",
+   "text": "Headline experiment: furnace loading and unloading are fully bound to the synthesis room on CPU (crucible tray, driven and interlocked furnace door, cooling rack, hand-off position). 2 of 6 robot operations, 8 of 21 sub-actions. Simulator confirmation handed over."
+  },
   {
    "t": "11-20 01:20",
    "text": "Balance check step 5, attempt 7 on the development machine: approach and descent passed for the first time in the simulator. Stopped at gripper closing on a zero-tolerance geometry check (weight rim 2.5 micrometres below the bench plane after the first finger touched). Ruling: use the existing 50-micrometre surface tolerance in that check; all other limits unchanged. Also measured: the simulation runs about 66 times slower than real time, so the full 37 steps need a faster checking loop or a longer run."
