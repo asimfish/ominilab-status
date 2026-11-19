@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 00:30",
+ "updated": "2026-11-20 01:00",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -162,7 +162,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "First properly exposed simulator picture (south-west corner, ambient light on). Structure gate passed; 600-step stability passed; balance check mapped onto it (37 of 37), none executed here yet. Appearance not yet signed off: plainer than the original labs, fit-out continues",
+     "line": "Refitted version (south-west corner, ambient light on): shelves now carry labelled boxes and logbooks, sockets and a wall panel are in, lights are calibrated to the original labs. Not signed off yet: the strict stability run fails on one added item (a spare 20 g weight tilts 1.8° in the first step; a three-pad seat is built and waiting for a free card), and the opposite walls are still bare",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance.jpg"
     },
@@ -222,6 +222,36 @@ window.STATUS = {
    "title": "Auto-built scenes",
    "blurb": "Scenes generated automatically from papers and protocols: one command goes from paper to protocol to scene, and the robot is placed automatically. Five are packaged for the live viewer.",
    "items": [
+    {
+     "id": "auto_alab_room",
+     "title": "Phosphate synthesis room (built from the paper)",
+     "tag": "Headline",
+     "live": false,
+     "status": "partial",
+     "line": "First simulator picture of the room for the headline experiment. Structure checks 33 of 33; 600-step stability run passed (largest drift 1.3 mm, 0.3°). Robot operations fully bound: 0 of 6; five fixtures still to add. Appearance not yet reviewed by the owner",
+     "details": "",
+     "img": "assets/snapshots/auto_alab_overview.jpg"
+    },
+    {
+     "id": "auto_alab_furnace",
+     "title": "Synthesis room · furnace",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "Box furnace for the 1000 °C step. The corrected door shows no start-up kick in the simulator (the old one gave 0.058 N·s); opening to 90° is not tested yet. The door will be driven by the instrument, not pushed by the robot",
+     "details": "",
+     "img": "assets/snapshots/auto_alab_furnace.jpg"
+    },
+    {
+     "id": "auto_alab_doser",
+     "title": "Synthesis room · dosing balance",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "Dosing station. A vial released onto the pan stays put (zero velocity after release). In the paper this station doses, mixes and dries by itself, so it is modelled as a station program",
+     "details": "",
+     "img": "assets/snapshots/auto_alab_doser.jpg"
+    },
     {
      "id": "auto_balance_routine_check",
      "title": "Balance routine check (NIST IR 6969)",
@@ -366,8 +396,9 @@ window.STATUS = {
      "tag": "Goal",
      "live": false,
      "status": "partial",
-     "line": "First draft had an assembly fault: one room's bench did not move with its room (weights ended about 0.9 m above the floor). Caught by the support check, assembler fixed, five-room building being re-verified on CPU. Not yet rendered or simulated; doors static; inherits 51 broken material links from the original labs",
-     "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end."
+     "line": "First simulator picture of the corrected five-room building: the corridor (lane lines, ceiling lights, one door opening). It is bare: no wall finish, door leaves or signs yet. Whole-building contact scan and strict stability run passed; the top view currently shows only roofs and will be re-rendered as a cut-away. First frame took 178 s to appear",
+     "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end.",
+     "img": "assets/snapshots/lab_multiroom.jpg"
     }
    ]
   }
@@ -381,12 +412,12 @@ window.STATUS = {
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: still 4 of 37 steps. The corrected descent path for step 5 is ready. New tonight: the owner approved native tests on the development machine's two idle GPUs, so each attempt at step 5 will take minutes instead of hours of packaging and queueing; a platform job is kept for the final, independently reviewed run. Starts as soon as the execution agent's account is restored"
+   "line": "100 g balance check: still 4 of 37 steps confirmed. Step 5 is now being attempted on the development machine with the corrected straight-line descent built into a test copy of the execution code (third attempt armed at 00:20). Results there are test evidence; one platform job follows for the independently reviewed run"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "36 m² weighing room: first properly exposed simulator pictures are on this page (16 exist: 8 camera positions, each with and without ambient light), and the 600-step stability run passed with only the four weights resting on the bench in the first steps. The team's own verdict: the workstation reads clearly, the room is still plainer than the original labs (empty tool trays, bare walls, default-looking robot base). Fit-out continues before the owner is asked to sign off. Robot steps executed in this room: 0 of 37"
+   "line": "36 m² weighing room: refitted (labelled boxes, logbooks, tools, spare weights, sockets, calibrated lights) and re-rendered; picture on this page. The strict stability run fails on one added item (a spare weight tilts 1.8° in the first step); a seat fix is built. Opposite walls still bare. Owner sign-off will be requested once the fix passes. Robot steps executed in this room: 0 of 37"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -396,7 +427,7 @@ window.STATUS = {
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "partial",
-   "line": "Corrected five-room building: full-building scan of 277 movable bodies found no blocking contact and the strict stability run passed. Its three pictures (top view, two corridor views) timed out at the first render in the platform job and will be rendered on the development machine instead. Doors static; no mobile-robot run yet"
+   "line": "Corrected five-room building: contact scan of 277 movable bodies and strict stability run passed; first pictures exist (corridor shown on this page, 178 s to first frame). The corridor is bare and the top view shows only roofs, so appearance work and a cut-away view are next. Doors static; no mobile-robot run yet"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
@@ -406,7 +437,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Latest job produced the weighing-room picture set and two stability runs (the job ended as failed on the platform, but its 199 evidence files were exported and verified). Accounting of the last three days: one job did nothing by design, two repeated the same batch, one left 50 pictures before failing, one completed 11 items with 15 pictures. Fully accepted base rooms: 0 of 5"
+   "line": "Tonight on the development machine: refitted weighing room rendered (16 views), synthesis room rendered and stable, building corridor rendered. Waiting for a free card: weighing-room seat fix, synthesis-room re-run with the corrected furnace door. Fully accepted base rooms: 0 of 5"
   },
   {
    "name": "Auto-built scenes",
@@ -425,6 +456,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 00:55",
+   "text": "First pictures from the development machine: refitted weighing room, the phosphate synthesis room for the headline experiment (stable over 600 steps), and the building corridor. Findings: one added weight in the weighing room tilts 1.8° at the first step (fix built); the corridor is bare; the building's top view shows only roofs."
+  },
   {
    "t": "11-19 23:25",
    "text": "Owner allowed OminiLab tests to share the development machine's GPUs with another project's light processes. Base-scene agent started rendering the refitted weighing room there."
