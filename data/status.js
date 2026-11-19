@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-19 14:40",
+ "updated": "2026-11-19 21:10",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -158,13 +158,43 @@ window.STATUS = {
     },
     {
      "id": "rebuilt_balance",
-     "title": "Weighing room (rebuilt)",
+     "title": "Weighing room, 36 m² (rebuilt)",
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "A 36 m² version now has 17 properly exposed simulator views and the full balance check mapped onto it. Not yet accepted: fit-out is still plain compared with the original labs, and the robot has not executed anything in it",
+     "line": "First properly exposed simulator picture (south-west corner, ambient light on). Structure gate passed; 600-step stability passed; balance check mapped onto it (37 of 37), none executed here yet. Appearance not yet signed off: plainer than the original labs, fit-out continues",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance.jpg"
+    },
+    {
+     "id": "rebuilt_balance_ne",
+     "title": "Weighing room · opposite corner",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "North-east corner, ambient light on. Island bench with the robot, balance and weights; wall cabinets behind",
+     "details": "",
+     "img": "assets/snapshots/rebuilt_balance_ne.jpg"
+    },
+    {
+     "id": "rebuilt_balance_top",
+     "title": "Weighing room · top view",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "Cut-away view from above (ceiling hidden for the picture): island bench, wall benches, waste bin, extinguisher, exit at the bottom",
+     "details": "",
+     "img": "assets/snapshots/rebuilt_balance_top.jpg"
+    },
+    {
+     "id": "rebuilt_balance_pan",
+     "title": "Weighing room · balance close-up",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "Balance pan, display and keys with the gripper above. This is the station for the 100 g balance check",
+     "details": "",
+     "img": "assets/snapshots/rebuilt_balance_pan.jpg"
     },
     {
      "id": "rebuilt_moisture",
@@ -346,17 +376,17 @@ window.STATUS = {
   {
    "name": "Headline · One complete paper experiment, every operation, in simulation",
    "status": "pending",
-   "line": "Owner's stated priority (11-17 to 11-19). Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations. 0 of 14 run so far. It needs the same robot skills as the balance check below (pick, supported place, wait, read, return), so that check's step 5 is the gate. PAUSED since the morning of 11-19: the AI service account the four agents run on has reached its usage limit; work resumes when it is topped up or resets (11-25)"
+   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Its room now passes all 33 structure checks; of its 13 physical workstations none is fully bound yet (first gap: the dosing station's parts share one coordinate origin). It needs the same robot skills as the balance check, whose step 5 is the gate. Two of the four agents are working again since 19:47; the execution agent and the reviewing agent are still stopped on the exhausted AI account"
   },
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: still 4 of 37 steps. Three more runs since 11-17: one failed at start-up, one was stopped after 19 minutes while approaching the weight at step 5 (the platform gave no reason). Cause found afterwards on CPU: the descent path dipped 76 mm below the grasp height and a finger passed through the bench. A corrected path is ready and checked. Next run: four parallel attempts of the whole chain, three in the original fixture and one in the full weighing room, with stop diagnostics built in. Waiting only for the agents to resume"
+   "line": "100 g balance check: still 4 of 37 steps. The corrected descent path for step 5 is ready. New tonight: the owner approved native tests on the development machine's two idle GPUs, so each attempt at step 5 will take minutes instead of hours of packaging and queueing; a platform job is kept for the final, independently reviewed run. Starts as soon as the execution agent's account is restored"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "36 m² weighing room: 17 properly exposed simulator views now exist, the balance check is mapped onto it (37 of 37 steps) and the approach path clears all 191 collision shapes. Nothing has been executed by the robot in the room yet (0 of 37). No base room is fully accepted (0 of 5); the next step is to bring this one room to the point where the owner can sign off its appearance"
+   "line": "36 m² weighing room: first properly exposed simulator pictures are on this page (16 exist: 8 camera positions, each with and without ambient light), and the 600-step stability run passed with only the four weights resting on the bench in the first steps. The team's own verdict: the workstation reads clearly, the room is still plainer than the original labs (empty tool trays, bare walls, default-looking robot base). Fit-out continues before the owner is asked to sign off. Robot steps executed in this room: 0 of 37"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
@@ -366,17 +396,17 @@ window.STATUS = {
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
    "status": "partial",
-   "line": "Correction: the first draft building had an assembly fault. The weighing room's bench stayed at its old position while the rest of the room moved, leaving the weights about 0.9 m above the floor. The base-scene checks caught it; the assembler is fixed and the five-room building is being re-verified on CPU. The earlier \"draft assembled\" entry does not count. First cross-room target unchanged: a 15-step transport-only task needing nine new skills"
+   "line": "Corrected five-room building: full-building scan of 277 movable bodies found no blocking contact and the strict stability run passed. Its three pictures (top view, two corridor views) timed out at the first render in the platform job and will be rendered on the development machine instead. Doors static; no mobile-robot run yet"
   },
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "Three complex rooms built automatically from papers: organic synthesis room passes all 32 structure checks, HPLC room 33 of 35, phosphate synthesis room 31 of 33. None fully accepted (0 of 3). Decision: finish one first, the phosphate synthesis room, because the headline experiment happens there"
+   "line": "Three complex rooms built automatically from papers: phosphate synthesis room now 33 of 33 structure checks (was 31), organic synthesis room 32 of 32, HPLC room 33 of 35. None fully accepted (0 of 3). The phosphate room goes first: pictures and stability cases are handed over, workstation bindings for the headline experiment are being built (0 of 13 complete)"
   },
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Three rebuilt rooms held still for 600 steps; weighing and thermal pass the structure gate. The picture job hung on the platform side and is being resubmitted, this time with the corrected building. Current honest state, as told to the project owner: rebuilt rooms have shell and facilities but are not yet realistic enough; existing renders are under-exposed"
+   "line": "Latest job produced the weighing-room picture set and two stability runs (the job ended as failed on the platform, but its 199 evidence files were exported and verified). Accounting of the last three days: one job did nothing by design, two repeated the same batch, one left 50 pictures before failing, one completed 11 items with 15 pictures. Fully accepted base rooms: 0 of 5"
   },
   {
    "name": "Auto-built scenes",
@@ -386,7 +416,7 @@ window.STATUS = {
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "Independent review has a backlog: the evidence of the 11-17 run (62 archives) and the corrected descent path are waiting for review; the reviewing agent has not run since 11-17"
+   "line": "Independent review backlog unchanged: the evidence of the 11-17 run and the corrected descent path await review; the reviewing agent has not run since 11-17 and its account has not been switched yet"
   },
   {
    "name": "Lab execution",
@@ -395,6 +425,22 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-19 20:55",
+   "text": "Owner approved native simulator tests on the development machine's two idle GPUs: one card for the balance-check chain, one for room pictures. Attempts that took hours through platform jobs now take minutes; platform jobs remain for the final reviewed runs."
+  },
+  {
+   "t": "11-19 20:50",
+   "text": "36 m² weighing room: 16 properly exposed simulator pictures and two 600-step stability runs delivered. Own verdict of the base-scene agent: workstation clear, room not yet at the original labs' level of realism."
+  },
+  {
+   "t": "11-19 20:16",
+   "text": "Phosphate synthesis room (where the headline experiment takes place): structure checks 33 of 33 after fixing a stirrer's support and adding lane markings. The experiment's 14 operations are mapped to the room; 13 need a physical workstation and none is fully bound yet."
+  },
+  {
+   "t": "11-19 19:47",
+   "text": "Two of the four agents (base scenes, auto-built scenes) were moved to a working AI account and resumed on the waiting instructions. The execution agent and the reviewing agent are still on the exhausted account."
+  },
   {
    "t": "11-19 14:30",
    "text": "Status after a two-day gap in supervision. All four agents are currently stopped: the AI service account they run on reached its usage limit this morning (it resets on 11-25 unless topped up). The reference machine had also moved; the new one is verified. A rule that had frozen native runs since 11-18 is withdrawn. Instructions for the next run and for clearing the review backlog are delivered and waiting."
