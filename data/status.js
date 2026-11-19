@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-19 21:10",
+ "updated": "2026-11-20 00:30",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -376,7 +376,7 @@ window.STATUS = {
   {
    "name": "Headline · One complete paper experiment, every operation, in simulation",
    "status": "pending",
-   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Its room now passes all 33 structure checks; of its 13 physical workstations none is fully bound yet (first gap: the dosing station's parts share one coordinate origin). It needs the same robot skills as the balance check, whose step 5 is the gate. Two of the four agents are working again since 19:47; the execution agent and the reviewing agent are still stopped on the exhausted AI account"
+   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Checked against the paper and the authors' control code: 6 operations happen inside automated stations (dosing, ethanol, mixing, slurry transfer, drying), 6 are done by the lab's robots (furnace loading and unloading, grinding handling, powder preparation, diffractometer loading, storage), 1 is the furnace program and 1 is data analysis. Only the 6 robot operations need full physical simulation; none is fully bound yet (0 of 6), and five fixtures are missing. The furnace door fault is fixed on CPU. Gate: step 5 of the balance check, same robot skills"
   },
   {
    "name": "Goal A · First complete experiment by the robot",
@@ -401,7 +401,7 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "Three complex rooms built automatically from papers: phosphate synthesis room now 33 of 33 structure checks (was 31), organic synthesis room 32 of 32, HPLC room 33 of 35. None fully accepted (0 of 3). The phosphate room goes first: pictures and stability cases are handed over, workstation bindings for the headline experiment are being built (0 of 13 complete)"
+   "line": "Phosphate synthesis room: 33 of 33 structure checks; furnace-door overlaps removed on CPU (6 to 0). Its operations are now split by who performs them in the paper: 6 station programs, 6 robot operations, 1 instrument program, 1 analysis. Robot operations fully bound: 0 of 6. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
   },
   {
    "name": "Base scenes",
@@ -425,6 +425,14 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-19 23:25",
+   "text": "Owner allowed OminiLab tests to share the development machine's GPUs with another project's light processes. Base-scene agent started rendering the refitted weighing room there."
+  },
+  {
+   "t": "11-20 00:08",
+   "text": "Headline experiment scoped against its source: the paper's methods and the authors' control code show six of the fourteen operations are done inside automated stations and six by robots. The room needs five more fixtures for the robot operations (movable crucible rack, furnace-door actuator, sieve and press fixtures, removable sample holder, labelled storage vial). Furnace door overlaps fixed on CPU."
+  },
   {
    "t": "11-19 20:55",
    "text": "Owner approved native simulator tests on the development machine's two idle GPUs: one card for the balance-check chain, one for room pictures. Attempts that took hours through platform jobs now take minutes; platform jobs remain for the final reviewed runs."
