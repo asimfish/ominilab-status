@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 02:15",
+ "updated": "2026-11-20 02:25",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -437,7 +437,7 @@ window.STATUS = {
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Tonight on the development machine: refitted weighing room rendered (16 views), synthesis room rendered and stable, building corridor rendered. Waiting for a free card: weighing-room seat fix, synthesis-room re-run with the corrected furnace door. Fully accepted base rooms: 0 of 5"
+   "line": "Four original labs rebuilt with lane markings and reseated glassware: structure checks 34/35, 31/32, 34/35 and 32/33; the one open item in each is seven glassware pieces whose support only the simulator can settle. A platform job is being sealed for the formal weighing-room run and pictures, the building cut-away, and strict stability runs of the four labs. Operability finding: in each original lab the balance is the only instrument with working moving parts; hoods, ovens, centrifuges and analysers are static models. Doors and lids are being rigged for the instruments the planned experiments use. Fully accepted base rooms: 0 of 5"
   },
   {
    "name": "Auto-built scenes",
@@ -456,6 +456,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 01:55",
+   "text": "Base scenes: four original labs rebuilt (structure checks 34/35, 31/32, 34/35, 32/33). Audit of moving parts: only the balance (buttons, draft-shield doors) is operable in those labs; other instruments are static models. Rigging of doors and lids starts with the instruments the planned experiments need."
+  },
   {
    "t": "11-20 02:10",
    "text": "Correction: the two furnace operations are not yet fully bound. Their reach check relied on moving the robot base, which no skill can do. Checked against the paper: it uses two arms dedicated to stations (one on a rail serving four furnaces, one for characterisation). The synthesis room is being re-laid out with two fixed arms; fixtures already built carry over."
