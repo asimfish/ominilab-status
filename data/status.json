@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 01:00",
+ "updated": "2026-11-20 01:25",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -412,7 +412,7 @@
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: still 4 of 37 steps confirmed. Step 5 is now being attempted on the development machine with the corrected straight-line descent built into a test copy of the execution code (third attempt armed at 00:20). Results there are test evidence; one platform job follows for the independently reviewed run"
+   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 (pick up the weight) advanced tonight on the development machine: approach and the corrected straight-line descent now pass in the simulator for the first time (1.2 mm from target against a 5 mm limit). It then stopped while closing the gripper: the first finger to touch tilted the weight by 0.018°, putting its rim 2.5 micrometres below the bench plane, and a check that demanded exactly zero refused. That check now uses the 50-micrometre tolerance already authorised for the bench surface; the next attempt is running. Grip force, lift and slip are not measured yet. Test evidence only"
   },
   {
    "name": "Goal B · First accepted complete room",
@@ -456,6 +456,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 01:20",
+   "text": "Balance check step 5, attempt 7 on the development machine: approach and descent passed for the first time in the simulator. Stopped at gripper closing on a zero-tolerance geometry check (weight rim 2.5 micrometres below the bench plane after the first finger touched). Ruling: use the existing 50-micrometre surface tolerance in that check; all other limits unchanged. Also measured: the simulation runs about 66 times slower than real time, so the full 37 steps need a faster checking loop or a longer run."
+  },
   {
    "t": "11-20 00:55",
    "text": "First pictures from the development machine: refitted weighing room, the phosphate synthesis room for the headline experiment (stable over 600 steps), and the building corridor. Findings: one added weight in the weighing room tilts 1.8° at the first step (fix built); the corridor is bare; the building's top view shows only roofs."
