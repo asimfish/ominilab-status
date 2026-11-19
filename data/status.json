@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 02:25",
+ "updated": "2026-11-20 02:45",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -435,9 +435,14 @@
    "line": "Phosphate synthesis room: 33 of 33 structure checks in its current layout; being rebuilt as a two-arm work cell (fixed furnace arm, fixed characterisation arm, diffractometer moved alongside) so that every robot step is within reach without moving a base. Robot operations fully bound: 0 of 6 until the new layout is verified. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
   },
   {
+   "name": "Operability · moving parts of the instruments the planned experiments use",
+   "status": "partial",
+   "line": "Across the synthesis room and the four original labs: 89 mechanisms (doors, lids, buttons) on the instruments the planned experiments need. Rigged: 36 (the balances' buttons and draft-shield doors, and one furnace door). Confirmed moving in the simulator: 0 so far. The other 53 have joints in the source models that were switched off and are being re-activated in order: moisture analyser lid, furnace and diffractometer doors, oven doors, mill lid. A further 449 mechanisms on instruments no planned experiment uses stay switched off"
+  },
+  {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Four original labs rebuilt with lane markings and reseated glassware: structure checks 34/35, 31/32, 34/35 and 32/33; the one open item in each is seven glassware pieces whose support only the simulator can settle. A platform job is being sealed for the formal weighing-room run and pictures, the building cut-away, and strict stability runs of the four labs. Operability finding: in each original lab the balance is the only instrument with working moving parts; hoods, ovens, centrifuges and analysers are static models. Doors and lids are being rigged for the instruments the planned experiments use. Fully accepted base rooms: 0 of 5"
+   "line": "Four original labs rebuilt with lane markings and reseated glassware: structure checks 34/35, 31/32, 34/35 and 32/33. A platform job was submitted at 02:19 (17 cases): formal weighing-room stability run and 16 pictures, building cut-away, strict stability and pictures of the four labs, furnace open and closed. Corridor fit-out (skirting, rails, door signs, extinguisher boxes) is built and waiting to be rendered. Fully accepted base rooms: 0 of 5"
   },
   {
    "name": "Auto-built scenes",
@@ -456,6 +461,10 @@
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 02:19",
+   "text": "Platform job submitted for the base scenes (17 cases): formal weighing-room run and pictures, building cut-away, the four original labs, furnace door open and closed. First operability count published: 36 of 89 needed mechanisms rigged, none confirmed in the simulator yet."
+  },
   {
    "t": "11-20 01:55",
    "text": "Base scenes: four original labs rebuilt (structure checks 34/35, 31/32, 34/35, 32/33). Audit of moving parts: only the balance (buttons, draft-shield doors) is operable in those labs; other instruments are static models. Rigging of doors and lids starts with the instruments the planned experiments need."
