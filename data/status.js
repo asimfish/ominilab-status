@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 02:45",
+ "updated": "2026-11-20 03:00",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -437,7 +437,7 @@ window.STATUS = {
   {
    "name": "Operability · moving parts of the instruments the planned experiments use",
    "status": "partial",
-   "line": "Across the synthesis room and the four original labs: 89 mechanisms (doors, lids, buttons) on the instruments the planned experiments need. Rigged: 36 (the balances' buttons and draft-shield doors, and one furnace door). Confirmed moving in the simulator: 0 so far. The other 53 have joints in the source models that were switched off and are being re-activated in order: moisture analyser lid, furnace and diffractometer doors, oven doors, mill lid. A further 449 mechanisms on instruments no planned experiment uses stay switched off"
+   "line": "Across the synthesis room, the four original labs and the weighing room: 124 mechanisms (doors, lids, buttons) on the instruments the planned experiments need. Rigged: 52, including the balances' buttons and draft-shield doors, the weighing-room balance keys, one furnace door, and newly prepared moisture-analyser lid, two oven doors, mill lid and a second furnace door. Confirmed moving in the simulator: 0 so far; a dedicated confirmation run (three full cycles per mechanism, no contact outside the instrument) follows the current platform job. Diffractometer and vacuum-oven doors still show possible contacts and wait for the simulator to decide. A further 449 mechanisms on instruments no planned experiment uses stay switched off"
   },
   {
    "name": "Base scenes",
