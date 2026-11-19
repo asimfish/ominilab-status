@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-17 02:12",
+ "updated": "2026-11-19 14:40",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -162,7 +162,7 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Structure gate and 600-step stability passed. Preview only: this picture is a too-dark render brightened for viewing, not an accepted image. Walls and fit-out are still bare compared with the original labs; lighting being recalibrated",
+     "line": "A 36 m² version now has 17 properly exposed simulator views and the full balance check mapped onto it. Not yet accepted: fit-out is still plain compared with the original labs, and the robot has not executed anything in it",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance.jpg"
     },
@@ -344,19 +344,24 @@ window.STATUS = {
  ],
  "summary": [
   {
+   "name": "Headline · One complete paper experiment, every operation, in simulation",
+   "status": "pending",
+   "line": "Owner's stated priority (11-17 to 11-19). Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations. 0 of 14 run so far. It needs the same robot skills as the balance check below (pick, supported place, wait, read, return), so that check's step 5 is the gate. PAUSED since the morning of 11-19: the AI service account the four agents run on has reached its usage limit; work resumes when it is topped up or resets (11-25)"
+  },
+  {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. The fifth run was submitted at 01:51 and the platform created the job at 02:09; it is waiting for GPUs. It targets the first 10 steps; if they pass, the full 37-step run follows without a further approval wait"
+   "line": "100 g balance check: still 4 of 37 steps. Three more runs since 11-17: one failed at start-up, one was stopped after 19 minutes while approaching the weight at step 5 (the platform gave no reason). Cause found afterwards on CPU: the descent path dipped 76 mm below the grasp height and a finger passed through the bench. A corrected path is ready and checked. Next run: four parallel attempts of the whole chain, three in the original fixture and one in the full weighing room, with stop diagnostics built in. Waiting only for the agents to resume"
   },
   {
    "name": "Goal B · First accepted complete room",
    "status": "partial",
-   "line": "Weighing room: structure gate and 600-step stability passed; the balance check is mapped onto it (all 37 steps, no path changes). Still no properly lit picture: the picture job submitted at 00:31 hung inside the platform (accepted, never created), so it is being resubmitted as a new job. Fit-out to the original labs' level is still to do"
+   "line": "36 m² weighing room: 17 properly exposed simulator views now exist, the balance check is mapped onto it (37 of 37 steps) and the approach path clears all 191 collision shapes. Nothing has been executed by the robot in the room yet (0 of 37). No base room is fully accepted (0 of 5); the next step is to bring this one room to the point where the owner can sign off its appearance"
   },
   {
    "name": "Goal C · Second experiment, taken from a paper",
    "status": "pending",
-   "line": "Moisture analysis: pilot room passes all 23 structure checks on CPU (simulator confirmation pending) and the experiment is compiled into 21 steps per sample cycle, 63 for the paper's three measurements. None of the 21 is covered by an approved skill yet; skill work starts after the balance check"
+   "line": "Moisture analysis: 63 steps planned for three samples, none run. New: a checked path for carrying the sample carrier into the analyser with the lid open (tightest gap 5.2 mm); with the lid closed the same path collides, so the robot must see the lid open first"
   },
   {
    "name": "Goal D · Multi-room laboratory with cross-room work",
@@ -366,7 +371,7 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "One command produces three room-shelled scenes; all pass support and library checks. Structure gate on CPU: weighing room passes, moisture room passes pending simulator confirmation, titration room is one check short (2 overlaps from an asset modelled without a bore). Now binding the compiled titration procedure to its room, so a third experiment has paper, room and task plan. Protocol extraction is still agent-drafted and checked"
+   "line": "Three complex rooms built automatically from papers: organic synthesis room passes all 32 structure checks, HPLC room 33 of 35, phosphate synthesis room 31 of 33. None fully accepted (0 of 3). Decision: finish one first, the phosphate synthesis room, because the headline experiment happens there"
   },
   {
    "name": "Base scenes",
@@ -381,15 +386,31 @@ window.STATUS = {
   {
    "name": "Papers → orchestrated tasks",
    "status": "partial",
-   "line": "11 task graphs, 130 task steps. After the protocol source audit, 43 steps (three fully verified experiments) clear the source check and 87 are held back. In progress: titration procedure bound to its auto-built room, and one ranked list of the skills still missing across the balance check, moisture, titration and transport tasks"
+   "line": "Independent review has a backlog: the evidence of the 11-17 run (62 archives) and the corrected descent path are waiting for review; the reviewing agent has not run since 11-17"
   },
   {
    "name": "Lab execution",
    "status": "partial",
-   "line": "6 skills approved. Fourth run reviewed: balance-check steps 1–4 confirmed; pick-and-place with the corrected timing confirmed twice; obstacle test confirmed. Fifth run: job created at 02:09, waiting for GPUs (4 low-priority cards, 75 minutes at most)"
+   "line": "6 skills approved; no new approvals. Native job submission had been paused since 11-18 by a rule (\"stop after two runs without progress\") that is now withdrawn: a run without progress must be followed by a named fault, a tested fix and added diagnostics, not by a stop"
   }
  ],
  "timeline": [
+  {
+   "t": "11-19 14:30",
+   "text": "Status after a two-day gap in supervision. All four agents are currently stopped: the AI service account they run on reached its usage limit this morning (it resets on 11-25 unless topped up). The reference machine had also moved; the new one is verified. A rule that had frozen native runs since 11-18 is withdrawn. Instructions for the next run and for clearing the review backlog are delivered and waiting."
+  },
+  {
+   "t": "11-19 07:26",
+   "text": "Cause of the step-5 trouble found on CPU: the old descent path went 76 mm below the grasp height, with a finger intersecting the bench in a third of the samples. A corrected path stays at least 8 mm clear and passes continuous collision checks in both the fixture and the weighing room."
+  },
+  {
+   "t": "11-18 21:18",
+   "text": "Base-scene job finished: simulator views of the five original labs (15) and of the 36 m² weighing room (17)."
+  },
+  {
+   "t": "11-17 20:37",
+   "text": "Sixth run of the balance check stopped after 19 minutes. Steps 1 to 4 passed again; step 5 (pick up the weight) got as far as the approach. Two more pick-and-place passes in the isolated test scene completed. The platform reported no stop reason."
+  },
   {
    "t": "11-17 02:09",
    "text": "Fifth run of the balance check is now a job on the platform, waiting for GPUs. Separately, the base-scene picture job from 00:31 turned out to be stuck inside the platform: its creation request has shown no progress for 100 minutes while a later request completed in 18. It will be resubmitted as a new job that also carries the corrected building."
