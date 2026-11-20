@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab Agent Diagram</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: the diagram alone, full width; scrolls sideways on phones. */
+:root {
+  --bg: #f5f7fa; --panel: #ffffff; --band: #eaeef4; --fg: #18212c; --muted: #5a6677;
+  --line: #c3ccd8; --accent: #2c5bb0; --ok: #23774a; --warn: #a8630a; --bad: #c03a2b;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151b; --panel: #19202a; --band: #151b23; --fg: #e3e8ef; --muted: #98a3b3;
+    --line: #34404f; --accent: #7fa6ee; --ok: #5cc98a; --warn: #e3a54a; --bad: #f06a5d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11151b; --panel: #19202a; --band: #151b23; --fg: #e3e8ef; --muted: #98a3b3;
+  --line: #34404f; --accent: #7fa6ee; --ok: #5cc98a; --warn: #e3a54a; --bad: #f06a5d;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--sans);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px;
+}
+.scroll { max-width: 1240px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.map { display: block; width: 100%; min-width: 900px; height: auto; font-family: var(--sans); }
+.band { fill: var(--band); stroke: var(--line); stroke-width: 1; }
+.bandlbl { fill: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .09em; }
+.nd { fill: var(--panel); stroke: var(--line); stroke-width: 1.2; }
+.nd-hq { stroke: var(--accent); stroke-width: 2; }
+.nd-bad { stroke: var(--bad); stroke-width: 2; }
+.nd-warn { stroke: var(--warn); stroke-width: 1.6; }
+.nd-ghost { stroke-dasharray: 5 4; }
+.t1 { fill: var(--fg); font-size: 13px; font-weight: 600; }
+.t2 { fill: var(--muted); font-size: 11px; font-family: var(--mono); }
+.st { font-size: 11.5px; font-weight: 500; }
+.st-ok { fill: var(--ok); } .st-warn { fill: var(--warn); } .st-bad { fill: var(--bad); }
+.lbl { fill: var(--muted); font-size: 11px; }
+.lbl-bad { fill: var(--bad); } .lbl-warn { fill: var(--warn); }
+.e { fill: none; stroke: var(--fg); stroke-width: 1.4; }
+.e-mu { stroke: var(--muted); stroke-dasharray: 5 4; stroke-width: 1.2; }
+.e-bad { stroke: var(--bad); stroke-dasharray: 6 4; stroke-width: 1.7; }
+.e-warn { stroke: var(--warn); stroke-dasharray: 6 4; stroke-width: 1.5; }
+.ah-fg { fill: var(--fg); } .ah-mu { fill: var(--muted); } .ah-bad { fill: var(--bad); } .ah-warn { fill: var(--warn); }
+.gapbg { fill: var(--bg); }
+.back { max-width: 1240px; margin: 14px auto 0; font-size: 13px; }
+.back a { color: var(--accent); }
+body { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="scroll">
+  <svg class="map" viewBox="0 0 1200 690" role="img" aria-label="Diagram of the OminiLab agents. The user guides the HQ mentor, which oversees the coordinator for steps 1 to 4 and the manipulation mentors for F1 to F4. Step3, the reviewer, has no working session, so step4's evidence piles up unreviewed, and rulings for F3 and F4 were never delivered.">
+    <defs>
+      <marker id="a-fg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-fg"/></marker>
+      <marker id="a-mu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-mu"/></marker>
+      <marker id="a-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-bad"/></marker>
+      <marker id="a-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-warn"/></marker>
+    </defs>
+
+    <rect class="nd" x="500" y="10" width="200" height="46" rx="8"/>
+    <text class="t1" x="600" y="30" text-anchor="middle">You</text>
+    <text class="lbl" x="600" y="47" text-anchor="middle">decisions · approvals</text>
+    <line class="e e-mu" x1="600" y1="56" x2="600" y2="90" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="608" y="78">review tasks</text>
+
+    <rect class="nd nd-hq" x="470" y="92" width="260" height="52" rx="8"/>
+    <text class="t1" x="600" y="113" text-anchor="middle">HQ mentor</text>
+    <text class="lbl" x="600" y="131" text-anchor="middle">reads all ten · can message each</text>
+
+    <path class="e e-mu" d="M470,118 H310 V184" marker-end="url(#a-mu)"/>
+    <path class="e e-mu" d="M730,118 H775 V184" marker-end="url(#a-mu)"/>
+    <path class="e e-mu" d="M775,118 H1040 V184" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="390" y="110" text-anchor="middle">oversees</text>
+    <text class="lbl" x="908" y="110" text-anchor="middle">oversees</text>
+
+    <rect class="nd" x="180" y="186" width="260" height="56" rx="8"/>
+    <text class="t1" x="310" y="208" text-anchor="middle">Coordinator</text>
+    <text class="t2" x="310" y="228" text-anchor="middle">“OminiLab” · mentors step1–4</text>
+
+    <rect class="nd" x="660" y="186" width="230" height="56" rx="8"/>
+    <text class="t1" x="775" y="208" text-anchor="middle">Manipulation mentor</text>
+    <text class="t2" x="775" y="228" text-anchor="middle">“Ominilab_手势” · F1 F3 F4</text>
+
+    <rect class="nd nd-ghost" x="920" y="186" width="240" height="56" rx="8"/>
+    <text class="t1" x="1040" y="208" text-anchor="middle">Second F mentor</text>
+    <text class="t2" x="1040" y="228" text-anchor="middle">F2 + grasp contract</text>
+
+    <rect class="band" x="20" y="290" width="580" height="340" rx="10"/>
+    <rect class="band" x="640" y="290" width="540" height="340" rx="10"/>
+    <text class="bandlbl" x="36" y="311">LAB PIPELINE · STEP 1–4</text>
+    <text class="bandlbl" x="656" y="311">MANIPULATION LINE · F1–F4</text>
+
+    <line class="e e-mu" x1="310" y1="242" x2="310" y2="288" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="318" y="270">briefs (link to step4 lost 17:48)</text>
+    <line class="e e-mu" x1="775" y1="242" x2="775" y2="288" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="783" y="270">rulings</text>
+    <line class="e e-mu" x1="1040" y1="242" x2="1040" y2="288" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="1048" y="270">rounds</text>
+
+    <rect class="nd" x="40" y="330" width="200" height="86" rx="8"/>
+    <text class="t1" x="54" y="354">step1 · Base scenes</text>
+    <text class="t2" x="54" y="374">Claude continuation</text>
+    <text class="st st-ok" x="54" y="398">running: batch R87e</text>
+
+    <rect class="nd nd-warn" x="380" y="330" width="200" height="86" rx="8"/>
+    <text class="t1" x="394" y="354">step2 · Paper → scene</text>
+    <text class="t2" x="394" y="374">Claude continuation</text>
+    <text class="st st-warn" x="394" y="398">blocked: pour fails 5° gate</text>
+
+    <rect class="nd nd-bad" x="40" y="520" width="200" height="86" rx="8"/>
+    <text class="t1" x="54" y="544">step3 · Review + tasks</text>
+    <text class="t2" x="54" y="564">original Codex agent</text>
+    <text class="st st-bad" x="54" y="588">not run since 11-17</text>
+
+    <rect class="nd" x="380" y="520" width="200" height="86" rx="8"/>
+    <text class="t1" x="394" y="544">step4 · Run in full lab</text>
+    <text class="t2" x="394" y="564">titled “Fork: step_3”</text>
+    <text class="st st-ok" x="394" y="588">running: balance check a13</text>
+
+    <line class="e" x1="380" y1="360" x2="243" y2="360" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="311" y="352" text-anchor="middle">release to confirm</text>
+    <line class="e" x1="110" y1="416" x2="110" y2="517" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="118" y="470">scenes</text>
+    <line class="e" x1="450" y1="416" x2="450" y2="517" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="458" y="470">motion packet</text>
+    <line class="e e-bad" x1="380" y1="548" x2="243" y2="548" marker-end="url(#a-bad)"/>
+    <text class="lbl lbl-bad" x="311" y="540" text-anchor="middle">evidence a7–a13</text>
+    <line class="e e-mu" x1="240" y1="584" x2="377" y2="584" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="311" y="601" text-anchor="middle">verdicts: none</text>
+
+    <rect class="nd" x="660" y="330" width="200" height="86" rx="8"/>
+    <text class="t1" x="674" y="354">F1 · Object labels</text>
+    <text class="t2" x="674" y="374">Codex agent</text>
+    <text class="st st-ok" x="674" y="398">running: round 79, job 18</text>
+
+    <rect class="nd nd-warn" x="960" y="330" width="200" height="86" rx="8"/>
+    <text class="t1" x="974" y="354">F2 · Grasp sampling</text>
+    <text class="t2" x="974" y="374">Codex agent</text>
+    <text class="st st-warn" x="974" y="398">idle: 0 grasp seeds</text>
+
+    <rect class="nd nd-bad" x="660" y="520" width="200" height="86" rx="8"/>
+    <text class="t1" x="674" y="544">F3 · Sub-task data</text>
+    <text class="t2" x="674" y="564">Claude continuation</text>
+    <text class="st st-bad" x="674" y="588">R74 ruling not delivered</text>
+
+    <rect class="nd nd-bad" x="960" y="520" width="200" height="86" rx="8"/>
+    <text class="t1" x="974" y="544">F4 · Chained eval</text>
+    <text class="t2" x="974" y="564">Claude continuation</text>
+    <text class="st st-bad" x="974" y="588">R88 ruling not delivered</text>
+
+    <line class="e" x1="863" y1="360" x2="957" y2="360" marker-start="url(#a-fg)" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="910" y="352" text-anchor="middle">grasp contract</text>
+    <line class="e" x1="730" y1="416" x2="730" y2="517" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="738" y="470">vessel masses</text>
+    <line class="e e-warn" x1="990" y1="416" x2="848" y2="517" marker-end="url(#a-warn)"/>
+    <text class="lbl lbl-warn" x="930" y="466">grasp library</text>
+    <text class="lbl lbl-warn" x="936" y="480">(empty)</text>
+    <line class="e" x1="860" y1="548" x2="957" y2="548" marker-end="url(#a-fg)"/>
+    <text class="lbl" x="910" y="540" text-anchor="middle">task splits</text>
+    <line class="e e-mu" x1="960" y1="584" x2="863" y2="584" marker-end="url(#a-mu)"/>
+    <text class="lbl" x="910" y="601" text-anchor="middle">data gaps</text>
+
+    <line class="e e-mu" x1="583" y1="566" x2="657" y2="566" marker-start="url(#a-mu)" marker-end="url(#a-mu)"/>
+    <rect class="gapbg" x="592" y="542" width="56" height="15" rx="3"/>
+    <text class="lbl" x="620" y="553" text-anchor="middle">same task</text>
+
+    <line class="e" x1="24" y1="664" x2="58" y2="664"/>
+    <text class="lbl" x="66" y="668">work handed over</text>
+    <line class="e e-mu" x1="190" y1="664" x2="224" y2="664"/>
+    <text class="lbl" x="232" y="668">guidance or weak link</text>
+    <line class="e e-warn" x1="380" y1="664" x2="414" y2="664"/>
+    <text class="lbl" x="422" y="668">blocked</text>
+    <line class="e e-bad" x1="486" y1="664" x2="520" y2="664"/>
+    <text class="lbl" x="528" y="668">broken or piling up</text>
+    <text class="lbl" x="1176" y="668" text-anchor="end">11-20 18:40 UTC+8</text>
+  </svg>
+</div>
+<p class="back"><a href="./">← OminiLab status</a></p>
+</body>
+</html>
