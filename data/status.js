@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 17:15",
+ "updated": "2026-11-20 17:00",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -12,7 +12,7 @@ window.STATUS = {
   {
    "id": "base",
    "title": "Base scenes",
-   "blurb": "5 original scenes and 7 new rooms. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
+   "blurb": "Four original labs, the 36 m² weighing room and the corridor, plus 7 draft rooms still to be rebuilt. Across the finished rooms and the synthesis room: 226 loose objects that hold still and can be picked up, and 32 of the 124 moving parts planned for experiments confirmed in 3 full open-close cycles. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
    "items": [
     {
      "id": "legacy_l0",
@@ -20,8 +20,8 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
-     "details": "A three-neck flask that tipped at step 7 is fixed. Full sweep: 0 blockers.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 27 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the oven door still stall.",
+     "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l0.jpg"
     },
     {
@@ -30,8 +30,8 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
-     "details": "A pestle that tipped at step 5 is fixed. Full sweep: 0 blockers.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 18 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door still stalls; the oven door is being retested.",
+     "details": "Structure: 31 of 32 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l1.jpg"
     },
     {
@@ -40,8 +40,8 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
-     "details": "Holds the pilot balance station. A 50 ml beaker standing on a 0.4 mm contact point got a 1 mm flat foot; the dispenser, oven and titrator repairs hold.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 32 loose objects can be picked up; 6 of 20 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the moisture-analyser lid still stall.",
+     "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l2.jpg"
     },
     {
@@ -50,8 +50,8 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the 600-step stability test. Structure gate: density, lights, hoods, sinks pass; waste station, legible exit signs and some support checks to add",
-     "details": "A free-standing vessel that tipped at step 1 is fixed. Full sweep: 0 blockers.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 7 of 26 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors, the furnace door); the top draft-shield door still stalls; the mill lid is being retested.",
+     "details": "Structure: 32 of 33 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l3.jpg"
     },
     {
@@ -162,8 +162,8 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Refitted version (south-west corner, ambient light on): shelves now carry labelled boxes and logbooks, sockets and a wall panel are in, lights are calibrated to the original labs. Not signed off yet: the strict stability run fails on one added item (a spare 20 g weight tilts 1.8° in the first step; a three-pad seat is built and waiting for a free card), and the opposite walls are still bare",
-     "details": "",
+     "line": "Walls dressed on all four sides. Strict stability now passes on the development machine: the spare 20 g weight tilted 2.4° because its collider had a 0.6 mm chamfer, thinner than the physics engine treats as a separate face; fixed, formal repeat in today's platform run. All 5 driven parts of the balance confirmed (4 keys, transport lock). 8 loose objects (reference weights, forceps, brush). Waiting for appearance sign-off.",
+     "details": "A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/rebuilt_balance.jpg"
     },
     {
@@ -172,7 +172,7 @@ window.STATUS = {
      "tag": "View",
      "live": false,
      "status": "partial",
-     "line": "North-east corner, ambient light on. Island bench with the robot, balance and weights; wall cabinets behind",
+     "line": "North-east corner: fixed robot arm on the island bench with the balance and weights; notice board, coat hooks and wall cabinets.",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance_ne.jpg"
     },
@@ -182,7 +182,7 @@ window.STATUS = {
      "tag": "View",
      "live": false,
      "status": "partial",
-     "line": "Cut-away view from above (ceiling hidden for the picture): island bench, wall benches, waste bin, extinguisher, exit at the bottom",
+     "line": "Plan view from above (ceiling hidden for the picture): island bench with the robot, wall benches and cabinets.",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance_top.jpg"
     },
@@ -192,7 +192,7 @@ window.STATUS = {
      "tag": "View",
      "live": false,
      "status": "partial",
-     "line": "Balance pan, display and keys with the gripper above. This is the station for the 100 g balance check",
+     "line": "Balance pan, display and keys with the gripper above. All four keys and the transport lock pass 3 full press-release cycles.",
      "details": "",
      "img": "assets/snapshots/rebuilt_balance_pan.jpg"
     },
@@ -214,6 +214,26 @@ window.STATUS = {
      "line": "Structure gate and 600-step stability passed. Preview only: a too-dark render brightened for viewing, not an accepted image. Fit-out still bare compared with the original labs; lighting being recalibrated",
      "details": "",
      "img": "assets/snapshots/rebuilt_thermal.jpg"
+    },
+    {
+     "id": "base_building",
+     "title": "Five-room building, cut-away",
+     "tag": "View",
+     "live": false,
+     "status": "partial",
+     "line": "Render-only view with ceilings, roofs and ceiling light panels hidden: the four labs, the weighing room and the corridor between them.",
+     "details": "",
+     "img": "assets/snapshots/base_building.jpg"
+    },
+    {
+     "id": "base_corridor",
+     "title": "Corridor fit-out",
+     "tag": "Fit-out",
+     "live": false,
+     "status": "partial",
+     "line": "Skirting, handrails, floor lane lines, room plates, fire extinguishers and a notice board along the corridor. Static fit-out with no moving parts; waiting for appearance sign-off.",
+     "details": "",
+     "img": "assets/snapshots/base_corridor.jpg"
     }
    ]
   },
@@ -461,6 +481,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 17:00",
+   "text": "Base scenes: the weighing room passes strict stability after a collider fix on the spare 20 g weight; 32 moving parts confirmed across the rooms (balance keys, draft-shield side doors, furnace and diffractometer doors), 226 loose objects ready to pick up; building cut-away cleaned up. Platform run for the updated synthesis room is being prepared."
+  },
   {
    "t": "11-20 02:46",
    "text": "Base-scene platform job succeeded: the four original labs pass the strict stability run."
