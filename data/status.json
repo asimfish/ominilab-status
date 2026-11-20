@@ -30,7 +30,7 @@
       },
       {
        "label": "Moving parts confirmed",
-       "value": 6,
+       "value": 8,
        "total": 27
       }
      ]
@@ -51,7 +51,7 @@
       },
       {
        "label": "Moving parts confirmed",
-       "value": 6,
+       "value": 8,
        "total": 18
       }
      ]
@@ -72,7 +72,7 @@
       },
       {
        "label": "Moving parts confirmed",
-       "value": 6,
+       "value": 8,
        "total": 20
       }
      ]
@@ -93,7 +93,7 @@
       },
       {
        "label": "Moving parts confirmed",
-       "value": 8,
+       "value": 9,
        "total": 26
       }
      ]
@@ -1464,7 +1464,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 21:50",
+  "updated": "2026-11-20 21:55",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1479,7 +1479,7 @@
    },
    {
     "label": "Assets & scenes",
-    "sub": "5 labs stable, auto builder",
+    "sub": "6 labs stable, auto builder",
     "status": "running"
    },
    {
@@ -1598,7 +1598,7 @@
     "status": "partial",
     "progress": {
      "label": "Labs passing the strict stability run",
-     "value": 5,
+     "value": 6,
      "total": 10
     },
     "metrics": [
@@ -1608,16 +1608,16 @@
      },
      {
       "label": "Moving parts confirmed",
-      "value": 33,
+      "value": 40,
       "total": 124
      },
      {
       "label": "Accepted by you",
       "value": 0,
-      "total": 5
+      "total": 6
      }
     ],
-    "next": "Rerun the 7 remaining cell states at 20:19; fix 3 stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts)."
+    "next": "Your look-and-feel sign-off on the weighing room; fix the remaining stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts)."
    },
    {
     "id": "s1_multilab",
@@ -1702,9 +1702,9 @@
       "total": 21
      },
      {
-      "label": "Cell states stable in the simulator",
-      "value": 11,
-      "total": 18
+      "label": "Cell snapshots stable in the simulator",
+      "value": 20,
+      "total": 20
      },
      {
       "label": "Doors and balance confirmed",

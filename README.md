@@ -25,6 +25,8 @@ build if hosts, IPs, paths, job ids, conversation ids or credentials appear.
   `agent`, `agent_state` = running / idle / stalled, `progress`, `metrics`, `next`, grid `col`/`row`, and the
   `group`/`item` it links to), `links` between stages (`route` = down / right / gutter / top / bottom / back,
   `kind` = flow / feed / broken), the top `flow` strip, `mentors` and `decisions`.
+- **Keep numbers in step:** when an item's `line` gives new counts, update its `metrics` too; the step pages draw
+  the bars from `metrics`, not from the text.
 - **Status values:** `pass`, `partial`, `running`, `blocked`, `fail`, `pending`.
 
 When a stage reaches a milestone, update its card's numbers and `next` in `pipeline.stages`, and bump
