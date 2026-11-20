@@ -1459,7 +1459,7 @@ window.STATUS = {
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 22:30",
+  "updated": "2026-11-21 02:10",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1521,8 +1521,8 @@ window.STATUS = {
      "base",
      "auto"
     ],
-    "now": "Moving parts being confirmed lab by lab; the two-arm cell is being rebuilt with safe arm poses.",
-    "next": "Rebuild the 7 draft rooms so there are ~10 varied labs, including biology."
+    "now": "Top priority since 11-21: every base lab realistic and operable, with a card per lab listing its working instruments and the experiments it can run. A census of all objects and scenes and a real2sim survey started in parallel.",
+    "next": "Fix the remaining stuck mechanisms; rebuild the draft rooms (biology first) toward ~10 varied labs."
    },
    {
     "id": "step2",
@@ -1549,8 +1549,8 @@ window.STATUS = {
      "atomic",
      "eval"
     ],
-    "now": "Annotation, grasp sampling, atomic collection and π0.5 evaluation are all running.",
-    "next": "First grasp that holds in physics; grip-and-lift data in carved scenes."
+    "now": "Top priority since 11-21: annotation judges every one of the 267 assets — can it do its experimental job, can it be fixed — and fixes what it can.",
+    "next": "Operability verdict for all 267 assets; first grasp that holds in physics."
    }
   ],
   "stages": [
@@ -1643,7 +1643,7 @@ window.STATUS = {
       "total": 6
      }
     ],
-    "next": "Your look-and-feel sign-off on the weighing room; fix the remaining stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts).",
+    "next": "Capability card per lab: working instruments, pickable objects, experiments it can run now; fix stuck mechanisms; rebuild draft rooms (biology first).",
     "milestones": [
      {
       "t": "4 original labs stable",
@@ -1658,7 +1658,12 @@ window.STATUS = {
      {
       "t": "Moving parts work",
       "s": "now",
-      "n": "40 of 124 confirmed"
+      "n": "40 of 124; priority since 11-21"
+     },
+     {
+      "t": "Capability card per lab",
+      "s": "now",
+      "n": "experiments each lab can run"
      },
      {
       "t": "7 draft rooms rebuilt",
@@ -2002,7 +2007,7 @@ window.STATUS = {
       "value": 770
      }
     ],
-    "next": "Simulator job 18; masses from materials (208 assets had 1 g placeholders).",
+    "next": "Judge all 267 assets: fully operable, fixable, static only, or broken; fix the fixable ones (CPU).",
     "milestones": [
      {
       "t": "267 assets identified",
@@ -2013,14 +2018,14 @@ window.STATUS = {
       "s": "done"
      },
      {
-      "t": "Ready for scene building",
+      "t": "Operability verdict per asset",
       "s": "now",
-      "n": "169 of 267; 70 need you"
+      "n": "priority since 11-21"
      },
      {
-      "t": "Real masses",
+      "t": "Fix what can be fixed",
       "s": "now",
-      "n": "estimated from materials"
+      "n": "colliders, units, mass, orientation"
      },
      {
       "t": "Ready for manipulation",
@@ -2200,6 +2205,109 @@ window.STATUS = {
       "s": "todo"
      }
     ]
+   },
+   {
+    "id": "s1_census",
+    "step": "step1",
+    "col": 1,
+    "row": 5,
+    "group": "base",
+    "map": false,
+    "title": "Asset & scene census",
+    "what": "Count every object and scene: how usable it is and which experiments it supports.",
+    "agent": "Census agent (Gemini)",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Census delivered",
+     "value": 0,
+     "total": 1
+    },
+    "metrics": [
+     {
+      "label": "Objects in the library",
+      "value": 267
+     },
+     {
+      "label": "Readiness levels",
+      "value": "L0–L4"
+     }
+    ],
+    "next": "Started 11-21 02:00: objects, scenes and experiments classified, with a re-runnable count.",
+    "milestones": [
+     {
+      "t": "Sources located",
+      "s": "now"
+     },
+     {
+      "t": "Objects classified",
+      "s": "todo",
+      "n": "267, levels L0–L4"
+     },
+     {
+      "t": "Scenes → experiments",
+      "s": "todo"
+     },
+     {
+      "t": "Top gaps listed",
+      "s": "todo"
+     },
+     {
+      "t": "One-click refresh",
+      "s": "todo"
+     }
+    ]
+   },
+   {
+    "id": "s1_real2sim",
+    "step": "step1",
+    "col": 1,
+    "row": 6,
+    "group": "base",
+    "map": false,
+    "title": "Real2sim: scan real labs",
+    "what": "Scan a real laboratory and turn it into an operable OminiLab scene.",
+    "agent": "Real2sim agent (Gemini)",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Labs scanned into the simulator",
+     "value": 0
+    },
+    "metrics": [
+     {
+      "label": "Survey",
+      "value": "in progress"
+     },
+     {
+      "label": "Pilot lab",
+      "value": "not chosen"
+     }
+    ],
+    "next": "Survey current real2sim methods, then specify how a scan becomes a scene that passes our checks.",
+    "milestones": [
+     {
+      "t": "Technology survey",
+      "s": "now"
+     },
+     {
+      "t": "Interface to our scenes",
+      "s": "todo",
+      "n": "USD, colliders, joints, labels"
+     },
+     {
+      "t": "Pilot plan",
+      "s": "todo"
+     },
+     {
+      "t": "First real lab scanned",
+      "s": "todo"
+     },
+     {
+      "t": "Scanned lab passes checks",
+      "s": "todo"
+     }
+    ]
    }
   ],
   "links": [
@@ -2314,6 +2422,7 @@ window.STATUS = {
    }
   ],
   "decisions": [
+   "Answer the Manipulation Mentor's question on grasp rules: it has waited since 11-20 19:36, and F1, F3 and F4 approvals are queued behind it.",
    "Register pick-and-place with the corrected timing for the isolated robot cell: 4 independent complete passes, 3 required. The reviewer recommends yes.",
    "50 µm tolerance: approve it only for the end point (as you did) and for the exact weight-on-bench pair with a real contact depth; the agent's own bench-plane fallback stays rejected (reviewer's recommendation).",
    "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",

@@ -46,7 +46,7 @@
   var html = "";
   P.steps.forEach(function (s, i) {
     html += '<div class="colhead ' + esc(s.id) + '" style="grid-column:' + (i + 1) + ';grid-row:1"><div class="ct"><span>' + esc(s.n) + "</span>" + esc(s.title) + "</div></div>";
-    stagesOf(s).forEach(function (st) {
+    stagesOf(s).filter(function (st) { return st.map !== false; }).forEach(function (st) {
       var c = OL.count(st.milestones), now = (st.milestones || []).filter(function (m) { return m.s === "now"; }).map(function (m) { return m.t; });
       html += '<a class="node compact ' + esc(st.step) + " st-" + esc(st.status) + '" id="n-' + esc(st.id) + '" href="' + esc(OL.stageLink(st)) +
         '" style="grid-column:' + (st.col || i + 1) + ";grid-row:" + (st.row + 1) + '"><div class="stage-head"><div class="stage-title">' + esc(st.title) + "</div>" + OL.pill(st.status) + "</div>" +
