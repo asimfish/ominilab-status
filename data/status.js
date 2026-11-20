@@ -412,7 +412,7 @@ window.STATUS = {
   {
    "id": "papers",
    "title": "Papers, plans & tasks",
-   "blurb": "From the paper to a synthesis plan, then to robot, instrument and observation calls. Plans are compiled; the independent review that turns runs into accepted results has not run since 11-17.",
+   "blurb": "From the paper to a synthesis plan, then to robot, instrument and observation calls. Plans are compiled; the independent review restarted on 11-20 at 21:44.",
    "items": [
     {
      "id": "plan_recipe118",
@@ -545,9 +545,9 @@ window.STATUS = {
      "title": "Independent review",
      "tag": "Review",
      "live": false,
-     "status": "blocked",
-     "line": "The review agent has not run since 11-17. Waiting: attempts a7–a14 with every test-only switch, the 11-17 platform run, the descent path and the two-arm cell.",
-     "details": "Until it runs, every execution result on this site is the producer's own test evidence."
+     "status": "running",
+     "line": "Back since 21:44 after two days idle. Now reviewing the R53 run evidence (62 archives verified so far); next the descent path, the reading wrapper, the weighing-room binding and the recipe 118 task plan.",
+     "details": "Dev attempts a7–a16 on the development machine, with their test-only switches, are not reviewed yet. Until a result is reviewed it remains the producer's own test evidence."
     }
    ]
   },
@@ -1464,7 +1464,7 @@ window.STATUS = {
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 19:50",
+  "updated": "2026-11-20 21:50",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1474,8 +1474,8 @@ window.STATUS = {
    },
    {
     "label": "Protocol & tasks",
-    "sub": "plans compiled, review stalled",
-    "status": "blocked"
+    "sub": "review restarted 21:44",
+    "status": "running"
    },
    {
     "label": "Assets & scenes",
@@ -1723,8 +1723,8 @@ window.STATUS = {
     "title": "Orchestrated tasks",
     "what": "Compile the plan into robot, instrument and observation calls; review results independently.",
     "agent": "Orchestration & review agent",
-    "agent_state": "stalled",
-    "status": "blocked",
+    "agent_state": "running",
+    "status": "running",
     "progress": {
      "label": "Task calls covered by a ready skill",
      "value": 12,
@@ -1740,11 +1740,11 @@ window.STATUS = {
       "value": "not compiled"
      },
      {
-      "label": "Independent reviews since 11-17",
-      "value": 0
+      "label": "Reviews since 11-17",
+      "value": "R53 under way"
      }
     ],
-    "next": "Needs a working session: review attempts a7–a14, then compile recipe 118 into tasks."
+    "next": "Back since 21:44: reviewing the R53 run evidence, then the descent path, then the recipe 118 task plan."
    },
    {
     "id": "s2_run",
@@ -1766,10 +1766,10 @@ window.STATUS = {
     "metrics": [
      {
       "label": "Latest attempt",
-      "value": "a14: lifted 1.1 s"
+      "value": "a16 running"
      },
      {
-      "label": "Grip at stop",
+      "label": "a14 grip at stop",
       "value": "27 N < 30 N"
      },
      {
@@ -1777,7 +1777,7 @@ window.STATUS = {
       "value": 6
      }
     ],
-    "next": "Hold the 100 g weight through the lift (attempt a15)."
+    "next": "a16 runs the original protocol with the new grip window; goal: hold the 100 g weight through the lift."
    },
    {
     "id": "s3_annot",
@@ -2016,13 +2016,12 @@ window.STATUS = {
    {
     "from": "s2_run",
     "to": "s2_tasks",
-    "label": "evidence, unreviewed",
+    "label": "evidence for review",
     "route": "back",
-    "kind": "broken"
+    "kind": "flow"
    }
   ],
   "decisions": [
-   "Open a working session for the orchestration & review agent (no independent review since 11-17).",
    "Approve or reject the balance-check tolerance extensions (second check, and the agent's own fallback).",
    "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
    "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
