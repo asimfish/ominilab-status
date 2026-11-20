@@ -12,7 +12,7 @@ window.STATUS = {
   {
    "id": "base",
    "title": "Base scenes",
-   "blurb": "Four original labs, the 36 m² weighing room and the corridor, plus 7 draft rooms still to be rebuilt. Across the finished rooms and the synthesis room: 226 loose objects that hold still and can be picked up, and 32 of the 124 moving parts planned for experiments confirmed in 3 full open-close cycles. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
+   "blurb": "Four original labs, the 36 m² weighing room and the corridor, plus 7 draft rooms still to be rebuilt. Across the finished rooms and the synthesis room: 226 loose objects that hold still and can be picked up, and 33 of the 124 moving parts planned for experiments confirmed in 3 full open-close cycles. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
    "items": [
     {
      "id": "legacy_l0",
@@ -50,7 +50,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 7 of 26 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors, the furnace door); the top draft-shield door still stalls; the mill lid is being retested.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 8 of 26 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors, the furnace door, the mill lid); the top draft-shield door still stalls.",
      "details": "Structure: 32 of 33 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l3.jpg"
     },
@@ -483,7 +483,7 @@ window.STATUS = {
  "timeline": [
   {
    "t": "11-20 17:00",
-   "text": "Base scenes: the weighing room passes strict stability after a collider fix on the spare 20 g weight; 32 moving parts confirmed across the rooms (balance keys, draft-shield side doors, furnace and diffractometer doors), 226 loose objects ready to pick up; building cut-away cleaned up. Platform run for the updated synthesis room is being prepared."
+   "text": "Base scenes: the weighing room passes strict stability after a collider fix on the spare 20 g weight; 33 moving parts confirmed across the rooms (balance keys, draft-shield side doors, furnace and diffractometer doors, mill lid), 226 loose objects ready to pick up; building cut-away cleaned up. Platform run for the updated synthesis room is being prepared."
   },
   {
    "t": "11-20 02:46",
