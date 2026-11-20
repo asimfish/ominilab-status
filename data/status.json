@@ -420,7 +420,7 @@
      "tag": "Headline",
      "live": false,
      "status": "running",
-     "line": "14 operations from the paper. The two-arm cell binds all 6 robot operations on CPU; the task plan is not compiled yet.",
+     "line": "14 operations compiled into a task graph: 6 robot actions, 7 instrument programs, 1 observation (21 physical sub-actions). 0 of 14 approved to run yet; executable plan in progress.",
      "details": "Solid-state synthesis with a box furnace step and a powder X-ray diffraction check. Powders and slurries are handled through instrument models and a mass ledger; results are labelled simulated and no product or yield is reported. The 14 operations are classified into robot actions, instrument programs and observations.",
      "metrics": [
       {
@@ -428,14 +428,13 @@
        "value": 14
       },
       {
-       "label": "Robot operations bound (CPU)",
-       "value": 6,
-       "total": 6
+       "label": "Robot actions / instrument programs / observations",
+       "value": "6 / 7 / 1"
       },
       {
-       "label": "Robot sub-actions bound",
-       "value": 21,
-       "total": 21
+       "label": "Calls approved to run",
+       "value": 0,
+       "total": 14
       }
      ]
     },
@@ -445,7 +444,7 @@
      "tag": "Compiled",
      "live": false,
      "status": "partial",
-     "line": "3 automated pre-checks, 25 robot and instrument calls and 9 calculations, with 307 evidence items to record.",
+     "line": "3 automated pre-checks, 25 robot and instrument calls and 9 calculations, with 307 evidence items. Calls 1–4 re-confirmed by independent review on 11-20.",
      "details": "First full experiment chosen for native execution; see Step 2 · Scripted task run for the run itself.",
      "metrics": [
       {
@@ -545,9 +544,9 @@
      "title": "Independent review",
      "tag": "Review",
      "live": false,
-     "status": "running",
-     "line": "Back since 21:44 after two days idle. Now reviewing the R53 run evidence (62 archives verified so far); next the descent path, the reading wrapper, the weighing-room binding and the recipe 118 task plan.",
-     "details": "Dev attempts a7–a16 on the development machine, with their test-only switches, are not reviewed yet. Until a result is reviewed it remains the producer's own test evidence."
+     "status": "partial",
+     "line": "Backlog cleared 21:44–22:02: R53 re-verified (calls 1–4 confirmed, call 5 unobserved after its first moments), pick-and-place 4 independent passes, descent path, reading wrapper and weighing-room binding all pass. Next: dev attempts a7–a16.",
+     "details": "Over-pan motion: 0 qualifying runs (tracking error exceeds the 0.5 mm clearance margin); the obstacle counter-example passed. Until reviewed, dev attempts a7–a16 remain the producer's own test evidence."
     }
    ]
   },
@@ -581,7 +580,7 @@
      "tag": "Approved skill",
      "live": false,
      "status": "partial",
-     "line": "Approved with the old motion timing. With the corrected timing: 2 complete passes independently confirmed; one more needed to extend the approval. Next run uses the corrected timing on both lanes",
+     "line": "Independent review 11-20: 4 complete passes with the corrected timing (3 required); lifts 34.8 mm, placement error 0.29–0.34 mm. Registration waits for your approval.",
      "details": "Approved for the isolated robot cell with the 100 g reference weight (50 N grip, smooth 1 s lift start). Five complete pick-lift-hold-place-release runs across two jobs: placement error 0.35–0.40 mm (limit 5 mm), slip while held 0.04–0.08 mm (limit 2 mm). The independent check compared 35,352 recorded values and 4.1 million contact pairs, with full agreement and zero violations. Two further attempts were cut off by a real-time limit and are counted as not observed. Not yet approved for the balance station."
     },
     {
@@ -1464,7 +1463,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 22:20",
+  "updated": "2026-11-20 22:10",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1474,7 +1473,7 @@
    },
    {
     "label": "Protocol & tasks",
-    "sub": "review restarted 21:44",
+    "sub": "recipe 118 task graph done",
     "status": "running"
    },
    {
@@ -1539,8 +1538,8 @@
      "papers",
      "lab"
     ],
-    "now": "Review restarted after two days; the robot is learning to hold the 100 g weight through the lift.",
-    "next": "Compile the recipe 118 task plan; finish the balance check (milestone A)."
+    "now": "Review cleared the backlog: recipe 118 is a 14-call task graph, and pick-and-place has 4 independent passes. The robot is working on holding the 100 g weight through the lift.",
+    "next": "Turn recipe 118 into an executable plan and send its scene requirements to the builder; review the dev attempts."
    },
    {
     "id": "step3",
@@ -1864,19 +1863,20 @@
     },
     "metrics": [
      {
-      "label": "Balance check calls",
-      "value": 37
+      "label": "Recipe 118 calls",
+      "value": 14
      },
      {
-      "label": "Recipe 118 task plan",
-      "value": "not compiled"
+      "label": "Recipe 118 calls approved to run",
+      "value": 0,
+      "total": 14
      },
      {
-      "label": "Reviews since 11-17",
-      "value": "R53 under way"
+      "label": "Pick-and-place passes (3 needed)",
+      "value": 4
      }
     ],
-    "next": "Back since 21:44: reviewing the R53 run evidence, then the descent path, then the recipe 118 task plan.",
+    "next": "Review dev attempts a7–a16 and their test-only switches; bind every recipe 118 call to a skill and scene part; send the scene requirements to the builder.",
     "milestones": [
      {
       "t": "Balance check compiled",
@@ -1888,18 +1888,28 @@
       "s": "done"
      },
      {
-      "t": "Independent review",
-      "s": "now",
-      "n": "restarted 11-20 21:44"
+      "t": "Review of the 11-17 run",
+      "s": "done",
+      "n": "62 archives verified"
      },
      {
-      "t": "Recipe 118 task plan",
-      "s": "todo"
+      "t": "Recipe 118 task graph",
+      "s": "done",
+      "n": "6 robot · 7 instrument · 1 observation"
+     },
+     {
+      "t": "Review of dev attempts a7–a16",
+      "s": "now"
+     },
+     {
+      "t": "Recipe 118 executable plan",
+      "s": "now",
+      "n": "bound to the two-arm cell"
      },
      {
       "t": "Skill gaps closed",
       "s": "todo",
-      "n": "12 of 82 calls covered"
+      "n": "0 of 14 recipe calls approved"
      }
     ]
    },
@@ -1938,7 +1948,8 @@
     "milestones": [
      {
       "t": "Calls 1–4 confirmed",
-      "s": "done"
+      "s": "done",
+      "n": "re-verified 11-20"
      },
      {
       "t": "Call 5: grip and lift",
@@ -2304,6 +2315,7 @@
    }
   ],
   "decisions": [
+   "Register pick-and-place with the corrected timing: 4 independent complete passes, 3 required.",
    "Approve or reject the balance-check tolerance extensions (second check, and the agent's own fallback).",
    "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
    "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
@@ -2335,7 +2347,8 @@
     },
     {
      "t": "Task plan",
-     "s": "todo"
+     "s": "done",
+     "n": "14 calls: 6 robot, 7 instrument, 1 observation"
     },
     {
      "t": "Grasps",
