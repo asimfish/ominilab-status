@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 17:35",
+ "updated": "2026-11-20 21:30",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -12,7 +12,7 @@ window.STATUS = {
   {
    "id": "base",
    "title": "Base scenes",
-   "blurb": "Four original labs, the 36 m² weighing room and the corridor, plus 7 draft rooms still to be rebuilt. Across the finished rooms and the synthesis room: 226 loose objects that hold still and can be picked up, and 33 of the 124 moving parts planned for experiments confirmed in 3 full open-close cycles. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
+   "blurb": "Four original labs, the 36 m² weighing room and the corridor, plus 7 draft rooms still to be rebuilt. Across the finished rooms and the synthesis room: 226 loose objects that hold still and can be picked up, and 40 of the 124 moving parts planned for experiments confirmed in 3 full open-close cycles. Each shows its latest snapshot; with a live session it opens in Isaac Sim to play, pause, reset, move the camera and inspect instruments.",
    "items": [
     {
      "id": "legacy_l0",
@@ -20,7 +20,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 27 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the oven door still stall.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 8 of 27 planned moving parts confirmed (4 balance keys, all 3 draft-shield doors, the oven door).",
      "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l0.jpg",
      "metrics": [
@@ -41,7 +41,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 18 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door still stalls; the oven door is being retested.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 8 of 18 planned moving parts confirmed (4 balance keys, all 3 draft-shield doors, the oven door).",
      "details": "Structure: 31 of 32 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l1.jpg",
      "metrics": [
@@ -62,7 +62,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict stability run on the platform (0 engine errors). 32 loose objects can be picked up; 6 of 20 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the moisture-analyser lid still stall.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 32 loose objects can be picked up; 8 of 20 planned moving parts confirmed (4 balance keys, all 3 draft-shield doors, the moisture-analyser lid).",
      "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l2.jpg",
      "metrics": [
@@ -83,7 +83,7 @@ window.STATUS = {
      "tag": "Base",
      "live": false,
      "status": "pass",
-     "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 8 of 26 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors, the furnace door, the mill lid); the top draft-shield door still stalls.",
+     "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 9 of 26 planned moving parts confirmed (4 balance keys, all 3 draft-shield doors, the furnace door, the mill lid).",
      "details": "Structure: 32 of 33 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
      "img": "assets/snapshots/legacy_l3.jpg",
      "metrics": [
@@ -206,8 +206,8 @@ window.STATUS = {
      "tag": "Rebuilt",
      "live": false,
      "status": "partial",
-     "line": "Walls dressed on all four sides. Strict stability now passes on the development machine: the spare 20 g weight tilted 2.4° because its collider had a 0.6 mm chamfer, thinner than the physics engine treats as a separate face; fixed, formal repeat in today's platform run. All 5 driven parts of the balance confirmed (4 keys, transport lock). 8 loose objects (reference weights, forceps, brush). Waiting for appearance sign-off.",
-     "details": "A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
+     "line": "Walls dressed on all four sides. Strict stability passes in the formal platform run (the spare 20 g weight was fixed: its 0.6 mm collider chamfer was thinner than the physics engine treats as a separate face). All 5 driven parts of the balance confirmed in the formal run (4 keys, transport lock). 8 loose objects (reference weights, forceps, brush). Waiting for appearance sign-off.",
+     "details": "Formal run 20 Nov evening: strict 60 + 600 step stability PASS, 0 engine errors.",
      "img": "assets/snapshots/rebuilt_balance.jpg",
      "metrics": [
       {
@@ -1030,6 +1030,10 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 21:30",
+   "text": "Base scenes: the weighing room passes strict stability in the formal platform run; the synthesis room passes on all 20 experiment snapshots, including the re-laid product cell, with 0 engine errors, and all 8 room views are rendered. 40 moving parts now confirmed across the rooms after fixing parts that were caught on their own instrument."
+  },
   {
    "t": "11-20 17:00",
    "text": "Attempt 9 failed before any physics because the simulator could not reach its extension registry through the development machine's proxy; attempt 10 ran without the proxy."
