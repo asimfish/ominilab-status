@@ -1464,7 +1464,7 @@ window.STATUS = {
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 21:55",
+  "updated": "2026-11-20 22:20",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1525,7 +1525,9 @@ window.STATUS = {
     "groups": [
      "base",
      "auto"
-    ]
+    ],
+    "now": "Moving parts being confirmed lab by lab; the two-arm cell is being rebuilt with safe arm poses.",
+    "next": "Rebuild the 7 draft rooms so there are ~10 varied labs, including biology."
    },
    {
     "id": "step2",
@@ -1536,7 +1538,9 @@ window.STATUS = {
     "groups": [
      "papers",
      "lab"
-    ]
+    ],
+    "now": "Review restarted after two days; the robot is learning to hold the 100 g weight through the lift.",
+    "next": "Compile the recipe 118 task plan; finish the balance check (milestone A)."
    },
    {
     "id": "step3",
@@ -1549,7 +1553,9 @@ window.STATUS = {
      "grasp",
      "atomic",
      "eval"
-    ]
+    ],
+    "now": "Annotation, grasp sampling, atomic collection and π0.5 evaluation are all running.",
+    "next": "First grasp that holds in physics; grip-and-lift data in carved scenes."
    }
   ],
   "stages": [
@@ -1583,7 +1589,32 @@ window.STATUS = {
       "value": "≥ 5°"
      }
     ],
-    "next": "Publish release f of the two-arm cell with every gate passing."
+    "next": "Publish release f of the two-arm cell with every gate passing.",
+    "milestones": [
+     {
+      "t": "Rooms from one command",
+      "s": "done",
+      "n": "3 rooms"
+     },
+     {
+      "t": "Automatic inspection",
+      "s": "done",
+      "n": "gates G1–G7"
+     },
+     {
+      "t": "Safe arm poses",
+      "s": "now",
+      "n": "release f, ≥ 5° from limits"
+     },
+     {
+      "t": "Builder output accepted",
+      "s": "todo"
+     },
+     {
+      "t": "Any paper → scene, no hand fixes",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s1_base",
@@ -1617,7 +1648,34 @@ window.STATUS = {
       "total": 6
      }
     ],
-    "next": "Your look-and-feel sign-off on the weighing room; fix the remaining stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts)."
+    "next": "Your look-and-feel sign-off on the weighing room; fix the remaining stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts).",
+    "milestones": [
+     {
+      "t": "4 original labs stable",
+      "s": "done",
+      "n": "strict platform run, 0 errors"
+     },
+     {
+      "t": "Weighing room passes",
+      "s": "done",
+      "n": "formal run, 11-20"
+     },
+     {
+      "t": "Moving parts work",
+      "s": "now",
+      "n": "40 of 124 confirmed"
+     },
+     {
+      "t": "7 draft rooms rebuilt",
+      "s": "todo",
+      "n": "for ~10 labs incl. biology"
+     },
+     {
+      "t": "Your sign-off per lab",
+      "s": "todo",
+      "n": "0 accepted"
+     }
+    ]
    },
    {
     "id": "s1_multilab",
@@ -1646,7 +1704,31 @@ window.STATUS = {
       "value": 0
      }
     ],
-    "next": "Wall finish, doors and signs; then a mobile robot travelling between stations."
+    "next": "Wall finish, doors and signs; then a mobile robot travelling between stations.",
+    "milestones": [
+     {
+      "t": "Floor plan",
+      "s": "done"
+     },
+     {
+      "t": "Whole building stable",
+      "s": "done",
+      "n": "277 bodies scanned"
+     },
+     {
+      "t": "Walls, doors, signs",
+      "s": "now",
+      "n": "corridor still bare"
+     },
+     {
+      "t": "Mobile robot moves between rooms",
+      "s": "todo"
+     },
+     {
+      "t": "Cross-room experiment",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s2_plan",
@@ -1676,7 +1758,27 @@ window.STATUS = {
       "total": 130
      }
     ],
-    "next": "Finish sourcing; extend beyond recipe 118 once it runs."
+    "next": "Finish sourcing; extend beyond recipe 118 once it runs.",
+    "milestones": [
+     {
+      "t": "19 papers collected",
+      "s": "done"
+     },
+     {
+      "t": "Headline plan extracted",
+      "s": "done",
+      "n": "recipe 118, 14 operations"
+     },
+     {
+      "t": "Every step traced to source",
+      "s": "now",
+      "n": "10 of 19 protocols"
+     },
+     {
+      "t": "Plans reviewed independently",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s2_scene",
@@ -1711,7 +1813,37 @@ window.STATUS = {
       "value": "yes"
      }
     ],
-    "next": "Release f (≥ 5° from joint limits) → simulator check by the base-scene agent."
+    "next": "Release f (≥ 5° from joint limits) → simulator check by the base-scene agent.",
+    "milestones": [
+     {
+      "t": "Instruments chosen",
+      "s": "done"
+     },
+     {
+      "t": "Two-arm cell built",
+      "s": "done",
+      "n": "release e"
+     },
+     {
+      "t": "6 robot operations placed",
+      "s": "done",
+      "n": "21 sub-actions, CPU"
+     },
+     {
+      "t": "Simulator check",
+      "s": "done",
+      "n": "doors, balance, 20/20 states"
+     },
+     {
+      "t": "Safe arm poses",
+      "s": "now",
+      "n": "release f"
+     },
+     {
+      "t": "Cell accepted",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s2_tasks",
@@ -1744,7 +1876,32 @@ window.STATUS = {
       "value": "R53 under way"
      }
     ],
-    "next": "Back since 21:44: reviewing the R53 run evidence, then the descent path, then the recipe 118 task plan."
+    "next": "Back since 21:44: reviewing the R53 run evidence, then the descent path, then the recipe 118 task plan.",
+    "milestones": [
+     {
+      "t": "Balance check compiled",
+      "s": "done",
+      "n": "37 calls"
+     },
+     {
+      "t": "Moisture & titration compiled",
+      "s": "done"
+     },
+     {
+      "t": "Independent review",
+      "s": "now",
+      "n": "restarted 11-20 21:44"
+     },
+     {
+      "t": "Recipe 118 task plan",
+      "s": "todo"
+     },
+     {
+      "t": "Skill gaps closed",
+      "s": "todo",
+      "n": "12 of 82 calls covered"
+     }
+    ]
    },
    {
     "id": "s2_run",
@@ -1777,7 +1934,31 @@ window.STATUS = {
       "value": 6
      }
     ],
-    "next": "a16 runs the original protocol with the new grip window; goal: hold the 100 g weight through the lift."
+    "next": "a16 runs the original protocol with the new grip window; goal: hold the 100 g weight through the lift.",
+    "milestones": [
+     {
+      "t": "Calls 1–4 confirmed",
+      "s": "done"
+     },
+     {
+      "t": "Call 5: grip and lift",
+      "s": "now",
+      "n": "a16 running"
+     },
+     {
+      "t": "Calls 6–37",
+      "s": "todo"
+     },
+     {
+      "t": "Balance check accepted",
+      "s": "todo",
+      "n": "milestone A"
+     },
+     {
+      "t": "Recipe 118 scripted run",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s3_annot",
@@ -1811,7 +1992,32 @@ window.STATUS = {
       "value": 770
      }
     ],
-    "next": "Simulator job 18; masses from materials (208 assets had 1 g placeholders)."
+    "next": "Simulator job 18; masses from materials (208 assets had 1 g placeholders).",
+    "milestones": [
+     {
+      "t": "267 assets identified",
+      "s": "done"
+     },
+     {
+      "t": "232 stable at rest",
+      "s": "done"
+     },
+     {
+      "t": "Ready for scene building",
+      "s": "now",
+      "n": "169 of 267; 70 need you"
+     },
+     {
+      "t": "Real masses",
+      "s": "now",
+      "n": "estimated from materials"
+     },
+     {
+      "t": "Ready for manipulation",
+      "s": "todo",
+      "n": "0 of 267"
+     }
+    ]
    },
    {
     "id": "s3_grasp",
@@ -1843,7 +2049,32 @@ window.STATUS = {
       "value": "cylinder, 3 of 4 fingers"
      }
     ],
-    "next": "First closed-loop demo on the 500 mL cylinder: one physics run with video."
+    "next": "First closed-loop demo on the 500 mL cylinder: one physics run with video.",
+    "milestones": [
+     {
+      "t": "Ideal finger layouts",
+      "s": "done",
+      "n": "25 hold all loads"
+     },
+     {
+      "t": "Real hand pose fits",
+      "s": "now",
+      "n": "cylinder: 3 of 4 fingers"
+     },
+     {
+      "t": "Physics hold demo",
+      "s": "todo",
+      "n": "1 run authorised"
+     },
+     {
+      "t": "First grasp in library",
+      "s": "todo"
+     },
+     {
+      "t": "All lab vessels",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s3_atomic",
@@ -1875,7 +2106,33 @@ window.STATUS = {
       "value": 1
      }
     ],
-    "next": "New grip-speed measure into the real check, then a GPU re-trial of the lift."
+    "next": "New grip-speed measure into the real check, then a GPU re-trial of the lift.",
+    "milestones": [
+     {
+      "t": "Experiments split",
+      "s": "done",
+      "n": "4 experiments"
+     },
+     {
+      "t": "Approach & descend data",
+      "s": "done",
+      "n": "43 / 40 episodes"
+     },
+     {
+      "t": "Carved small scenes",
+      "s": "now",
+      "n": "1 built on CPU"
+     },
+     {
+      "t": "Grip & lift data",
+      "s": "now",
+      "n": "re-trial being packaged"
+     },
+     {
+      "t": "Policy trained on atomic tasks",
+      "s": "todo"
+     }
+    ]
    },
    {
     "id": "s3_eval",
@@ -1907,7 +2164,32 @@ window.STATUS = {
       "value": "not chosen"
      }
     ],
-    "next": "Read back the π0.5 job; stream evidence to disk so the last stage can be scored."
+    "next": "Read back the π0.5 job; stream evidence to disk so the last stage can be scored.",
+    "milestones": [
+     {
+      "t": "Chain scoring ready",
+      "s": "done"
+     },
+     {
+      "t": "Diffusion policy chain run",
+      "s": "done",
+      "n": "approach 5/5"
+     },
+     {
+      "t": "π0.5 evaluation",
+      "s": "now",
+      "n": "job running"
+     },
+     {
+      "t": "World-action model",
+      "s": "todo",
+      "n": "needs your approval"
+     },
+     {
+      "t": "Mobile robot runs a full experiment",
+      "s": "todo"
+     }
+    ]
    }
   ],
   "links": [
@@ -2026,6 +2308,48 @@ window.STATUS = {
    "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
    "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
    "Which mobile robot carries the arm in full-lab evaluation."
-  ]
+  ],
+  "headline": {
+   "title": "Recipe 118 · CaFe₂P₂O₉ synthesis with powder XRD",
+   "sub": "The one experiment we are taking all the way through",
+   "stops": [
+    {
+     "t": "Paper",
+     "s": "done",
+     "n": "14 operations"
+    },
+    {
+     "t": "Instruments",
+     "s": "done",
+     "n": "chosen"
+    },
+    {
+     "t": "Scene",
+     "s": "done",
+     "n": "two-arm cell, simulator-checked"
+    },
+    {
+     "t": "Safe arm poses",
+     "s": "now",
+     "n": "release f"
+    },
+    {
+     "t": "Task plan",
+     "s": "todo"
+    },
+    {
+     "t": "Grasps",
+     "s": "todo"
+    },
+    {
+     "t": "Scripted run",
+     "s": "todo"
+    },
+    {
+     "t": "Policy evaluation",
+     "s": "todo"
+    }
+   ]
+  }
  }
 };

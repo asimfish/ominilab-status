@@ -71,11 +71,33 @@
     }).join("") + "</div>";
   }
 
+
+  /* milestone track: done / now / todo, drawn as a line of stations */
+  var MSTATE = { done: "Done", now: "In progress", todo: "Not started" };
+  function track(list, cls) {
+    if (!list || !list.length) return "";
+    return '<ol class="track' + (cls ? " " + cls : "") + '">' + list.map(function (m) {
+      var s = MSTATE[m.s] ? m.s : "todo";
+      return '<li class="mst ' + s + '"><span class="d" aria-hidden="true">' + (s === "done" ? "✓" : "") + "</span>" +
+        '<span class="sr">' + MSTATE[s] + ": </span>" +
+        '<span class="mt">' + esc(m.t) + "</span>" + (m.n ? '<span class="mn">' + esc(m.n) + "</span>" : "") + "</li>";
+    }).join("") + "</ol>";
+  }
+  function segs(list) {
+    return '<div class="segs" aria-hidden="true">' + (list || []).map(function (m) { return '<i class="' + esc(m.s) + '"></i>'; }).join("") + "</div>";
+  }
+  function count(list) {
+    var c = { done: 0, now: 0, todo: 0, total: (list || []).length };
+    (list || []).forEach(function (m) { c[MSTATE[m.s] ? m.s : "todo"]++; });
+    return c;
+  }
+
   function stageLink(st) { return "index.html#" + encodeURIComponent(st.group) + (st.item ? "/" + encodeURIComponent(st.item) : ""); }
   function stageBody(st) {
     return '<div class="stage-head"><div class="stage-title">' + esc(st.title) + "</div>" + pill(st.status) + "</div>" +
       '<div class="stage-what">' + esc(st.what) + "</div>" +
       agent(st.agent, st.agent_state) +
+      track(st.milestones, "small") +
       kpi(st.progress) +
       metricRows(st.metrics, true) +
       (st.next ? '<div class="next"><b>Next:</b> ' + esc(st.next) + "</div>" : "");
@@ -86,5 +108,5 @@
   }
 
   window.OL = { esc: esc, store: store, initTheme: initTheme, pill: pill, agent: agent, kpi: kpi, metricRows: metricRows,
-                tiles: tiles, stageBody: stageBody, stageCard: stageCard, stageLink: stageLink, isNum: isNum };
+                tiles: tiles, track: track, segs: segs, count: count, stageBody: stageBody, stageCard: stageCard, stageLink: stageLink, isNum: isNum };
 })();

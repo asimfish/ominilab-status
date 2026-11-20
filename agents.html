@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OminiLab Project Map</title>
-<meta name="description" content="How OminiLab's three steps and their agents fit together, from real papers to evaluated policies, with each part's progress.">
+<title>OminiLab Plan &amp; Progress</title>
+<meta name="description" content="OminiLab's plan and progress: three steps from real papers to evaluated policies, each part's milestones, the headline experiment, and how the parts connect.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -14,30 +14,43 @@
   <div class="wrap top-row">
     <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
       <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
-      <div><div class="brand-name">OminiLab Project Map</div><div class="brand-sub" id="updated">Loading…</div></div>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
     </a>
     <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
   </div>
   <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
 </header>
 
-<main class="wrap" style="gap:16px">
+<main class="wrap plan">
   <section class="map-hero">
-    <h1>From real papers to evaluated policies</h1>
+    <h1>Plan &amp; progress</h1>
     <p id="goal"></p>
   </section>
-  <div class="flow" id="flow" aria-label="End-to-end pipeline"></div>
-  <div class="mentors" id="mentors"></div>
-  <div class="map-scroll"><div class="map" id="map"></div></div>
-  <div class="legend" aria-hidden="true">
-    <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--text-2)"/></svg>hands work on</span>
-    <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--muted)" stroke-dasharray="5 4"/></svg>feeds or supports</span>
-    <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--bad)" stroke-dasharray="6 4"/></svg>stuck: waiting with nobody to act</span>
-    <span>Click any card for its detailed progress.</span>
-  </div>
+
+  <section class="glance" id="glance" aria-label="The three steps at a glance"></section>
+
+  <section class="journey" id="journey" aria-label="Headline experiment"></section>
+
+  <section class="block">
+    <div class="block-head"><h2>Roadmap</h2><p>Each line is one part of the project, in order: what is done, what is being worked on now, and what comes next. Click a part's name for its full detail.</p>
+      <div class="key" aria-hidden="true"><span><i class="kd done">✓</i>Done</span><span><i class="kd now"></i>In progress</span><span><i class="kd todo"></i>Not started</span></div>
+    </div>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><h2>How the parts connect</h2><p>Arrows show what each part hands to the next. Every box is one agent's work.</p></div>
+    <div class="map-scroll"><div class="map compact-map" id="map"></div></div>
+    <div class="legend" aria-hidden="true">
+      <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--text-2)"/></svg>hands work on</span>
+      <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--muted)" stroke-dasharray="5 4"/></svg>feeds or supports</span>
+      <span><svg viewBox="0 0 32 8"><line x1="0" y1="4" x2="32" y2="4" stroke="var(--bad)" stroke-dasharray="6 4"/></svg>stuck</span>
+    </div>
+  </section>
+
   <section class="decisions" id="decisions"></section>
 </main>
-<footer class="wrap foot">Maintained from <code>data/status.json</code> (<code>pipeline</code> section); the same data drives the step pages.</footer>
+<footer class="wrap foot">Maintained from <code>data/status.json</code> (<code>pipeline</code>); the same data drives the step pages.</footer>
 <script src="data/status.js"></script>
 <script src="assets/common.js"></script>
 <script src="assets/map.js"></script>

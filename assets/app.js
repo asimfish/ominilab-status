@@ -34,7 +34,7 @@
 
   /* top tabs */
   var nav = $("#tabs");
-  nav.innerHTML = '<a class="tab" href="agents.html">Project map</a>' + steps.map(function (s) {
+  nav.innerHTML = '<a class="tab" href="agents.html">Plan &amp; progress</a>' + steps.map(function (s) {
     return '<button class="tab ' + esc(s.id) + '" role="tab" data-step="' + esc(s.id) + '"><span class="badge" aria-hidden="true">' + esc(s.n) + "</span>" + esc(s.title) + "</button>";
   }).join("") + '<button class="tab" role="tab" data-step="summary">Goals &amp; timeline</button>';
   nav.addEventListener("click", function (e) {
