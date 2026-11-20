@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 17:00",
+ "updated": "2026-11-20 17:35",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -432,7 +432,7 @@ window.STATUS = {
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 on the development machine: attempt 7 got through the approach and descent; attempt 8 (16:13) stopped earlier, during the approach, purely on a time budget: the shared machine was at 90 % CPU load from other projects, so each simulator step took 2.4 times longer and a 10-minute per-phase limit ran out. Attempt 9 (17:05) runs with those time budgets scaled for the development machine only; no physical, force or contact limit changed. Test evidence only"
+   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 on the development machine, attempt 10 (17:00): approach, descent and gripper closing all ran (to step 1815, fingers 12.4 mm apart), and the closing geometry check now passes with the 50-micrometre tolerance. It stopped on a second check of the same fact: the weight sinking a few micrometres into its own bench when the first finger touches. The same tolerance is being applied to that check only; all other limits unchanged. Grip force, lift and slip not measured yet. The simulation runs at about 0.3 to 0.5 s per step on the shared machine; logging the contact record once instead of twice will cut about a fifth of that. Test evidence only"
   },
   {
    "name": "Goal B · First accepted complete room",
@@ -481,6 +481,14 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 17:00",
+   "text": "Attempt 9 failed before any physics because the simulator could not reach its extension registry through the development machine's proxy; attempt 10 ran without the proxy."
+  },
+  {
+   "t": "11-20 17:23",
+   "text": "Balance check step 5, attempt 10: approach, descent and gripper closing ran to completion of the closing motion; the closing geometry check passed. Stopped on a second check of the same micrometre-scale contact between the weight and its bench; the 50-micrometre tolerance is extended to that check only."
+  },
   {
    "t": "11-20 17:00",
    "text": "Base scenes: the weighing room passes strict stability after a collider fix on the spare 20 g weight; 33 moving parts confirmed across the rooms (balance keys, draft-shield side doors, furnace and diffractometer doors, mill lid), 226 loose objects ready to pick up; building cut-away cleaned up. Platform run for the updated synthesis room is being prepared."
