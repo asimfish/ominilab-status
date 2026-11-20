@@ -22,7 +22,18 @@
      "status": "pass",
      "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 27 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the oven door still stall.",
      "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
-     "img": "assets/snapshots/legacy_l0.jpg"
+     "img": "assets/snapshots/legacy_l0.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 47
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 6,
+       "total": 27
+      }
+     ]
     },
     {
      "id": "legacy_l1",
@@ -32,7 +43,18 @@
      "status": "pass",
      "line": "Passes the strict stability run on the platform (0 engine errors). 47 loose objects can be picked up; 6 of 18 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door still stalls; the oven door is being retested.",
      "details": "Structure: 31 of 32 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
-     "img": "assets/snapshots/legacy_l1.jpg"
+     "img": "assets/snapshots/legacy_l1.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 47
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 6,
+       "total": 18
+      }
+     ]
     },
     {
      "id": "legacy_l2",
@@ -42,7 +64,18 @@
      "status": "pass",
      "line": "Passes the strict stability run on the platform (0 engine errors). 32 loose objects can be picked up; 6 of 20 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors); the top draft-shield door and the moisture-analyser lid still stall.",
      "details": "Structure: 34 of 35 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
-     "img": "assets/snapshots/legacy_l2.jpg"
+     "img": "assets/snapshots/legacy_l2.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 32
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 6,
+       "total": 20
+      }
+     ]
     },
     {
      "id": "legacy_l3",
@@ -52,7 +85,18 @@
      "status": "pass",
      "line": "Passes the strict stability run on the platform (0 engine errors). 43 loose objects can be picked up; 8 of 26 planned moving parts confirmed (4 balance keys, 2 draft-shield side doors, the furnace door, the mill lid); the top draft-shield door still stalls.",
      "details": "Structure: 32 of 33 checks; the last item (glassware support) settled in the simulator. Lane lines checked on the plan view. A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
-     "img": "assets/snapshots/legacy_l3.jpg"
+     "img": "assets/snapshots/legacy_l3.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 43
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 8,
+       "total": 26
+      }
+     ]
     },
     {
      "id": "legacy_l4",
@@ -164,7 +208,18 @@
      "status": "partial",
      "line": "Walls dressed on all four sides. Strict stability now passes on the development machine: the spare 20 g weight tilted 2.4° because its collider had a 0.6 mm chamfer, thinner than the physics engine treats as a separate face; fixed, formal repeat in today's platform run. All 5 driven parts of the balance confirmed (4 keys, transport lock). 8 loose objects (reference weights, forceps, brush). Waiting for appearance sign-off.",
      "details": "A moving part counts as confirmed after 3 full open-close cycles that end and hold where they should and touch nothing outside the instrument (development machine; formal repeat to follow).",
-     "img": "assets/snapshots/rebuilt_balance.jpg"
+     "img": "assets/snapshots/rebuilt_balance.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 8
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 5,
+       "total": 7
+      }
+     ]
     },
     {
      "id": "rebuilt_balance_ne",
@@ -250,7 +305,23 @@
      "status": "partial",
      "line": "Room for the headline experiment, shown in its first layout. Structure checks 33 of 33; 600-step stability run passed. Being re-laid out as a two-arm work cell; pictures and stability will be redone on the new layout. Robot operations fully bound: 0 of 6",
      "details": "",
-     "img": "assets/snapshots/auto_alab_overview.jpg"
+     "img": "assets/snapshots/auto_alab_overview.jpg",
+     "metrics": [
+      {
+       "label": "Objects that can be picked up",
+       "value": 49
+      },
+      {
+       "label": "Moving parts confirmed",
+       "value": 2,
+       "total": 26
+      },
+      {
+       "label": "Robot operations bound (CPU)",
+       "value": 6,
+       "total": 6
+      }
+     ]
     },
     {
      "id": "auto_alab_furnace",
@@ -339,6 +410,148 @@
    ]
   },
   {
+   "id": "papers",
+   "title": "Papers, plans & tasks",
+   "blurb": "From the paper to a synthesis plan, then to robot, instrument and observation calls. Plans are compiled; the independent review that turns runs into accepted results has not run since 11-17.",
+   "items": [
+    {
+     "id": "plan_recipe118",
+     "title": "Nature A-Lab CaFe₂P₂O₉ synthesis (recipe 118)",
+     "tag": "Headline",
+     "live": false,
+     "status": "running",
+     "line": "14 operations from the paper. The two-arm cell binds all 6 robot operations on CPU; the task plan is not compiled yet.",
+     "details": "Solid-state synthesis with a box furnace step and a powder X-ray diffraction check. Powders and slurries are handled through instrument models and a mass ledger; results are labelled simulated and no product or yield is reported. The 14 operations are classified into robot actions, instrument programs and observations.",
+     "metrics": [
+      {
+       "label": "Operations in the paper",
+       "value": 14
+      },
+      {
+       "label": "Robot operations bound (CPU)",
+       "value": 6,
+       "total": 6
+      },
+      {
+       "label": "Robot sub-actions bound",
+       "value": 21,
+       "total": 21
+      }
+     ]
+    },
+    {
+     "id": "plan_balance",
+     "title": "Balance routine check (NIST IR 6969)",
+     "tag": "Compiled",
+     "live": false,
+     "status": "partial",
+     "line": "3 automated pre-checks, 25 robot and instrument calls and 9 calculations, with 307 evidence items to record.",
+     "details": "First full experiment chosen for native execution; see Step 2 · Scripted task run for the run itself.",
+     "metrics": [
+      {
+       "label": "Calls in the plan",
+       "value": 37
+      },
+      {
+       "label": "Calls confirmed",
+       "value": 4,
+       "total": 37
+      },
+      {
+       "label": "Evidence items",
+       "value": 307
+      }
+     ]
+    },
+    {
+     "id": "plan_moisture",
+     "title": "Moisture by loss on drying",
+     "tag": "Compiled",
+     "live": false,
+     "status": "partial",
+     "line": "21 steps per sample cycle, 63 for the paper's three measurements; none covered by an approved skill yet.",
+     "details": "A checked path carries the sample carrier into the analyser with the lid open (tightest gap 5.2 mm).",
+     "metrics": [
+      {
+       "label": "Steps per cycle",
+       "value": 21
+      },
+      {
+       "label": "Steps covered by approved skills",
+       "value": 0,
+       "total": 21
+      }
+     ]
+    },
+    {
+     "id": "plan_titration",
+     "title": "Titration",
+     "tag": "Compiled",
+     "live": false,
+     "status": "partial",
+     "line": "8 of 9 instrument links resolve; pH calibration still has no instrument or interface.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Instrument links resolved",
+       "value": 8,
+       "total": 9
+      }
+     ]
+    },
+    {
+     "id": "plan_sources",
+     "title": "Source papers",
+     "tag": "Sources",
+     "live": false,
+     "status": "partial",
+     "line": "19 source papers; 10 protocols fully traced to their source. Source gate: 83 of 130 nodes pass, 10 mixed, 37 undetermined.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Protocols fully sourced",
+       "value": 10,
+       "total": 19
+      },
+      {
+       "label": "Source-gate nodes passing",
+       "value": 83,
+       "total": 130
+      }
+     ]
+    },
+    {
+     "id": "plan_skill_queue",
+     "title": "Skills the plans need",
+     "tag": "Gaps",
+     "live": false,
+     "status": "partial",
+     "line": "Across four plans: 82 calls, 12 with a ready skill and 70 gaps in 42 work units. Largest gaps: pick 8, closed-loop place 8, wait for stable 4, read balance 4.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Calls with a ready skill",
+       "value": 12,
+       "total": 82
+      },
+      {
+       "label": "Work units to build",
+       "value": 42
+      }
+     ]
+    },
+    {
+     "id": "plan_review",
+     "title": "Independent review",
+     "tag": "Review",
+     "live": false,
+     "status": "blocked",
+     "line": "The review agent has not run since 11-17. Waiting: attempts a7–a14 with every test-only switch, the 11-17 platform run, the descent path and the two-arm cell.",
+     "details": "Until it runs, every execution result on this site is the producer's own test evidence."
+    }
+   ]
+  },
+  {
    "id": "lab",
    "title": "Lab execution",
    "blurb": "The robot doing real tasks in the simulator. Five skills are approved, pick-and-place included; the first full experiment is next.",
@@ -419,6 +632,342 @@
      "line": "First simulator picture of the corrected five-room building: the corridor (lane lines, ceiling lights, one door opening). It is bare: no wall finish, door leaves or signs yet. Whole-building contact scan and strict stability run passed; the top view currently shows only roofs and will be re-rendered as a cut-away. First frame took 178 s to appear",
      "details": "Milestones: 1) floor spec and feasibility; 2) first building assembled, structure and appearance accepted; 3) whole building physically stable; 4) mobile robot can travel between all stations; 5) first cross-room experiment runs end to end.",
      "img": "assets/snapshots/lab_multiroom.jpg"
+    }
+   ]
+  },
+  {
+   "id": "annot",
+   "title": "Object annotation",
+   "blurb": "Each of the 267 library assets gets size, pose, bottom and support geometry for clean placement, plus grasp regions, approach directions and hand offsets that steer grasp sampling.",
+   "items": [
+    {
+     "id": "annot_library",
+     "title": "Asset library",
+     "tag": "267 assets",
+     "live": false,
+     "status": "partial",
+     "line": "Source files match for all 267. Stable at rest: 232. Ready for scene building: 169. Ready for manipulation: 0.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Ready for scene building",
+       "value": 169,
+       "total": 267
+      },
+      {
+       "label": "Stable at rest",
+       "value": 232,
+       "total": 267
+      },
+      {
+       "label": "Ready for manipulation",
+       "value": 0,
+       "total": 267
+      }
+     ]
+    },
+    {
+     "id": "annot_grasp_context",
+     "title": "Grasp context for vessels",
+     "tag": "Contract",
+     "live": false,
+     "status": "partial",
+     "line": "18 vessel entries with pose class, free sides, arm reach, approach (side or from above) and allowed wall areas. Your three rules apply: upright and clear → from the right; lying → from above; crowded → from above.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Vessel entries",
+       "value": 18
+      },
+      {
+       "label": "Rule version",
+       "value": "v005"
+      }
+     ]
+    },
+    {
+     "id": "annot_mass",
+     "title": "Masses from materials",
+     "tag": "Masses",
+     "live": false,
+     "status": "running",
+     "line": "208 assets had parts written as exactly 1 g. Masses are now estimated from materials, F3's vessels first: 4 of 6 done (the 100 mL beaker: 71.1 g of glass).",
+     "details": "",
+     "metrics": [
+      {
+       "label": "F3 vessels estimated",
+       "value": 4,
+       "total": 6
+      },
+      {
+       "label": "Assets with placeholder masses",
+       "value": 208
+      }
+     ]
+    },
+    {
+     "id": "annot_ops",
+     "title": "Operation proposals",
+     "tag": "Proposals",
+     "live": false,
+     "status": "partial",
+     "line": "770 operation proposals for 251 of 267 assets, drawn from 261 instrument manuals.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Assets with proposals",
+       "value": 251,
+       "total": 267
+      }
+     ]
+    },
+    {
+     "id": "annot_orientation",
+     "title": "Orientation decisions",
+     "tag": "Needs you",
+     "live": false,
+     "status": "pending",
+     "line": "70 assets need only an orientation decision to become ready for scene building.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Assets waiting",
+       "value": 70
+      }
+     ]
+    },
+    {
+     "id": "annot_job18",
+     "title": "Simulator check · job 18",
+     "tag": "Simulator",
+     "live": false,
+     "status": "running",
+     "line": "4-card low-priority job queued. Four glass vessels re-run for 960 steps with estimated masses all pass on CPU.",
+     "details": ""
+    }
+   ]
+  },
+  {
+   "id": "grasp",
+   "title": "Grasp sampling",
+   "blurb": "Monte-Carlo sampling of right-hand poses guided by the annotations, then simplified to a stable hold. The finger layouts that would hold are known; no real hand pose reaches one yet.",
+   "items": [
+    {
+     "id": "grasp_cylinder",
+     "title": "500 mL graduated cylinder",
+     "tag": "Vessel",
+     "live": false,
+     "status": "running",
+     "line": "Best pose: 3 of 4 contacts pass. The middle finger lands 0.433 mm outside its allowed face; being re-solved now.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Contacts passing",
+       "value": 3,
+       "total": 4
+      }
+     ]
+    },
+    {
+     "id": "grasp_beaker100",
+     "title": "100 mL beaker",
+     "tag": "Vessel",
+     "live": false,
+     "status": "blocked",
+     "line": "The hand is taller than the beaker: at its table position only 2 poses clear the table. 24 mm from the edge, 73 clear and the best has 3 of 4 contacts.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Contacts passing (near edge)",
+       "value": 3,
+       "total": 4
+      }
+     ]
+    },
+    {
+     "id": "grasp_layouts",
+     "title": "Ideal finger layouts",
+     "tag": "Loads",
+     "live": false,
+     "status": "pass",
+     "line": "25 layouts hold all 63 test loads at no more than 9.5 N per finger; published to annotation.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Layouts holding all loads",
+       "value": 25
+      }
+     ]
+    },
+    {
+     "id": "grasp_library",
+     "title": "Grasp library",
+     "tag": "Library",
+     "live": false,
+     "status": "pending",
+     "line": "0 entries. A grasp enters only after contacts, loads, perturbations and one physics run all pass.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Real hand poses passing all contacts",
+       "value": 0,
+       "total": 936
+      }
+     ]
+    },
+    {
+     "id": "grasp_physics",
+     "title": "Physics confirmation",
+     "tag": "Physics",
+     "live": false,
+     "status": "pending",
+     "line": "One CPU physics run is authorised (close, lift 30 mm, hold 0.5 s) for the first pose that passes every CPU gate.",
+     "details": ""
+    }
+   ]
+  },
+  {
+   "id": "atomic",
+   "title": "Atomic tasks",
+   "blurb": "Experiments split into atomic operations, collected and evaluated in small scenes carved from the big lab: objects the robot does not touch stay as shapes without collisions, so the view matches the big scene.",
+   "items": [
+    {
+     "id": "atomic_decomp",
+     "title": "Experiment decompositions",
+     "tag": "Splits",
+     "live": false,
+     "status": "partial",
+     "line": "Weigh-and-return (22 steps) plus three longer flows of 28, 30 and 61 steps; operation vocabulary v1 published.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Experiments decomposed",
+       "value": 4
+      },
+      {
+       "label": "Steps in the longest flow",
+       "value": 61
+      }
+     ]
+    },
+    {
+     "id": "atomic_episodes",
+     "title": "Collected episodes",
+     "tag": "Data",
+     "live": false,
+     "status": "partial",
+     "line": "approach_pick 43 and descend_pick 40 episodes. grasp, lift, carry, place, release, retreat, return_home and retrieve: 0. weigh, verify and power_off: not reported.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "approach_pick",
+       "value": 43
+      },
+      {
+       "label": "descend_pick",
+       "value": 40
+      },
+      {
+       "label": "Operations with data",
+       "value": 2,
+       "total": 13
+      }
+     ]
+    },
+    {
+     "id": "atomic_carved",
+     "title": "Carved small scenes",
+     "tag": "Scenes",
+     "live": false,
+     "status": "running",
+     "line": "Plan A approved: keep every object, switch off collisions on objects the robot does not touch. One carved scene built on CPU.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Carved scenes built",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "id": "atomic_trial",
+     "title": "GPU collection trial",
+     "tag": "GPU trial",
+     "live": false,
+     "status": "partial",
+     "line": "0 of 4 cases passed: all stopped at the pre-lift speed check. Cause: reported velocities don't match the measured positions while the gripper clamps. Your new measure is approved; the re-trial is being packaged.",
+     "details": "",
+     "metrics": [
+      {
+       "label": "Cases passed",
+       "value": 0,
+       "total": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eval",
+   "title": "Full-lab evaluation",
+   "blurb": "An agent with mobile manipulation runs whole experiments in the full lab, so each policy is scored on the complete task, segment by segment.",
+   "items": [
+    {
+     "id": "eval_pi05",
+     "title": "π0.5 (zero-shot)",
+     "tag": "Policy",
+     "live": false,
+     "status": "running",
+     "line": "Six-start comparison job running on 4 low-priority cards (at most 8 card-hours and 150 model calls).",
+     "details": ""
+    },
+    {
+     "id": "eval_dp",
+     "title": "Diffusion policy",
+     "tag": "Policy",
+     "live": false,
+     "status": "partial",
+     "line": "In-distribution chained tasks: approach 5/5 by the policy, place and weigh 5/5 by native skills, retrieve unmeasured. Out of distribution: 0/3.",
+     "details": "This validates the pipeline, not generalisation.",
+     "metrics": [
+      {
+       "label": "Approach by policy",
+       "value": 5,
+       "total": 5
+      },
+      {
+       "label": "Out-of-distribution",
+       "value": 0,
+       "total": 3
+      }
+     ]
+    },
+    {
+     "id": "eval_chain",
+     "title": "Chain contract",
+     "tag": "Framework",
+     "live": false,
+     "status": "pass",
+     "line": "Experiment splits compile into chains the runner executes; the scoreboard keeps unmeasured separate from failed. 32 tests pass.",
+     "details": ""
+    },
+    {
+     "id": "eval_wam",
+     "title": "World-action models",
+     "tag": "Policy",
+     "live": false,
+     "status": "pending",
+     "line": "Not connected yet; the download and any fine-tuning need your approval.",
+     "details": ""
+    },
+    {
+     "id": "eval_mobile",
+     "title": "Agent + mobile manipulation",
+     "tag": "Platform",
+     "live": false,
+     "status": "pending",
+     "line": "Mobile base not chosen. A candidate agent profile lets the model control more than one segment of a chain.",
+     "details": ""
     }
    ]
   }
@@ -909,5 +1458,571 @@
    "t": "11-07 04:27",
    "text": "Paper → protocol → scene runs as one command, with automatic robot placement."
   }
- ]
+ ],
+ "pipeline": {
+  "updated": "2026-11-20 19:50",
+  "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
+  "flow": [
+   {
+    "label": "Real papers",
+    "sub": "19 sources",
+    "status": "partial"
+   },
+   {
+    "label": "Protocol & tasks",
+    "sub": "plans compiled, review stalled",
+    "status": "blocked"
+   },
+   {
+    "label": "Assets & scenes",
+    "sub": "5 labs stable, auto builder",
+    "status": "running"
+   },
+   {
+    "label": "Grasps from annotations",
+    "sub": "0 grasps proven yet",
+    "status": "running"
+   },
+   {
+    "label": "Atomic data & training",
+    "sub": "2 of 13 operations collected",
+    "status": "running"
+   },
+   {
+    "label": "Full-experiment evaluation",
+    "sub": "π0.5 job running",
+    "status": "running"
+   }
+  ],
+  "mentors": [
+   {
+    "name": "HQ mentor",
+    "covers": "All steps",
+    "note": "Reviews at stage boundaries"
+   },
+   {
+    "name": "Coordinator",
+    "covers": "Steps 1–2",
+    "note": "“OminiLab” conversation"
+   },
+   {
+    "name": "Manipulation mentor",
+    "covers": "Step 3",
+    "note": "“Ominilab_手势” conversation"
+   }
+  ],
+  "steps": [
+   {
+    "id": "step1",
+    "n": 1,
+    "title": "Scenes",
+    "what": "Realistic, varied base labs, merged into a multi-lab building, plus a builder that makes operable scenes from papers.",
+    "mentor": "Coordinator",
+    "groups": [
+     "base",
+     "auto"
+    ]
+   },
+   {
+    "id": "step2",
+    "n": 2,
+    "title": "Papers → plans → tasks",
+    "what": "Synthesis plan from the paper, instruments placed into a base scene, then the plan compiled into robot tasks.",
+    "mentor": "Coordinator",
+    "groups": [
+     "papers",
+     "lab"
+    ]
+   },
+   {
+    "id": "step3",
+    "n": 3,
+    "title": "Manipulation",
+    "what": "Annotate objects, sample stable grasps, collect atomic tasks in carved small scenes, and evaluate policies on full experiments.",
+    "mentor": "Manipulation mentor",
+    "groups": [
+     "annot",
+     "grasp",
+     "atomic",
+     "eval"
+    ]
+   }
+  ],
+  "stages": [
+   {
+    "id": "s1_builder",
+    "step": "step1",
+    "col": 1,
+    "row": 1,
+    "group": "auto",
+    "title": "Auto scene builder",
+    "what": "Builds operable scenes from papers and our assets; checks collisions, overlaps and reach.",
+    "agent": "Scene-builder agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Bench scenes stable over 600 steps",
+     "value": 4,
+     "total": 12
+    },
+    "metrics": [
+     {
+      "label": "Full rooms from one command",
+      "value": 3
+     },
+     {
+      "label": "Automatic inspection gates",
+      "value": "G1–G7"
+     },
+     {
+      "label": "Joint-limit margin rule",
+      "value": "≥ 5°"
+     }
+    ],
+    "next": "Publish release f of the two-arm cell with every gate passing."
+   },
+   {
+    "id": "s1_base",
+    "step": "step1",
+    "col": 1,
+    "row": 2,
+    "group": "base",
+    "title": "Base scenes",
+    "what": "About ten realistic labs (chemistry, materials, biology…) with different layouts.",
+    "agent": "Base-scene agent",
+    "agent_state": "running",
+    "status": "partial",
+    "progress": {
+     "label": "Labs passing the strict stability run",
+     "value": 5,
+     "total": 10
+    },
+    "metrics": [
+     {
+      "label": "Objects that can be picked up",
+      "value": 226
+     },
+     {
+      "label": "Moving parts confirmed",
+      "value": 33,
+      "total": 124
+     },
+     {
+      "label": "Accepted by you",
+      "value": 0,
+      "total": 5
+     }
+    ],
+    "next": "Rerun the 7 remaining cell states at 20:19; fix 3 stuck mechanisms; rebuild the 7 draft rooms (biology is only in drafts)."
+   },
+   {
+    "id": "s1_multilab",
+    "step": "step1",
+    "col": 1,
+    "row": 4,
+    "group": "lab",
+    "item": "lab_multiroom",
+    "title": "Multi-lab building",
+    "what": "Several base labs merged into one building so experiments can cross rooms.",
+    "agent": "Base-scene agent",
+    "agent_state": "idle",
+    "status": "partial",
+    "progress": {
+     "label": "Building milestones",
+     "value": 2,
+     "total": 5
+    },
+    "metrics": [
+     {
+      "label": "Movable bodies scanned, stable",
+      "value": 277
+     },
+     {
+      "label": "Mobile-robot runs",
+      "value": 0
+     }
+    ],
+    "next": "Wall finish, doors and signs; then a mobile robot travelling between stations."
+   },
+   {
+    "id": "s2_plan",
+    "step": "step2",
+    "col": 2,
+    "row": 1,
+    "group": "papers",
+    "item": "plan_sources",
+    "title": "Paper → synthesis plan",
+    "what": "Extract the protocol from the paper and trace every step to its source.",
+    "agent": "Scene-builder agent",
+    "agent_state": "running",
+    "status": "partial",
+    "progress": {
+     "label": "Protocols fully sourced",
+     "value": 10,
+     "total": 19
+    },
+    "metrics": [
+     {
+      "label": "Headline experiment operations",
+      "value": 14
+     },
+     {
+      "label": "Source-gate nodes passing",
+      "value": 83,
+      "total": 130
+     }
+    ],
+    "next": "Finish sourcing; extend beyond recipe 118 once it runs."
+   },
+   {
+    "id": "s2_scene",
+    "step": "step2",
+    "col": 2,
+    "row": 2,
+    "group": "auto",
+    "item": "auto_alab_room",
+    "title": "Instruments → scene",
+    "what": "Pick the instruments we have, place them in a base scene, let the builder fix the layout.",
+    "agent": "Scene-builder agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Recipe 118 robot operations bound (CPU)",
+     "value": 6,
+     "total": 6
+    },
+    "metrics": [
+     {
+      "label": "Robot sub-actions bound",
+      "value": 21,
+      "total": 21
+     },
+     {
+      "label": "Cell states stable in the simulator",
+      "value": 11,
+      "total": 18
+     },
+     {
+      "label": "Doors and balance confirmed",
+      "value": "yes"
+     }
+    ],
+    "next": "Release f (≥ 5° from joint limits) → simulator check by the base-scene agent."
+   },
+   {
+    "id": "s2_tasks",
+    "step": "step2",
+    "col": 2,
+    "row": 3,
+    "group": "papers",
+    "item": "plan_skill_queue",
+    "title": "Orchestrated tasks",
+    "what": "Compile the plan into robot, instrument and observation calls; review results independently.",
+    "agent": "Orchestration & review agent",
+    "agent_state": "stalled",
+    "status": "blocked",
+    "progress": {
+     "label": "Task calls covered by a ready skill",
+     "value": 12,
+     "total": 82
+    },
+    "metrics": [
+     {
+      "label": "Balance check calls",
+      "value": 37
+     },
+     {
+      "label": "Recipe 118 task plan",
+      "value": "not compiled"
+     },
+     {
+      "label": "Independent reviews since 11-17",
+      "value": 0
+     }
+    ],
+    "next": "Needs a working session: review attempts a7–a14, then compile recipe 118 into tasks."
+   },
+   {
+    "id": "s2_run",
+    "step": "step2",
+    "col": 2,
+    "row": 4,
+    "group": "lab",
+    "item": "lab_balance_check",
+    "title": "Scripted task run",
+    "what": "Run the compiled tasks with native robot skills to prove the experiment is executable.",
+    "agent": "Task-execution agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Balance check calls confirmed",
+     "value": 4,
+     "total": 37
+    },
+    "metrics": [
+     {
+      "label": "Latest attempt",
+      "value": "a14: lifted 1.1 s"
+     },
+     {
+      "label": "Grip at stop",
+      "value": "27 N < 30 N"
+     },
+     {
+      "label": "Approved skills",
+      "value": 6
+     }
+    ],
+    "next": "Hold the 100 g weight through the lift (attempt a15)."
+   },
+   {
+    "id": "s3_annot",
+    "step": "step3",
+    "col": 3,
+    "row": 1,
+    "group": "annot",
+    "title": "Object annotation",
+    "what": "Size, pose and bottom for clean placement; grasp poses and offsets for sampling.",
+    "agent": "Annotation agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Assets ready for scene building",
+     "value": 169,
+     "total": 267
+    },
+    "metrics": [
+     {
+      "label": "Stable at rest",
+      "value": 232,
+      "total": 267
+     },
+     {
+      "label": "Ready for manipulation",
+      "value": 0,
+      "total": 267
+     },
+     {
+      "label": "Operation proposals",
+      "value": 770
+     }
+    ],
+    "next": "Simulator job 18; masses from materials (208 assets had 1 g placeholders)."
+   },
+   {
+    "id": "s3_grasp",
+    "step": "step3",
+    "col": 3,
+    "row": 2,
+    "group": "grasp",
+    "title": "Grasp sampling & stabilising",
+    "what": "Monte-Carlo hand poses guided by the annotations, then simplified to a stable hold.",
+    "agent": "Grasp-sampling agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Grasps in the library",
+     "value": 0
+    },
+    "metrics": [
+     {
+      "label": "Ideal finger layouts that hold all loads",
+      "value": 25
+     },
+     {
+      "label": "Real hand poses passing all contacts",
+      "value": 0,
+      "total": 936
+     },
+     {
+      "label": "Best so far",
+      "value": "cylinder, 3 of 4 fingers"
+     }
+    ],
+    "next": "First closed-loop demo on the 500 mL cylinder: one physics run with video."
+   },
+   {
+    "id": "s3_atomic",
+    "step": "step3",
+    "col": 3,
+    "row": 3,
+    "group": "atomic",
+    "title": "Atomic tasks in carved scenes",
+    "what": "Split experiments into atomic tasks; collect them in small scenes cut from the big lab.",
+    "agent": "Atomic-task agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Atomic operations with collected episodes",
+     "value": 2,
+     "total": 13
+    },
+    "metrics": [
+     {
+      "label": "Episodes: approach / descend",
+      "value": "43 / 40"
+     },
+     {
+      "label": "Experiments decomposed",
+      "value": 4
+     },
+     {
+      "label": "Carved scenes built (CPU)",
+      "value": 1
+     }
+    ],
+    "next": "New grip-speed measure into the real check, then a GPU re-trial of the lift."
+   },
+   {
+    "id": "s3_eval",
+    "step": "step3",
+    "col": 3,
+    "row": 4,
+    "group": "eval",
+    "title": "Full-lab evaluation",
+    "what": "An agent with mobile manipulation runs whole experiments so policies are judged end to end.",
+    "agent": "Evaluation agent",
+    "agent_state": "running",
+    "status": "running",
+    "progress": {
+     "label": "Policies with chain results",
+     "value": 1,
+     "total": 3
+    },
+    "metrics": [
+     {
+      "label": "π0.5 six-start job",
+      "value": "running"
+     },
+     {
+      "label": "DP, approach in chain",
+      "value": "5 / 5"
+     },
+     {
+      "label": "Mobile base",
+      "value": "not chosen"
+     }
+    ],
+    "next": "Read back the π0.5 job; stream evidence to disk so the last stage can be scored."
+   }
+  ],
+  "links": [
+   {
+    "from": "s3_annot",
+    "to": "s1_builder",
+    "label": "size · pose · bottom",
+    "route": "top",
+    "kind": "feed"
+   },
+   {
+    "from": "s1_base",
+    "to": "s1_multilab",
+    "label": "rooms merged",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s1_builder",
+    "to": "s2_scene",
+    "label": "layout fixes",
+    "route": "gutter",
+    "kind": "flow",
+    "lane": -1
+   },
+   {
+    "from": "s1_base",
+    "to": "s2_scene",
+    "label": "base lab",
+    "route": "right",
+    "kind": "flow",
+    "lane": 1
+   },
+   {
+    "from": "s2_plan",
+    "to": "s2_scene",
+    "label": "instrument list",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s2_scene",
+    "to": "s2_tasks",
+    "label": "operable scene",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s2_tasks",
+    "to": "s2_run",
+    "label": "task list",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s3_annot",
+    "to": "s3_grasp",
+    "label": "grasp poses · offsets",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s3_grasp",
+    "to": "s3_atomic",
+    "label": "stable grasps",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s3_atomic",
+    "to": "s3_eval",
+    "label": "trained policies",
+    "route": "down",
+    "kind": "flow"
+   },
+   {
+    "from": "s2_scene",
+    "to": "s3_atomic",
+    "label": "carved scenes",
+    "route": "gutter",
+    "kind": "flow",
+    "lane": -1
+   },
+   {
+    "from": "s2_tasks",
+    "to": "s3_atomic",
+    "label": "experiment splits",
+    "route": "right",
+    "kind": "flow",
+    "lane": 1
+   },
+   {
+    "from": "s2_run",
+    "to": "s3_eval",
+    "label": "native skills",
+    "route": "right",
+    "kind": "feed"
+   },
+   {
+    "from": "s1_multilab",
+    "to": "s3_eval",
+    "label": "full lab for mobile runs",
+    "route": "bottom",
+    "kind": "feed"
+   },
+   {
+    "from": "s2_run",
+    "to": "s2_tasks",
+    "label": "evidence, unreviewed",
+    "route": "back",
+    "kind": "broken"
+   }
+  ],
+  "decisions": [
+   "Open a working session for the orchestration & review agent (no independent review since 11-17).",
+   "Approve or reject the balance-check tolerance extensions (second check, and the agent's own fallback).",
+   "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
+   "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
+   "Which mobile robot carries the arm in full-lab evaluation."
+  ]
+ }
 }
