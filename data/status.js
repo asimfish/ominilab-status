@@ -1,5 +1,5 @@
 window.STATUS = {
- "updated": "2026-11-20 03:00",
+ "updated": "2026-11-20 17:15",
  "tz": "UTC+8",
  "snapshots_taken": "11-15 19:57",
  "session": {
@@ -407,12 +407,12 @@ window.STATUS = {
   {
    "name": "Headline · One complete paper experiment, every operation, in simulation",
    "status": "pending",
-   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. Correction to the earlier entry: robot operations fully bound is 0 of 6, not 2. The furnace fixtures (crucible tray, driven interlocked door, cooling rack) are built, but their reach check moved the robot base, and no skill can do that. The paper uses two station-dedicated arms, so the room is being re-laid out with a fixed furnace arm and a fixed characterisation arm side by side, handing samples over at the cooling tray. Gate: step 5 of the balance check, same robot skills"
+   "line": "Owner's stated priority. Chosen experiment: a published autonomous-lab solid-state synthesis of CaFe₂P₂O₉ with an X-ray diffraction check, 14 operations, 0 run so far. The synthesis room is now a two-arm work cell (fixed furnace arm, fixed characterisation arm, hand-off at the cooling tray) and all 6 robot operations, 21 of 21 robot sub-actions, are bound on CPU with structure checks 33 of 33. Open: many arm poses sit within 2° of a joint limit, too tight for execution, and simulator confirmation of the cell has not run yet. Gate: step 5 of the balance check, same robot skills"
   },
   {
    "name": "Goal A · First complete experiment by the robot",
    "status": "partial",
-   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 (pick up the weight) advanced tonight on the development machine: approach and the corrected straight-line descent now pass in the simulator for the first time (1.2 mm from target against a 5 mm limit). It then stopped while closing the gripper: the first finger to touch tilted the weight by 0.018°, putting its rim 2.5 micrometres below the bench plane, and a check that demanded exactly zero refused. That check now uses the 50-micrometre tolerance already authorised for the bench surface; the next attempt is running. Grip force, lift and slip are not measured yet. Test evidence only"
+   "line": "100 g balance check: 4 of 37 steps confirmed. Step 5 on the development machine: attempt 7 got through the approach and descent; attempt 8 (16:13) stopped earlier, during the approach, purely on a time budget: the shared machine was at 90 % CPU load from other projects, so each simulator step took 2.4 times longer and a 10-minute per-phase limit ran out. Attempt 9 (17:05) runs with those time budgets scaled for the development machine only; no physical, force or contact limit changed. Test evidence only"
   },
   {
    "name": "Goal B · First accepted complete room",
@@ -432,17 +432,17 @@ window.STATUS = {
   {
    "name": "Goal E · From paper to runnable lab automatically",
    "status": "partial",
-   "line": "Phosphate synthesis room: 33 of 33 structure checks in its current layout; being rebuilt as a two-arm work cell (fixed furnace arm, fixed characterisation arm, diffractometer moved alongside) so that every robot step is within reach without moving a base. Robot operations fully bound: 0 of 6 until the new layout is verified. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
+   "line": "Phosphate synthesis room rebuilt as a two-arm work cell by the automatic cell builder (fixtures placed on declared surfaces where the fixed arm reaches every access point): 6 of 6 robot operations and 21 of 21 sub-actions bound on CPU, structure checks 33 of 33. Simulator confirmation batch being prepared. Organic synthesis room 32 of 32, HPLC room 33 of 35, both on hold. None fully accepted (0 of 3)"
   },
   {
    "name": "Operability · moving parts of the instruments the planned experiments use",
    "status": "partial",
-   "line": "Across the synthesis room, the four original labs and the weighing room: 124 mechanisms (doors, lids, buttons) on the instruments the planned experiments need. Rigged: 52, including the balances' buttons and draft-shield doors, the weighing-room balance keys, one furnace door, and newly prepared moisture-analyser lid, two oven doors, mill lid and a second furnace door. Confirmed moving in the simulator: 0 so far; a dedicated confirmation run (three full cycles per mechanism, no contact outside the instrument) follows the current platform job. Diffractometer and vacuum-oven doors still show possible contacts and wait for the simulator to decide. A further 449 mechanisms on instruments no planned experiment uses stay switched off"
+   "line": "Across the synthesis room, the four original labs and the weighing room: 124 mechanisms on the instruments the planned experiments need; 52 rigged. Confirmed moving in the simulator (development machine, three full cycles, no outside contact): the weighing-room balance keys and transport lock, the furnace door, the diffractometer door, and the balance keys in one original lab. A formal confirmation batch covering these and the other rigged mechanisms is being prepared. 449 mechanisms on instruments no planned experiment uses stay switched off"
   },
   {
    "name": "Base scenes",
    "status": "partial",
-   "line": "Four original labs rebuilt with lane markings and reseated glassware: structure checks 34/35, 31/32, 34/35 and 32/33. A platform job was submitted at 02:19 (17 cases): formal weighing-room stability run and 16 pictures, building cut-away, strict stability and pictures of the four labs, furnace open and closed. Corridor fit-out (skirting, rails, door signs, extinguisher boxes) is built and waiting to be rendered. Fully accepted base rooms: 0 of 5"
+   "line": "Platform job of 02:19 succeeded: all four original labs pass the strict stability run. The weighing room's formal run failed on one added spare weight; the cause (the simulator merged a thin chamfer into the weight's base when simplifying its shape, leaving it lopsided) is fixed and passes on the development machine, formal re-run pending. Fully accepted base rooms: 0 of 5"
   },
   {
    "name": "Auto-built scenes",
@@ -461,6 +461,18 @@ window.STATUS = {
   }
  ],
  "timeline": [
+  {
+   "t": "11-20 02:46",
+   "text": "Base-scene platform job succeeded: the four original labs pass the strict stability run."
+  },
+  {
+   "t": "11-20 06:30",
+   "text": "Headline experiment: all 6 robot operations (21 sub-actions) bound to the two-arm work cell on CPU, using a new automatic cell builder that places fixtures where the fixed arm can reach them. Structure checks 33 of 33. Weakness found: many poses within 2° of a joint limit."
+  },
+  {
+   "t": "11-20 17:05",
+   "text": "Balance check step 5: attempt 8 stopped during the approach on a 10-minute per-phase time limit, because other projects held the shared machine at 90 % CPU and every simulator step took 2.4 times longer. Attempt 9 started with the development machine's time budgets scaled up; all physical, force and contact limits unchanged."
+  },
   {
    "t": "11-20 02:19",
    "text": "Platform job submitted for the base scenes (17 cases): formal weighing-room run and pictures, building cut-away, the four original labs, furnace door open and closed. First operability count published: 36 of 89 needed mechanisms rigged, none confirmed in the simulator yet."
