@@ -31,3 +31,7 @@ build if hosts, IPs, paths, job ids, conversation ids or credentials appear.
 
 When a stage reaches a milestone, update its card's numbers and `next` in `pipeline.stages`, and bump
 `pipeline.updated`. Run `git pull --rebase` before every push: several sessions publish here.
+
+## Loading
+
+The site makes no third-party requests: fonts are in `assets/fonts/` (IBM Plex Sans, IBM Plex Mono, Space Grotesk; SIL OFL 1.1, latin subset), so it loads where Google is blocked. Keep it that way: do not add CDN or Google Fonts links.
