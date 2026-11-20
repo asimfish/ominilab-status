@@ -420,8 +420,8 @@
      "tag": "Headline",
      "live": false,
      "status": "running",
-     "line": "14 operations compiled into a task graph: 6 robot actions, 7 instrument programs, 1 observation (21 physical sub-actions). 0 of 14 approved to run yet; executable plan in progress.",
-     "details": "Solid-state synthesis with a box furnace step and a powder X-ray diffraction check. Powders and slurries are handled through instrument models and a mass ledger; results are labelled simulated and no product or yield is reported. The 14 operations are classified into robot actions, instrument programs and observations.",
+     "line": "Executable plan for the two-arm cell: 14 calls (6 robot actions, 7 instrument programs, 1 observation), 21 physical sub-actions, each with its skill, station, preconditions and evidence. Runnable now: 0 of 14. Scene requirements sent to the scene builder.",
+     "details": "The diffractometer in our scene (Rigaku MiniFlex) is not proven equivalent to the paper's (Aeris), so all powder, slurry and diffraction results are labelled simulated; no product or yield is reported. A separate delta covers the release f changes to operations 7, 9, 10, 11, 12 and 14.",
      "metrics": [
       {
        "label": "Operations in the paper",
@@ -432,7 +432,7 @@
        "value": "6 / 7 / 1"
       },
       {
-       "label": "Calls approved to run",
+       "label": "Calls runnable now",
        "value": 0,
        "total": 14
       }
@@ -525,17 +525,13 @@
      "tag": "Gaps",
      "live": false,
      "status": "partial",
-     "line": "Across four plans: 82 calls, 12 with a ready skill and 70 gaps in 42 work units. Largest gaps: pick 8, closed-loop place 8, wait for stable 4, read balance 4.",
+     "line": "96 calls across the plans, 84 of them without a qualified skill. First gaps in recipe 118 order: batch and pre-loaded material hand-off, Quantos tare and dosing ledger, wet-mix preparation, mix program, slurry transfer ledger.",
      "details": "",
      "metrics": [
       {
-       "label": "Calls with a ready skill",
+       "label": "Calls with a qualified skill",
        "value": 12,
-       "total": 82
-      },
-      {
-       "label": "Work units to build",
-       "value": 42
+       "total": 96
       }
      ]
     },
@@ -545,8 +541,8 @@
      "tag": "Review",
      "live": false,
      "status": "partial",
-     "line": "Backlog cleared 21:44–22:02: R53 re-verified (calls 1–4 confirmed, call 5 unobserved after its first moments), pick-and-place 4 independent passes, descent path, reading wrapper and weighing-room binding all pass. Next: dev attempts a7–a16.",
-     "details": "Over-pan motion: 0 qualifying runs (tracking error exceeds the 0.5 mm clearance margin); the obstacle counter-example passed. Until reviewed, dev attempts a7–a16 remain the producer's own test evidence."
+     "line": "Dev attempts a7–a16 reviewed 22:05–22:25: 0 accepted, 6 not accepted (a7, a10, a12–a15), 4 unobserved (a8, a9, a11, a16). Kept for a formal run: straight-line descent (as a candidate). Development only: run-all-calls, two-GPU, local archive, time scale, log de-duplication. Rejected: the bench-plane tolerance fallback.",
+     "details": "Lift sag: the arm was always commanded upward, yet the gripper sank up to 0.33 mm after closing while the weight stayed in contact with the bench; drive lag, load and contact cannot be separated from the logs. a14: one finger fell from 33.9 N to 27.2 N in a single step. a16 is unobserved until its raw package and your grip-window approval are published as files."
     }
    ]
   },
@@ -1463,7 +1459,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-20 22:10",
+  "updated": "2026-11-20 22:30",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1538,8 +1534,8 @@
      "papers",
      "lab"
     ],
-    "now": "Review cleared the backlog: recipe 118 is a 14-call task graph, and pick-and-place has 4 independent passes. The robot is working on holding the 100 g weight through the lift.",
-    "next": "Turn recipe 118 into an executable plan and send its scene requirements to the builder; review the dev attempts."
+    "now": "Recipe 118 has an executable plan and its scene requirements went to the builder. The review rejected the shortcuts nobody approved; the robot still has to hold the weight through the lift.",
+    "next": "Close recipe 118's skill gaps in order; get call 5 (grip and lift) accepted."
    },
    {
     "id": "step3",
@@ -1857,26 +1853,27 @@
     "agent_state": "running",
     "status": "running",
     "progress": {
-     "label": "Task calls covered by a ready skill",
-     "value": 12,
-     "total": 82
+     "label": "Recipe 118 calls with a ready skill",
+     "value": 0,
+     "total": 14
     },
     "metrics": [
      {
-      "label": "Recipe 118 calls",
-      "value": 14
-     },
-     {
-      "label": "Recipe 118 calls approved to run",
+      "label": "Recipe 118 calls runnable now",
       "value": 0,
       "total": 14
+     },
+     {
+      "label": "Calls still needing a skill",
+      "value": 84,
+      "total": 96
      },
      {
       "label": "Pick-and-place passes (3 needed)",
       "value": 4
      }
     ],
-    "next": "Review dev attempts a7–a16 and their test-only switches; bind every recipe 118 call to a skill and scene part; send the scene requirements to the builder.",
+    "next": "Close skill gaps in the order recipe 118 needs them: batch hand-off, Quantos tare and dosing, wet-mix prep, mix program, slurry transfer.",
     "milestones": [
      {
       "t": "Balance check compiled",
@@ -1893,23 +1890,24 @@
       "n": "62 archives verified"
      },
      {
-      "t": "Recipe 118 task graph",
-      "s": "done",
-      "n": "6 robot · 7 instrument · 1 observation"
-     },
-     {
       "t": "Review of dev attempts a7–a16",
-      "s": "now"
+      "s": "done",
+      "n": "0 accepted · 6 not · 4 unobserved"
      },
      {
       "t": "Recipe 118 executable plan",
-      "s": "now",
-      "n": "bound to the two-arm cell"
+      "s": "done",
+      "n": "candidate for the two-arm cell"
+     },
+     {
+      "t": "Scene requirements to the builder",
+      "s": "done",
+      "n": "sent 11-20"
      },
      {
       "t": "Skill gaps closed",
       "s": "todo",
-      "n": "0 of 14 recipe calls approved"
+      "n": "84 of 96 calls still need a skill"
      }
     ]
    },
@@ -1936,15 +1934,16 @@
       "value": "a16 running"
      },
      {
-      "label": "a14 grip at stop",
-      "value": "27 N < 30 N"
+      "label": "Dev attempts accepted by review",
+      "value": 0,
+      "total": 10
      },
      {
       "label": "Approved skills",
       "value": 6
      }
     ],
-    "next": "a16 runs the original protocol with the new grip window; goal: hold the 100 g weight through the lift.",
+    "next": "a16 judges grip on a 50 ms average (your decision); publish its raw package and your approval as a file so the reviewer can check it.",
     "milestones": [
      {
       "t": "Calls 1–4 confirmed",
@@ -1954,7 +1953,7 @@
      {
       "t": "Call 5: grip and lift",
       "s": "now",
-      "n": "a16 running"
+      "n": "a7–a15 not accepted; a16 running"
      },
      {
       "t": "Calls 6–37",
@@ -2315,8 +2314,8 @@
    }
   ],
   "decisions": [
-   "Register pick-and-place with the corrected timing: 4 independent complete passes, 3 required.",
-   "Approve or reject the balance-check tolerance extensions (second check, and the agent's own fallback).",
+   "Register pick-and-place with the corrected timing for the isolated robot cell: 4 independent complete passes, 3 required. The reviewer recommends yes.",
+   "50 µm tolerance: approve it only for the end point (as you did) and for the exact weight-on-bench pair with a real contact depth; the agent's own bench-plane fallback stays rejected (reviewer's recommendation).",
    "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
    "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
    "Which mobile robot carries the arm in full-lab evaluation."
@@ -2348,7 +2347,7 @@
     {
      "t": "Task plan",
      "s": "done",
-     "n": "14 calls: 6 robot, 7 instrument, 1 observation"
+     "n": "executable plan, 14 calls"
     },
     {
      "t": "Grasps",
