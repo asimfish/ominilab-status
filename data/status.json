@@ -1654,7 +1654,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-21 15:40",
+  "updated": "2026-11-21 15:20",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1717,7 +1717,7 @@
      "auto"
     ],
     "now": "Every room has a capability card: 3 of 14 are ready for an experiment today (weighing room: balance check; A-Lab cell: recipe 118; analytical room: titration). 40 moving parts formally confirmed; 5 draft rooms rebuilt.",
-    "next": "Close each room's listed gaps; finish the last 2 draft rooms; real2sim pilot once you approve it."
+    "next": "Robot station in the analytical room (titration is the next experiment); formal check of the 5 rebuilt rooms; wall fit-out."
    },
    {
     "id": "step2",
@@ -1839,7 +1839,7 @@
       "total": 7
      }
     ],
-    "next": "Close the gaps the cards list: FTIR lid and weights in the original labs, a working pipette for qPCR, missing models in the bio-assay, molecular biology and materials rooms.",
+    "next": "Your choice: a fixed robot arm in the analytical room for titration next, plus one formal batch for the 5 rebuilt rooms; then fill the gaps the cards list (FTIR lid, weights, a usable pipette, HPLC injector).",
     "milestones": [
      {
       "t": "4 original labs stable",
@@ -2635,6 +2635,8 @@
    }
   ],
   "decisions": [
+   "Appearance sign-off for the 14 rooms (pictures on the Assets & scenes page); the rebuilt rooms' walls are still bare.",
+   "Mechanism rules: ignore a moving part's contact with its own instrument when confirming it; add a drive to the Oven065 door; switch off 13 misplaced thermal-analyser colliders in the room; add a biology room type to the checks.",
    "Orientation of 52 assets: F1 has narrowed its open questions to these (38 front only, 2 up only, 12 both); a picture pack is ready.",
    "Real2sim pilot: a real lab for ~2 h, an iPhone Pro with LiDAR, a calibration kit (¥1,100–1,800), optional laser-scanner rental (¥2,500–4,500), GPU time and model downloads.",
    "Register pick-and-place with the corrected timing for the isolated robot cell: 4 independent complete passes, 3 required. The reviewer recommends yes.",
