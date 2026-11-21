@@ -694,11 +694,16 @@
      "tag": "Sources",
      "live": false,
      "status": "partial",
-     "line": "19 source papers; 10 protocols fully traced to their source. Source gate: 83 of 130 nodes pass, 10 mixed, 37 undetermined.",
+     "line": "19 source papers. Strict source audit: 3 of 19 pass. The scene builder's own check traces 10 of 19. Source gate: 83 of 130 nodes pass, 10 mixed, 37 undetermined.",
      "details": "",
      "metrics": [
       {
-       "label": "Protocols fully sourced",
+       "label": "Pass the strict source audit",
+       "value": 3,
+       "total": 19
+      },
+      {
+       "label": "Traced by the builder's check",
        "value": 10,
        "total": 19
       },
@@ -1649,7 +1654,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-21 15:05",
+  "updated": "2026-11-21 15:40",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1939,11 +1944,16 @@
     "agent_state": "running",
     "status": "partial",
     "progress": {
-     "label": "Protocols fully sourced",
-     "value": 10,
+     "label": "Papers passing the strict source audit",
+     "value": 3,
      "total": 19
     },
     "metrics": [
+     {
+      "label": "Traced by the scene builder's check",
+      "value": 10,
+      "total": 19
+     },
      {
       "label": "Headline experiment operations",
       "value": 14
@@ -1954,7 +1964,7 @@
       "total": 130
      }
     ],
-    "next": "Finish sourcing; extend beyond recipe 118 once it runs.",
+    "next": "Bring more papers through the strict source audit; two papers (potato, filter-paper adsorption) have conflicting audit results to settle.",
     "milestones": [
      {
       "t": "19 papers collected",
@@ -1968,7 +1978,7 @@
      {
       "t": "Every step traced to source",
       "s": "now",
-      "n": "10 of 19 protocols"
+      "n": "3 of 19 pass the strict audit (10 by the builder's check)"
      },
      {
       "t": "Plans reviewed independently",
