@@ -1649,7 +1649,7 @@ window.STATUS = {
   }
  ],
  "pipeline": {
-  "updated": "2026-11-21 02:10",
+  "updated": "2026-11-21 15:05",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -1664,7 +1664,7 @@ window.STATUS = {
    },
    {
     "label": "Assets & scenes",
-    "sub": "6 labs stable, auto builder",
+    "sub": "14 rooms carded, 3 ready",
     "status": "running"
    },
    {
@@ -1711,8 +1711,8 @@ window.STATUS = {
      "base",
      "auto"
     ],
-    "now": "Top priority since 11-21: every base lab realistic and operable, with a card per lab listing its working instruments and the experiments it can run. A census of all objects and scenes and a real2sim survey started in parallel.",
-    "next": "Fix the remaining stuck mechanisms; rebuild the draft rooms (biology first) toward ~10 varied labs."
+    "now": "Every room has a capability card: 3 of 14 are ready for an experiment today (weighing room: balance check; A-Lab cell: recipe 118; analytical room: titration). 40 moving parts formally confirmed; 5 draft rooms rebuilt.",
+    "next": "Close each room's listed gaps; finish the last 2 draft rooms; real2sim pilot once you approve it."
    },
    {
     "id": "step2",
@@ -1739,8 +1739,8 @@ window.STATUS = {
      "atomic",
      "eval"
     ],
-    "now": "Top priority since 11-21: annotation judges every one of the 267 assets — can it do its experimental job, can it be fixed — and fixes what it can.",
-    "next": "Operability verdict for all 267 assets; first grasp that holds in physics."
+    "now": "All 267 assets judged: 3 fully operable, 30 fixable (25 already fixed), 5 display only, 229 lacking evidence or parts. Grasp rules updated: short vessels from above, edge placement also allowed.",
+    "next": "Turn instruments into operable ones room by room with the base-scene agent; first grasp that holds in physics."
    }
   ],
   "stages": [
@@ -1813,27 +1813,28 @@ window.STATUS = {
     "agent_state": "running",
     "status": "partial",
     "progress": {
-     "label": "Labs passing the strict stability run",
-     "value": 6,
-     "total": 10
+     "label": "Rooms with a capability card",
+     "value": 14,
+     "total": 14
     },
     "metrics": [
      {
-      "label": "Objects that can be picked up",
-      "value": 226
+      "label": "Rooms ready for at least one experiment",
+      "value": 3,
+      "total": 14
      },
      {
-      "label": "Moving parts confirmed",
+      "label": "Moving parts formally confirmed",
       "value": 40,
       "total": 124
      },
      {
-      "label": "Accepted by you",
-      "value": 0,
-      "total": 6
+      "label": "Draft rooms rebuilt",
+      "value": 5,
+      "total": 7
      }
     ],
-    "next": "Capability card per lab: working instruments, pickable objects, experiments it can run now; fix stuck mechanisms; rebuild draft rooms (biology first).",
+    "next": "Close the gaps the cards list: FTIR lid and weights in the original labs, a working pipette for qPCR, missing models in the bio-assay, molecular biology and materials rooms.",
     "milestones": [
      {
       "t": "4 original labs stable",
@@ -1846,19 +1847,24 @@ window.STATUS = {
       "n": "formal run, 11-20"
      },
      {
+      "t": "Capability card per room",
+      "s": "done",
+      "n": "14 rooms, 11-21"
+     },
+     {
       "t": "Moving parts work",
       "s": "now",
-      "n": "40 of 124; priority since 11-21"
+      "n": "40 of 124 formally confirmed"
      },
      {
-      "t": "Capability card per lab",
+      "t": "Draft rooms rebuilt",
       "s": "now",
-      "n": "experiments each lab can run"
+      "n": "5 of 7: 3 biology, materials, analytical"
      },
      {
-      "t": "7 draft rooms rebuilt",
+      "t": "Every room ready for its experiments",
       "s": "todo",
-      "n": "for ~10 labs incl. biology"
+      "n": "3 of 14 today"
      },
      {
       "t": "Your sign-off per lab",
@@ -2177,27 +2183,26 @@ window.STATUS = {
     "agent_state": "running",
     "status": "running",
     "progress": {
-     "label": "Assets ready for scene building",
-     "value": 169,
+     "label": "Assets with an operability verdict",
+     "value": 267,
      "total": 267
     },
     "metrics": [
      {
-      "label": "Stable at rest",
-      "value": 232,
-      "total": 267
+      "label": "A fully operable / B fixable",
+      "value": "3 / 30"
+     },
+     {
+      "label": "C display only / D not auto-fixable",
+      "value": "5 / 229"
      },
      {
       "label": "Ready for manipulation",
       "value": 0,
       "total": 267
-     },
-     {
-      "label": "Operation proposals",
-      "value": 770
      }
     ],
-    "next": "Judge all 267 assets: fully operable, fixable, static only, or broken; fix the fixable ones (CPU).",
+    "next": "Most instruments (190) lack the evidence of a full experimental operation; F1 and the base-scene agent close this together, room by room.",
     "milestones": [
      {
       "t": "267 assets identified",
@@ -2209,13 +2214,13 @@ window.STATUS = {
      },
      {
       "t": "Operability verdict per asset",
-      "s": "now",
-      "n": "priority since 11-21"
+      "s": "done",
+      "n": "A 3 · B 30 · C 5 · D 229"
      },
      {
       "t": "Fix what can be fixed",
       "s": "now",
-      "n": "colliders, units, mass, orientation"
+      "n": "25 fixed; 52 orientations need you"
      },
      {
       "t": "Ready for manipulation",
@@ -2406,45 +2411,52 @@ window.STATUS = {
     "title": "Asset & scene census",
     "what": "Count every object and scene: how usable it is and which experiments it supports.",
     "agent": "Census agent (Gemini)",
-    "agent_state": "running",
-    "status": "running",
+    "agent_state": "idle",
+    "status": "pass",
     "progress": {
      "label": "Census delivered",
-     "value": 0,
+     "value": 1,
      "total": 1
     },
     "metrics": [
      {
-      "label": "Objects in the library",
+      "label": "Objects",
       "value": 267
      },
      {
-      "label": "Readiness levels",
-      "value": "L0–L4"
+      "label": "Scenes",
+      "value": 34
+     },
+     {
+      "label": "Experiments that can run end to end",
+      "value": 0,
+      "total": 28
      }
     ],
-    "next": "Started 11-21 02:00: objects, scenes and experiments classified, with a re-runnable count.",
+    "next": "Re-run census.py after each stage boundary to refresh the counts.",
     "milestones": [
      {
       "t": "Sources located",
-      "s": "now"
+      "s": "done"
      },
      {
       "t": "Objects classified",
-      "s": "todo",
-      "n": "267, levels L0–L4"
+      "s": "done",
+      "n": "L0 30 · L1 67 · L2 163 · L3 7 · L4 0"
      },
      {
       "t": "Scenes → experiments",
-      "s": "todo"
+      "s": "done",
+      "n": "34 scenes, 28 experiments"
      },
      {
       "t": "Top gaps listed",
-      "s": "todo"
+      "s": "done"
      },
      {
       "t": "One-click refresh",
-      "s": "todo"
+      "s": "done",
+      "n": "census.py"
      }
     ]
    },
@@ -2458,40 +2470,41 @@ window.STATUS = {
     "title": "Real2sim: scan real labs",
     "what": "Scan a real laboratory and turn it into an operable OminiLab scene.",
     "agent": "Real2sim agent (Gemini)",
-    "agent_state": "running",
-    "status": "running",
+    "agent_state": "idle",
+    "status": "partial",
     "progress": {
      "label": "Labs scanned into the simulator",
      "value": 0
     },
     "metrics": [
      {
-      "label": "Survey",
-      "value": "in progress"
+      "label": "Survey and interface spec",
+      "value": "done"
      },
      {
-      "label": "Pilot lab",
-      "value": "not chosen"
+      "label": "Pilot",
+      "value": "needs your approval"
      }
     ],
-    "next": "Survey current real2sim methods, then specify how a scan becomes a scene that passes our checks.",
+    "next": "Pilot needs your approval: one real lab for ~2 h, an iPhone Pro with LiDAR, a calibration kit (¥1,100–1,800), optional 1-day laser-scanner rental, GPU time and model downloads.",
     "milestones": [
      {
       "t": "Technology survey",
-      "s": "now"
+      "s": "done"
      },
      {
       "t": "Interface to our scenes",
-      "s": "todo",
-      "n": "USD, colliders, joints, labels"
+      "s": "done",
+      "n": "spec + JSON schema"
      },
      {
       "t": "Pilot plan",
-      "s": "todo"
+      "s": "done"
      },
      {
       "t": "First real lab scanned",
-      "s": "todo"
+      "s": "todo",
+      "n": "needs your approval"
      },
      {
       "t": "Scanned lab passes checks",
@@ -2612,12 +2625,11 @@ window.STATUS = {
    }
   ],
   "decisions": [
-   "Answer the Manipulation Mentor's question on grasp rules: it has waited since 11-20 19:36, and F1, F3 and F4 approvals are queued behind it.",
+   "Orientation of 52 assets: F1 has narrowed its open questions to these (38 front only, 2 up only, 12 both); a picture pack is ready.",
+   "Real2sim pilot: a real lab for ~2 h, an iPhone Pro with LiDAR, a calibration kit (¥1,100–1,800), optional laser-scanner rental (¥2,500–4,500), GPU time and model downloads.",
    "Register pick-and-place with the corrected timing for the isolated robot cell: 4 independent complete passes, 3 required. The reviewer recommends yes.",
    "50 µm tolerance: approve it only for the end point (as you did) and for the exact weight-on-bench pair with a real contact depth; the agent's own bench-plane fallback stays rejected (reviewer's recommendation).",
-   "Budget for the full 37-call balance run (2–4 h; job cap is 75 min).",
-   "Grasp rules: grasp short vessels from above, or place them at the table edge; GPU for batched grasp trials.",
-   "Which mobile robot carries the arm in full-lab evaluation."
+   "Budget for the full 37-call balance run (2–4 h; job cap is 75 min)."
   ],
   "headline": {
    "title": "Recipe 118 · CaFe₂P₂O₉ synthesis with powder XRD",
