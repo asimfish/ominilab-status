@@ -10,7 +10,7 @@
 
   $("#tabs").innerHTML = '<a class="tab" aria-selected="true" href="agents.html">Plan &amp; progress</a>' + P.steps.map(function (s) {
     return '<a class="tab ' + esc(s.id) + '" href="index.html#' + esc(s.groups[0]) + '"><span class="badge" aria-hidden="true">' + esc(s.n) + "</span>" + esc(s.title) + "</a>";
-  }).join("") + '<a class="tab" href="catalog.html">Assets &amp; scenes</a><a class="tab" href="index.html#summary">Goals &amp; timeline</a>';
+  }).join("") + '<a class="tab" href="catalog.html">Assets &amp; scenes</a><a class="tab" href="real2sim.html">Real2sim</a><a class="tab" href="index.html#summary">Goals &amp; timeline</a>';
   $("#goal").textContent = P.goal;
 
   function stagesOf(step) { return P.stages.filter(function (st) { return st.step === step.id; }).sort(function (a, b) { return a.row - b.row; }); }

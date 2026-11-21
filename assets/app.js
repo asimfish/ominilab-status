@@ -36,7 +36,7 @@
   var nav = $("#tabs");
   nav.innerHTML = '<a class="tab" href="agents.html">Plan &amp; progress</a>' + steps.map(function (s) {
     return '<button class="tab ' + esc(s.id) + '" role="tab" data-step="' + esc(s.id) + '"><span class="badge" aria-hidden="true">' + esc(s.n) + "</span>" + esc(s.title) + "</button>";
-  }).join("") + '<a class="tab" href="catalog.html">Assets &amp; scenes</a><button class="tab" role="tab" data-step="summary">Goals &amp; timeline</button>';
+  }).join("") + '<a class="tab" href="catalog.html">Assets &amp; scenes</a><a class="tab" href="real2sim.html">Real2sim</a><button class="tab" role="tab" data-step="summary">Goals &amp; timeline</button>';
   nav.addEventListener("click", function (e) {
     var b = e.target.closest("[data-step]"); if (!b) return;
     var id = b.getAttribute("data-step");
@@ -102,7 +102,7 @@
     }).join("") + "</nav>" : "";
     var sts = stagesFor(step, g.id);
     var cards = sts.length ? '<section class="stages">' + sts.map(function (st) {
-      var href = st.group === g.id && !st.item ? null : "#" + st.group + (st.item ? "/" + st.item : "");
+      var href = st.href || (st.group === g.id && !st.item ? null : "#" + st.group + (st.item ? "/" + st.item : ""));
       return OL.stageCard(st, href);
     }).join("") + "</section>" : "";
     main.innerHTML = band + sub + cards + '<p class="blurb">' + esc(g.blurb) + "</p>" +

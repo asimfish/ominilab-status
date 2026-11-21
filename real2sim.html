@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab Real2sim Options</title>
+<meta name="description" content="Seven complete ways to turn a scan of a real laboratory into an operable OminiLab scene, compared on cost, time, accuracy, physics and chemistry-lab risks.">
+<link rel="preload" href="assets/fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
+      <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
+    </a>
+    <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
+</header>
+
+<main class="wrap r2s">
+  <section class="map-hero">
+    <h1>Real2sim options</h1>
+    <p>How to turn a scan of a real laboratory into a scene the robot can operate in Isaac Sim: seven complete approaches,
+       compared on time, cost, accuracy, physics, moving parts and the hard cases of chemistry labs (glass, steel, small buttons).</p>
+    <p class="muted small" id="r2s-note"></p>
+  </section>
+  <section id="pilot"></section>
+  <section class="block"><div class="block-head"><h2>Which approach for which goal</h2></div><div class="goals4" id="goals"></div></section>
+  <section class="block"><div class="block-head"><h2>Side by side</h2><p>Scores are 0–5 (higher is better); TRL is technology readiness, 9 = proven in production.</p></div>
+    <div class="tscroll"><table class="cmp" id="cmp"></table></div></section>
+  <section class="block"><div class="block-head"><h2>The seven approaches</h2><p>Open one for its pipeline, tools, cost and time, pros and cons, and risks.</p></div><div id="sols" class="sols"></div></section>
+  <section class="block"><div class="block-head"><h2>Hard cases in chemistry labs</h2><p>How badly each approach copes with what makes chemistry labs difficult to scan.</p></div>
+    <div class="tscroll"><table class="cmp risk" id="risk"></table></div></section>
+  <section class="block"><div class="block-head"><h2>Technology landscape</h2><p>The eight areas the survey covered, with representative work in each.</p></div><div id="dirs" class="dirs"></div></section>
+  <section class="block"><div class="block-head"><h2>Sources</h2></div><ol id="srcs" class="srcs"></ol></section>
+</main>
+<footer class="wrap foot">Research by the real2sim agent (11-21). Each claim is labelled: verified usable, paper claim, vendor claim or unverified.</footer>
+<script src="data/status.js"></script>
+<script src="data/real2sim.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/real2sim.js"></script>
+</body>
+</html>

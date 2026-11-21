@@ -92,7 +92,7 @@
     return c;
   }
 
-  function stageLink(st) { return "index.html#" + encodeURIComponent(st.group) + (st.item ? "/" + encodeURIComponent(st.item) : ""); }
+  function stageLink(st) { if (st.href) return st.href; return "index.html#" + encodeURIComponent(st.group) + (st.item ? "/" + encodeURIComponent(st.item) : ""); }
   function stageBody(st) {
     return '<div class="stage-head"><div class="stage-title">' + esc(st.title) + "</div>" + pill(st.status) + "</div>" +
       '<div class="stage-what">' + esc(st.what) + "</div>" +

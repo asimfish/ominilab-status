@@ -12,7 +12,7 @@
   var steps = S && S.pipeline ? S.pipeline.steps : [];
   $("#tabs").innerHTML = '<a class="tab" href="agents.html">Plan &amp; progress</a>' + steps.map(function (s) {
     return '<a class="tab ' + esc(s.id) + '" href="index.html#' + esc(s.groups[0]) + '"><span class="badge" aria-hidden="true">' + esc(s.n) + "</span>" + esc(s.title) + "</a>";
-  }).join("") + '<a class="tab" aria-selected="true" href="catalog.html">Assets &amp; scenes</a><a class="tab" href="index.html#summary">Goals &amp; timeline</a>';
+  }).join("") + '<a class="tab" aria-selected="true" href="catalog.html">Assets &amp; scenes</a><a class="tab" href="real2sim.html">Real2sim</a><a class="tab" href="index.html#summary">Goals &amp; timeline</a>';
 
   var A = C.assets, SC = C.scenes, EX = C.experiments;
   var byA = {}, byS = {}, byE = {};

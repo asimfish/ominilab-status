@@ -1654,7 +1654,7 @@
   }
  ],
  "pipeline": {
-  "updated": "2026-11-21 15:20",
+  "updated": "2026-11-21 16:00",
   "goal": "A robot runs a published experiment from start to finish in a simulated lab, every operation reviewed, and policies are judged on whole experiments. Current headline: the Nature A-Lab CaFe₂P₂O₉ synthesis with powder XRD (recipe 118).",
   "flow": [
    {
@@ -2488,19 +2488,24 @@
     },
     "metrics": [
      {
-      "label": "Survey and interface spec",
-      "value": "done"
+      "label": "Approaches compared",
+      "value": 7
+     },
+     {
+      "label": "Sources checked",
+      "value": 37
      },
      {
       "label": "Pilot",
       "value": "needs your approval"
      }
     ],
-    "next": "Pilot needs your approval: one real lab for ~2 h, an iPhone Pro with LiDAR, a calibration kit (¥1,100–1,800), optional 1-day laser-scanner rental, GPU time and model downloads.",
+    "next": "Choose an approach on the Real2sim page; the recommended first pilot is phased (library swap in week 1, two-track after) with a 1-day laser-scanner rental for ground truth.",
     "milestones": [
      {
       "t": "Technology survey",
-      "s": "done"
+      "s": "done",
+      "n": "8 areas, 7 complete approaches"
      },
      {
       "t": "Interface to our scenes",
@@ -2509,7 +2514,8 @@
      },
      {
       "t": "Pilot plan",
-      "s": "done"
+      "s": "done",
+      "n": "phased: library swap first, then two-track"
      },
      {
       "t": "First real lab scanned",
@@ -2520,7 +2526,8 @@
       "t": "Scanned lab passes checks",
       "s": "todo"
      }
-    ]
+    ],
+    "href": "real2sim.html"
    }
   ],
   "links": [
