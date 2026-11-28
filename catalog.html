@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="ol-build" content="046379ef">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab Assets &amp; Scenes</title>
+<meta name="description" content="Every OminiLab object and scene: what it is for, whether it can be operated, which experiments it supports, and what is still missing.">
+<link rel="preload" href="assets/fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script type="importmap">{"imports": {"three": "./assets/vendor/three/three.module.min.js", "three/addons/": "./assets/vendor/three/addons/"}}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
+      <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
+    </a>
+    <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
+</header>
+
+<main class="wrap catalog">
+  <section class="map-hero">
+    <h1>Assets &amp; scenes</h1>
+    <p>Every object and scene we have: what it is for, whether it can be operated, which experiments it supports, and what is still missing. Click any row or card for the full record.</p>
+    <p class="muted small" id="sources"></p>
+  </section>
+  <nav class="subtabs" id="views" aria-label="Lists"></nav>
+  <div id="view"></div>
+</main>
+
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-back" id="dback"></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Details">
+    <button type="button" class="icon-btn dclose" id="dclose" aria-label="Close details">✕ Close</button>
+    <div id="dbody" class="dbody"></div>
+  </aside>
+</div>
+
+<footer class="wrap foot">Built from F1's operability verdicts, the asset census and the base-scene agent's room cards; refreshed by <code>build_catalog.py</code>.
+Pictures and 3D previews are lightweight copies for academic research. ChemLab models: <a href="https://huggingface.co/datasets/MBZUAI/ChemLab-Assets">MBZUAI ChemLab-Assets</a>, CC BY-NC 4.0. SafeLab models: the OminiLab project.
+3D viewer: three.js (MIT), served from this site.</footer>
+<script src="secure.js" data-load="data/status.js data/catalog.js data/f1_accept.js data/lab_families.js assets/common.js assets/f1_accept.js assets/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="ol-build" content="046379ef">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab Real2sim Options</title>
+<meta name="description" content="把真实实验室的图片和视频变成可操作的 OminiLab 仿真房间：技术路线、各方法对比、耗时和 3D 效果。">
+<link rel="preload" href="assets/fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script type="importmap">{"imports": {"three": "./assets/vendor/three/three.module.min.js", "three/addons/": "./assets/vendor/three/addons/"}}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
+      <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
+    </a>
+    <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
+</header>
+
+<main class="wrap r2s">
+  <section class="block r2pairs" id="r2pairs"></section>
+  <details class="block r2sv2" id="r2sv2"><summary><b>v2 的详细结果：从像素重建房壳（11-24 到 11-26，已停止）</b> <span class="muted small">技术路线 R1–R5、耗时、误差拆分、Blender 清理、逐个场景</span></summary>
+  <section class="r2scompare" id="r2scompare"></section>
+  </details>
+  <details class="block r2sall" id="r2sall"><summary><b>全部数据</b> <span class="muted small">评分卡、各阶段耗时、真值对照表、哪条路线在哪里跑过，以及每一次运行</span></summary>
+  <section class="r2strials" id="r2strials"></section>
+  </details>
+  <details class="block r2sbg"><summary><b>背景</b> <span class="muted small">视频转场景方案（11-23）和仪器方面的工作</span></summary>
+  <section class="v2sum" id="v2sum"></section>
+  </details>
+  <details class="oldr2s"><summary><b>早期调研（11-21）：七种基于扫描的方案对比</b> <span class="muted small">留作参考；上面的方案已经取代它</span></summary>
+  <section class="map-hero">
+    <h1>Real2sim 方案</h1>
+    <p>怎样把真实实验室的扫描变成机器人能在 Isaac Sim 里操作的场景：七种完整方案，
+       按时间、成本、精度、物理、可动部件和化学实验室的难点（玻璃、不锈钢、小按钮）对比。</p>
+    <p class="muted small" id="r2s-note"></p>
+      </section>
+  <section id="pilot"></section>
+  <section class="block"><div class="block-head"><h2>什么目标用哪种方案</h2></div><div class="goals4" id="goals"></div></section>
+  <section class="block"><div class="block-head"><h2>并排对比</h2><p>评分 0–5（越高越好）；TRL 是技术成熟度，9 = 已在生产中验证。</p></div>
+    <div class="tscroll"><table class="cmp" id="cmp"></table></div></section>
+  <section class="block"><div class="block-head"><h2>七种方案</h2><p>展开一种，看它的流程、工具、成本和时间、优缺点和风险。</p></div><div id="sols" class="sols"></div></section>
+  <section class="block"><div class="block-head"><h2>化学实验室的难点</h2><p>化学实验室难扫的地方，各方案分别受多大影响。</p></div>
+    <div class="tscroll"><table class="cmp risk" id="risk"></table></div></section>
+  <section class="block"><div class="block-head"><h2>技术版图</h2><p>调研覆盖的八个方向，以及每个方向的代表性工作。</p></div><div id="dirs" class="dirs"></div></section>
+  <section class="block"><div class="block-head"><h2>参考来源</h2></div><ol id="srcs" class="srcs"></ol></section>
+  </details>
+</main>
+<footer class="wrap foot">real2sim 代理的调研和试验。早期调研（11-21）里每条结论都标了来源：已验证可用、论文声称、厂商声称或未验证。</footer>
+<script src="secure.js" data-load="data/status.js data/real2sim.js data/video2scene.js data/r2s_trials.js data/r2s_pairs.js assets/common.js assets/real2sim.js assets/r2s_trials.js assets/r2s_compare.js assets/r2s_pairs.js"></script>
+</body>
+</html>

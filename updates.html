@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="ol-build" content="046379ef">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab 进展快报</title>
+<meta name="description" content="OminiLab 各条线的整体进展：关键指标、需要你决定的事、每个智能体在做什么、最近更新。">
+<link rel="preload" href="assets/fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
+      <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
+    </a>
+    <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
+</header>
+
+<main class="wrap upd" id="upd">
+  <section class="map-hero upd-hero">
+    <h1>进展快报</h1>
+    <p class="upd-meta" id="upd-meta"></p>
+    <p class="upd-headline" id="upd-headline"></p>
+  </section>
+  <section class="upd-kpis" id="upd-kpis" aria-label="关键指标"></section>
+  <section class="block upd-dec" id="upd-dec"></section>
+  <section class="block" id="upd-lanes"></section>
+  <section class="block upd-tl" id="upd-tl"></section>
+</main>
+<footer class="wrap foot">由 HQ（指挥部）汇总各智能体的回执更新。数据源：<code>data/hq_updates.json</code>，用 <code>tools/hq/build_updates.py</code> 生成。</footer>
+<script src="secure.js" data-load="data/status.js data/hq_updates.js assets/common.js assets/updates.js"></script>
+</body>
+</html>

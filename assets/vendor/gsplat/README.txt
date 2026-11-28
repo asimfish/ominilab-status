@@ -1,0 +1,2 @@
+GaussianSplats3D 0.4.7 (https://github.com/mkkellogg/GaussianSplats3D), MIT License, see LICENSE. File copied unchanged from the npm package @mkkellogg/gaussian-splats-3d@0.4.7 (integrity sha512-0vy9/i9sJLFH/v3WJZ4axCsqjkToe8UsV3xY7bvK5EUC0akiRsWZODoCiSzpxhTLNyzSKTsyQKozIFeNA5RWRA==):
+build/gaussian-splats-3d.module.js -> gaussian-splats-3d.module.js. Imports only "three" (resolved by the page import map to ../three).

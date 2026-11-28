@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="ol-build" content="046379ef">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OminiLab 先锋实验</title>
+<meta name="description" content="两个先锋实验从论文到完整执行的全过程：场景搭建、资产选择和标注、原子任务区域、数据采集、DP 训练、评测。">
+<link rel="preload" href="assets/fonts/IBMPlexSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/SpaceGrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script type="importmap">{"imports": {"three": "./assets/vendor/three/three.module.min.js", "three/addons/": "./assets/vendor/three/addons/"}}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="agents.html" style="text-decoration:none;color:inherit">
+      <svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" fill="var(--text)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--bg)" stroke-width="2.4"/><circle cx="17" cy="17" r="3" fill="var(--s1)"/><circle cx="23.5" cy="11" r="2.2" fill="var(--s3)"/></svg>
+      <div><div class="brand-name">OminiLab</div><div class="brand-sub" id="updated">Loading…</div></div>
+    </a>
+    <div class="top-right"><button class="icon-btn" id="themeBtn" type="button">◐ Auto</button></div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Pages"></nav>
+</header>
+
+<main class="wrap van">
+  <section class="vc-hero">
+    <div>
+      <h1>先锋实验 · 直播控制台</h1>
+      <p>两个先锋智能体正在用现有资产，把两个真实实验从论文一路做到机器人完整执行。这里像电视导播间一样同时盯着两路：主屏播出一路的一个机位（方案、场景 3D、采集、训练、评测、完整执行），右边是所有机位的小监看画面，下面是两路共用的时间线和实时动态。</p>
+      <p class="upd-meta" id="van-meta"></p>
+    </div>
+    <nav class="vc-views" id="van-views" aria-label="视图">
+      <button type="button" data-go="console">直播控制台</button><button type="button" data-go="compare">两路对比</button><button type="button" data-go="detail">十步详情</button>
+    </nav>
+    <p class="vc-keys muted small">快捷键：<kbd>1</kbd>–<kbd>6</kbd> 切机位，<kbd>←</kbd><kbd>→</kbd> 上一个/下一个，<kbd>S</kbd> 切实验，<kbd>F</kbd> 主屏全屏</p>
+  </section>
+  <div id="van-body"></div>
+</main>
+<footer class="wrap foot">由两个先锋智能体维护各自的 <code>PIPELINE_STATUS.json</code>，HQ 用 <code>tools/hq/build_vanguard.py</code> 生成本页。</footer>
+<script src="secure.js" data-load="data/status.js data/vanguard.js assets/common.js assets/vanguard.js"></script>
+</body>
+</html>
